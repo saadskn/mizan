@@ -31,3 +31,24 @@ export function scoreCombo(totals, goals) {
   }
   return Math.round(100 * (1 - errSum / keys.length));
 }
+
+export function generateCombos(items) {
+  const combos = [];
+  const isDessert = (i) => i.category === 'dessert';
+  const push = (combo) => {
+    let desserts = 0;
+    for (const i of combo) if (isDessert(i)) desserts++;
+    if (desserts <= 1) combos.push(combo);
+  };
+  const n = items.length;
+  for (let i = 0; i < n; i++) {
+    push([items[i]]);
+    for (let j = i; j < n; j++) {
+      push([items[i], items[j]]);
+      for (let k = j; k < n; k++) {
+        push([items[i], items[j], items[k]]);
+      }
+    }
+  }
+  return combos;
+}

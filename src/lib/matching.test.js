@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { FLOORS, comboTotals, scoreCombo } from './matching.js';
+import { FLOORS, comboTotals, scoreCombo, generateCombos } from './matching.js';
 
 const item = (over = {}) => ({
   id: 'x', chain: 'X', name: 'X', category: 'main',
@@ -62,5 +62,36 @@ describe('scoreCombo', () => {
 
   it('exports the exact floors from the spec', () => {
     expect(FLOORS).toEqual({ protein: 10, carbs: 10, fats: 10, calories: 100 });
+  });
+});
+
+describe('generateCombos', () => {
+  const A = item({ id: 'a', category: 'main' });
+  const B = item({ id: 'b', category: 'side' });
+  const C = item({ id: 'c', category: 'dessert' });
+
+  it('generates all multisets of size 1-3 minus multi-dessert combos', () => {
+    // 3 singles + 6 pairs-with-repetition + 10 triples-with-repetition = 19
+    // minus {C,C}, {C,C,A}, {C,C,B}, {C,C,C} = 15
+    expect(generateCombos([A, B, C])).toHaveLength(15);
+  });
+
+  it('never includes more than one dessert item in a combo', () => {
+    for (const combo of generateCombos([A, B, C])) {
+      const desserts = combo.filter((i) => i.category === 'dessert').length;
+      expect(desserts).toBeLessThanOrEqual(1);
+    }
+  });
+
+  it('allows the same non-dessert item twice or three times', () => {
+    const keys = generateCombos([A, B]).map((c) => c.map((i) => i.id).sort().join('+'));
+    expect(keys).toContain('a+a');
+    expect(keys).toContain('a+a+a');
+    expect(keys).toContain('a+a+b');
+  });
+
+  it('has no permutation duplicates', () => {
+    const keys = generateCombos([A, B, C]).map((c) => c.map((i) => i.id).sort().join('+'));
+    expect(new Set(keys).size).toBe(keys.length);
   });
 });

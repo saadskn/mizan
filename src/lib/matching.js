@@ -52,3 +52,60 @@ export function generateCombos(items) {
   }
   return combos;
 }
+
+export function overlapRatio(a, b) {
+  const count = (arr) => {
+    const m = new Map();
+    for (const i of arr) m.set(i.id, (m.get(i.id) || 0) + 1);
+    return m;
+  };
+  const ca = count(a);
+  const cb = count(b);
+  let inter = 0;
+  for (const [id, n] of ca) inter += Math.min(n, cb.get(id) || 0);
+  return inter / Math.max(a.length, b.length);
+}
+
+export function findMatches(menu, goals, opts = {}) {
+  const { limit = 25, perChainCap = 10, dupThreshold = 2 / 3 } = opts;
+  if (filledGoalKeys(goals).length === 0) return [];
+
+  const byChain = new Map();
+  for (const it of menu) {
+    if (!byChain.has(it.chain)) byChain.set(it.chain, []);
+    byChain.get(it.chain).push(it);
+  }
+
+  const scored = [];
+  for (const [chain, items] of byChain) {
+    for (const combo of generateCombos(items)) {
+      const totals = comboTotals(combo);
+      scored.push({ chain, items: combo, totals, score: scoreCombo(totals, goals) });
+    }
+  }
+
+  scored.sort(
+    (a, b) =>
+      b.score - a.score ||
+      a.totals.price_sar - b.totals.price_sar ||
+      a.items.length - b.items.length
+  );
+
+  const results = [];
+  const perChain = new Map();
+  for (const cand of scored) {
+    if ((perChain.get(cand.chain) || 0) >= perChainCap) continue;
+    let dup = false;
+    for (const r of results) {
+      if (r.chain === cand.chain && overlapRatio(r.items, cand.items) >= dupThreshold) {
+        dup = true;
+        break;
+      }
+    }
+    if (dup) continue;
+    results.push(cand);
+    perChain.set(cand.chain, (perChain.get(cand.chain) || 0) + 1);
+    if (results.length === limit) break;
+  }
+  return results;
+}

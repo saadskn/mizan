@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { FLOORS, comboTotals, scoreCombo, generateCombos } from './matching.js';
+import {
+  FLOORS, comboTotals, scoreCombo, generateCombos, overlapRatio, findMatches,
+} from './matching.js';
 
 const item = (over = {}) => ({
   id: 'x', chain: 'X', name: 'X', category: 'main',
@@ -93,5 +95,100 @@ describe('generateCombos', () => {
   it('has no permutation duplicates', () => {
     const keys = generateCombos([A, B, C]).map((c) => c.map((i) => i.id).sort().join('+'));
     expect(new Set(keys).size).toBe(keys.length);
+  });
+});
+
+describe('overlapRatio', () => {
+  const A = item({ id: 'a' });
+  const B = item({ id: 'b' });
+  const C = item({ id: 'c' });
+  const D = item({ id: 'd' });
+
+  it('is 2/3 for triples sharing two items', () => {
+    expect(overlapRatio([A, B, C], [A, B, D])).toBeCloseTo(2 / 3);
+  });
+
+  it('counts multiplicity', () => {
+    // {a,a,b} vs {a,b}: intersection = a(1) + b(1) = 2, max size 3
+    expect(overlapRatio([A, A, B], [A, B])).toBeCloseTo(2 / 3);
+  });
+
+  it('is 1/2 for pairs sharing one item', () => {
+    expect(overlapRatio([A, B], [A, C])).toBeCloseTo(1 / 2);
+  });
+});
+
+describe('findMatches', () => {
+  const mk = (chain, id, macros, price = 10, category = 'main') =>
+    item({ chain, id: `${chain}-${id}`, name: id, category, price_sar: price, ...macros });
+
+  it('returns [] when no goals are filled', () => {
+    const menu = [mk('X', 'a', { protein: 20 })];
+    expect(findMatches(menu, {})).toEqual([]);
+    expect(findMatches(menu, { protein: null })).toEqual([]);
+  });
+
+  it('ranks by score descending and respects the result limit', () => {
+    const menu = [];
+    for (let c = 0; c < 8; c++) {
+      for (let i = 0; i < 4; i++) {
+        menu.push(mk(`C${c}`, `i${i}`, { protein: 10 + c + i, carbs: 5, fats: 5, calories: 200 }));
+      }
+    }
+    const res = findMatches(menu, { protein: 40 }, { limit: 5 });
+    expect(res).toHaveLength(5);
+    for (let i = 1; i < res.length; i++) {
+      expect(res[i - 1].score).toBeGreaterThanOrEqual(res[i].score);
+    }
+  });
+
+  it('never exceeds the per-chain cap', () => {
+    const menu = [];
+    for (let i = 0; i < 8; i++) menu.push(mk('ONLY', `i${i}`, { protein: 10 + i }));
+    const res = findMatches(menu, { protein: 30 }, { perChainCap: 3, limit: 25 });
+    expect(res.length).toBeLessThanOrEqual(3);
+    expect(res.every((r) => r.chain === 'ONLY')).toBe(true);
+  });
+
+  it('collapses same-chain near-duplicates (overlap >= 2/3)', () => {
+    const menu = [
+      mk('T', 'a', { protein: 10 }), mk('T', 'b', { protein: 11 }),
+      mk('T', 'c', { protein: 12 }), mk('T', 'd', { protein: 13 }),
+    ];
+    const res = findMatches(menu, { protein: 33 }, { limit: 25 });
+    for (let i = 0; i < res.length; i++) {
+      for (let j = i + 1; j < res.length; j++) {
+        if (res[i].chain === res[j].chain) {
+          expect(overlapRatio(res[i].items, res[j].items)).toBeLessThan(2 / 3);
+        }
+      }
+    }
+  });
+
+  it('tie-breaks equal scores by lower price', () => {
+    const menu = [
+      mk('A', 'exp', { protein: 25, carbs: 0, fats: 0, calories: 0 }, 20),
+      mk('B', 'chp', { protein: 15, carbs: 0, fats: 0, calories: 0 }, 5),
+    ];
+    // both: |v-20|/20 = 0.25 -> 75
+    const res = findMatches(menu, { protein: 20 });
+    expect(res[0].score).toBe(res[1].score);
+    expect(res[0].totals.price_sar).toBeLessThan(res[1].totals.price_sar);
+  });
+
+  it('handles a realistic dataset size in under 1.5 seconds', () => {
+    const menu = [];
+    for (let c = 0; c < 100; c++) {
+      for (let i = 0; i < 9; i++) {
+        menu.push(mk(`CH${c}`, `it${i}`, {
+          protein: (i * 7 + c) % 45, carbs: (i * 11 + c) % 60,
+          fats: (i * 5 + c) % 30, calories: 150 + ((i * 97 + c * 13) % 500),
+        }, 5 + (i % 20)));
+      }
+    }
+    const t0 = performance.now();
+    const res = findMatches(menu, { protein: 40, carbs: 50, fats: 20, calories: 600 });
+    expect(performance.now() - t0).toBeLessThan(1500);
+    expect(res).toHaveLength(25);
   });
 });

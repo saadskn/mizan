@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-page: #fafaf8;
+  --color-page-dark: #1a2332;
+  --color-card-dark: #232f42;
+  --color-edge-dark: #324158;
+  --color-sage: #7dd3b0;
+  --font-sans: 'Inter', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+}
+
+html[lang='ar'] body {
+  font-family: 'IBM Plex Sans Arabic', 'Inter', ui-sans-serif, system-ui, sans-serif;
+}

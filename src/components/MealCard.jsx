@@ -16,7 +16,6 @@ function comboLabel(items) {
 
 export default function MealCard({ t, result, goals }) {
   const { chain, items, totals, score } = result;
-  const filled = ORDER.filter((k) => Number.isFinite(goals[k]));
   return (
     <article
       className="rounded-2xl p-5 bg-white dark:bg-card-dark
@@ -33,7 +32,7 @@ export default function MealCard({ t, result, goals }) {
         {comboLabel(items)}
       </p>
       <div className="space-y-2">
-        {filled.map((k) => (
+        {ORDER.map((k) => (
           <MacroBar key={k} t={t} macroKey={k} value={totals[k]} goal={goals[k]} />
         ))}
       </div>

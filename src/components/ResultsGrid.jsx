@@ -15,6 +15,10 @@ export default function ResultsGrid({ t, results, goals }) {
           <MealCard key={idx} t={t} result={r} goals={goals} index={idx} />
         ))}
       </div>
+      <p className="anim-rise mt-8 text-center text-xs text-faint dark:text-cream-mut max-w-xl mx-auto"
+         style={{ animationDelay: `${Math.min(results.length, 10) * 90 + 400}ms` }}>
+        ⚖ {t.disclaimer}
+      </p>
     </section>
   );
 }

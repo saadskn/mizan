@@ -50,12 +50,19 @@ html[lang='ar'] body {
 }
 .bg-wash { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
 .bg-wash::before, .bg-wash::after {
-  content: ''; position: absolute; width: 70vw; height: 70vw; border-radius: 50%; filter: blur(80px);
+  content: ''; position: absolute; width: 90vw; height: 90vw;
+  will-change: transform; transform: translateZ(0);
 }
-.bg-wash::before { background: rgba(228, 213, 184, 0.40); top: -30vw; right: -20vw; animation: drift1 22s ease-in-out infinite alternate; }
-.bg-wash::after { background: rgba(14, 122, 95, 0.11); bottom: -35vw; left: -20vw; animation: drift2 26s ease-in-out infinite alternate; }
-.dark .bg-wash::before { background: rgba(201, 185, 143, 0.07); }
-.dark .bg-wash::after { background: rgba(61, 189, 146, 0.06); }
+.bg-wash::before {
+  background: radial-gradient(closest-side, rgba(228, 213, 184, 0.45), transparent 72%);
+  top: -35vw; right: -25vw; animation: drift1 22s ease-in-out infinite alternate;
+}
+.bg-wash::after {
+  background: radial-gradient(closest-side, rgba(14, 122, 95, 0.13), transparent 72%);
+  bottom: -40vw; left: -25vw; animation: drift2 26s ease-in-out infinite alternate;
+}
+.dark .bg-wash::before { background: radial-gradient(closest-side, rgba(201, 185, 143, 0.09), transparent 72%); }
+.dark .bg-wash::after { background: radial-gradient(closest-side, rgba(61, 189, 146, 0.08), transparent 72%); }
 @keyframes drift1 { to { transform: translate(-9vw, 7vw) scale(1.15); } }
 @keyframes drift2 { to { transform: translate(8vw, -6vw) scale(1.1); } }
 

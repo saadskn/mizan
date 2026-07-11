@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { validateMenu, MENU } from './index.js';
+import { validateMenu, MENU, CHAINS } from './index.js';
 
 const good = {
   id: 'x-1', chain: 'X', name: 'Grilled Thing', category: 'main',
@@ -37,5 +37,19 @@ describe('validateMenu', () => {
 describe('MENU', () => {
   it('is always valid', () => {
     expect(validateMenu(MENU)).toEqual([]);
+  });
+});
+
+describe('final dataset', () => {
+  it('covers exactly 100 chains', () => {
+    expect(CHAINS).toHaveLength(100);
+  });
+
+  it('has at least 5 items per chain and 600-1000 items total', () => {
+    const counts = new Map();
+    for (const i of MENU) counts.set(i.chain, (counts.get(i.chain) || 0) + 1);
+    for (const [chain, n] of counts) expect(n, chain).toBeGreaterThanOrEqual(5);
+    expect(MENU.length).toBeGreaterThanOrEqual(600);
+    expect(MENU.length).toBeLessThanOrEqual(1000);
   });
 });

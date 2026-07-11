@@ -15,6 +15,8 @@ import saudiTraditional from './chains/saudi-traditional.js';
 import seafood from './chains/seafood.js';
 import asian from './chains/asian.js';
 import healthy from './chains/healthy.js';
+import bakeryBreakfast from './chains/bakery-breakfast.js';
+import desserts from './chains/desserts.js';
 
 const CATEGORY_FILES = [
   burgersIntl,
@@ -27,7 +29,8 @@ const CATEGORY_FILES = [
   seafood,
   asian,
   healthy,
-  // appended by dataset tasks: bakery-breakfast, desserts
+  bakeryBreakfast,
+  desserts,
 ];
 
 export const MENU = CATEGORY_FILES.flat();

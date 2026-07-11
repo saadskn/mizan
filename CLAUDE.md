@@ -18,7 +18,7 @@ There is no lint setup. Tests use Vitest via the `test` key in `vite.config.js` 
 
 The engine and dataset are plain ES modules with no React imports, so real search scenarios can be exercised headlessly in Node (useful for sanity-checking data changes). On Windows, absolute imports in an ad-hoc `.mjs` script must be `file:///C:/...` URLs — bare `C:/...` paths throw `ERR_UNSUPPORTED_ESM_URL_SCHEME`.
 
-Deployment is user-managed (Vercel/Netlify import the GitHub repo; Vite auto-detected, build `npm run build`, publish dir `dist`). Don't set up CI or deploy config unless asked.
+Deployment: GitHub Pages at https://saadskn.github.io/macromenu-riyadh/ via `.github/workflows/deploy.yml` (runs tests, builds with `DEPLOY_TARGET=gh-pages` to get the `/macromenu-riyadh/` base path, publishes on every push to main). Root-hosted deploys (Vercel/Netlify) still work because the base path is env-gated in `vite.config.js`.
 
 ## What this app is
 

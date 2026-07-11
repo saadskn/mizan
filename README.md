@@ -22,15 +22,22 @@ npm run dev
 npm test
 ```
 
-## Deploy (free)
+## Live site
+
+**https://saadskn.github.io/macromenu-riyadh/** — deployed by GitHub Actions
+(`.github/workflows/deploy.yml`). Every push to `main` re-deploys the site
+automatically in about a minute.
+
+## Deploy elsewhere (optional)
 
 **Vercel:** vercel.com → Add New Project → Import `macromenu-riyadh` from
-GitHub → framework auto-detects Vite → Deploy. Done.
+GitHub → framework auto-detects Vite → Deploy.
 
 **Netlify:** app.netlify.com → Add new site → Import from GitHub →
 Build command `npm run build`, publish directory `dist` → Deploy.
 
-Every push to `main` re-deploys automatically on both platforms.
+(The GitHub Pages base path only applies when `DEPLOY_TARGET=gh-pages` is
+set, so root-hosted deploys keep working.)
 
 ## Disclaimer
 

@@ -1,4 +1,4 @@
-# MacroMenu Riyadh 🥗
+# Mizan · ميزان ⚖
 
 A reverse macro calculator for Riyadh. Type the protein, carbs, fats, and
 calories you have **left** for the day — get real fast-food orders from 91
@@ -24,13 +24,13 @@ npm test
 
 ## Live site
 
-**https://saadskn.github.io/macromenu-riyadh/** — deployed by GitHub Actions
+**https://saadskn.github.io/mizan/** — deployed by GitHub Actions
 (`.github/workflows/deploy.yml`). Every push to `main` re-deploys the site
 automatically in about a minute.
 
 ## Deploy elsewhere (optional)
 
-**Vercel:** vercel.com → Add New Project → Import `macromenu-riyadh` from
+**Vercel:** vercel.com → Add New Project → Import `mizan` from
 GitHub → framework auto-detects Vite → Deploy.
 
 **Netlify:** app.netlify.com → Add new site → Import from GitHub →

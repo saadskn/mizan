@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-10
 **Status:** Approved by user (design + restaurant list)
-**Repo:** `macromenu-riyadh` (public, github.com/saadskn) — deployment to Vercel/Netlify is out of scope; user will do it later using README instructions.
+**Repo:** `mizan` (public, github.com/saadskn; originally `macromenu-riyadh`, renamed 2026-07-11 along with the product rebrand to Mizan · ميزان) — deployed via GitHub Actions to GitHub Pages.
 
 ## 1. Concept
 

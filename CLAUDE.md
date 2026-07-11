@@ -18,11 +18,11 @@ There is no lint setup. Tests use Vitest via the `test` key in `vite.config.js` 
 
 The engine and dataset are plain ES modules with no React imports, so real search scenarios can be exercised headlessly in Node (useful for sanity-checking data changes). On Windows, absolute imports in an ad-hoc `.mjs` script must be `file:///C:/...` URLs — bare `C:/...` paths throw `ERR_UNSUPPORTED_ESM_URL_SCHEME`.
 
-Deployment: GitHub Pages at https://saadskn.github.io/macromenu-riyadh/ via `.github/workflows/deploy.yml` (runs tests, builds with `DEPLOY_TARGET=gh-pages` to get the `/macromenu-riyadh/` base path, publishes on every push to main). Root-hosted deploys (Vercel/Netlify) still work because the base path is env-gated in `vite.config.js`.
+Deployment: GitHub Pages at https://saadskn.github.io/mizan/ via `.github/workflows/deploy.yml` (runs tests, builds with `DEPLOY_TARGET=gh-pages` to get the `/mizan/` base path, publishes on every push to main). Root-hosted deploys (Vercel/Netlify) still work because the base path is env-gated in `vite.config.js`.
 
 ## What this app is
 
-**Mizan · ميزان** (tagline: كل بميزان) — a fully client-side "reverse macro calculator": the user enters remaining daily macros (protein/carbs/fats/calories) and the app brute-forces real 1–3 item combos from Riyadh fast-food chains, ranked by closeness to those targets. No backend, no router, no state library. The repo/URL keeps the old working name `macromenu-riyadh`; the product name in the UI is Mizan. Roster and item counts are locked by tests in `src/data/index.test.js` — treat those assertions as the source of truth, and update them deliberately with any roster change.
+**Mizan · ميزان** (tagline: كل بميزان) — a fully client-side "reverse macro calculator": the user enters remaining daily macros (protein/carbs/fats/calories) and the app brute-forces real 1–3 item combos from Riyadh fast-food chains, ranked by closeness to those targets. No backend, no router, no state library. Repo, package, and URL are all `mizan` (renamed from the working name `macromenu-riyadh` on 2026-07-11 — old Pages links are dead, git redirects still work). Roster and item counts are locked by tests in `src/data/index.test.js` — treat those assertions as the source of truth, and update them deliberately with any roster change.
 
 Authoritative design docs: `docs/superpowers/specs/2026-07-10-macromenu-riyadh-design.md` (approved spec) and `docs/superpowers/plans/2026-07-10-macromenu-riyadh.md` (implementation plan). When behavior questions arise, the spec wins.
 

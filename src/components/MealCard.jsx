@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import MacroBar from './MacroBar.jsx';
+import { useInView } from '../hooks/useInView.js';
 
 const ORDER = ['protein', 'carbs', 'fats', 'calories'];
 
@@ -18,9 +19,10 @@ function comboLabel(items) {
 const reducedMotion = () =>
   window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
 
-function useCountUp(target, delayMs) {
+function useCountUp(target, delayMs, start = true) {
   const [val, setVal] = useState(() => (reducedMotion() ? target : 0));
   useEffect(() => {
+    if (!start) return;
     if (reducedMotion()) {
       setVal(target);
       return;
@@ -39,13 +41,13 @@ function useCountUp(target, delayMs) {
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [target, delayMs]);
+  }, [target, delayMs, start]);
   return val;
 }
 
 // The Mizan dial: a weighing-scale gauge whose needle swings to the match %.
-function Dial({ score, delayMs }) {
-  const shown = useCountUp(score, delayMs);
+function Dial({ score, delayMs, start = true }) {
+  const shown = useCountUp(score, delayMs, start);
   const ARC = 126; // arc length of the semicircle path
   return (
     <div dir="ltr" className="w-[96px] shrink-0 text-center">
@@ -72,15 +74,20 @@ function Dial({ score, delayMs }) {
 
 export default function MealCard({ t, result, goals, index = 0 }) {
   const { chain, items, totals, score } = result;
-  const baseDelay = 300 + index * 130;
+  // Animations begin only once the card scrolls into view; cards in the same
+  // grid row stagger by column so each row lands as a small wave.
+  const [ref, inView] = useInView(0.35);
+  const col = index % 3;
+  const baseDelay = 200 + col * 130;
   return (
     <article
-      className="stitched anim-rise rounded-2xl p-5 bg-white dark:bg-olive-card
+      ref={ref}
+      className={`stitched rounded-2xl p-5 bg-white dark:bg-olive-card
                  border border-edge dark:border-olive-edge
                  shadow-[0_10px_30px_rgba(107,63,42,0.07)] dark:shadow-none
                  hover:-translate-y-1 hover:shadow-[0_16px_38px_rgba(107,63,42,0.13)]
-                 transition-all"
-      style={{ animationDelay: `${index * 130}ms` }}
+                 transition-all ${inView ? 'anim-rise' : 'opacity-0'}`}
+      style={{ animationDelay: `${col * 130}ms` }}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
@@ -91,11 +98,11 @@ export default function MealCard({ t, result, goals, index = 0 }) {
             {comboLabel(items)}
           </p>
         </div>
-        <Dial score={score} delayMs={baseDelay + 150} />
+        <Dial score={score} delayMs={baseDelay + 150} start={inView} />
       </div>
       <div className="space-y-2 mt-4">
         {ORDER.map((k) => (
-          <MacroBar key={k} t={t} macroKey={k} value={totals[k]} goal={goals[k]} delayMs={baseDelay} />
+          <MacroBar key={k} t={t} macroKey={k} value={totals[k]} goal={goals[k]} delayMs={baseDelay} start={inView} />
         ))}
       </div>
       <div className="mt-4 pt-3 flex items-center justify-between border-t border-sand-lt dark:border-olive-edge">

@@ -3,7 +3,7 @@ import { FLOORS } from '../lib/matching.js';
 // Visual reference widths for macros the user didn't set a goal for.
 const INFO_REF = { protein: 60, carbs: 80, fats: 40, calories: 1000 };
 
-export default function MacroBar({ t, macroKey, value, goal, delayMs = 300 }) {
+export default function MacroBar({ t, macroKey, value, goal, delayMs = 300, start = true }) {
   const hasGoal = Number.isFinite(goal);
   let weave;
   let pct;
@@ -24,8 +24,8 @@ export default function MacroBar({ t, macroKey, value, goal, delayMs = 300 }) {
       </span>
       <div className="flex-1 h-[9px] rounded-[3px] bg-sand-lt dark:bg-olive-track overflow-hidden">
         <div
-          className={`h-full rounded-[3px] anim-weave ${weave}`}
-          style={{ width: `${pct}%`, animationDelay: `${delayMs}ms` }}
+          className={`h-full rounded-[3px] ${weave} ${start ? 'anim-weave' : ''}`}
+          style={{ width: start ? `${pct}%` : 0, animationDelay: `${delayMs}ms` }}
         />
       </div>
       <span dir="ltr" className="w-20 shrink-0 text-end font-medium text-ink/80 dark:text-cream/85">

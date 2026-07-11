@@ -72,16 +72,26 @@ export function overlapRatio(a, b) {
 // tolerance (2 g / 20 kcal absolute, or 4% relative). Price is ignored.
 const SIMILARITY = { protein: 2, carbs: 2, fats: 2, calories: 20 };
 
-export function totalsSimilar(a, b) {
-  return Object.keys(SIMILARITY).every((k) => {
+function macrosWithin(a, b, keys) {
+  return keys.every((k) => {
     const tol = Math.max(SIMILARITY[k], 0.04 * Math.max(a[k], b[k]));
     return Math.abs(a[k] - b[k]) <= tol;
   });
 }
 
+export function totalsSimilar(a, b) {
+  return macrosWithin(a, b, Object.keys(SIMILARITY));
+}
+
+function sharesAnyItem(a, b) {
+  const ids = new Set(a.map((i) => i.id));
+  return b.some((i) => ids.has(i.id));
+}
+
 export function findMatches(menu, goals, opts = {}) {
   const { limit = 25, perChainCap = 10, dupThreshold = 2 / 3 } = opts;
-  if (filledGoalKeys(goals).length === 0) return [];
+  const scoredKeys = filledGoalKeys(goals);
+  if (scoredKeys.length === 0) return [];
 
   const byChain = new Map();
   for (const it of menu) {
@@ -113,7 +123,9 @@ export function findMatches(menu, goals, opts = {}) {
       if (
         r.chain === cand.chain &&
         (overlapRatio(r.items, cand.items) >= dupThreshold ||
-          totalsSimilar(r.totals, cand.totals))
+          totalsSimilar(r.totals, cand.totals) ||
+          (sharesAnyItem(r.items, cand.items) &&
+            macrosWithin(r.totals, cand.totals, scoredKeys)))
       ) {
         dup = true;
         break;

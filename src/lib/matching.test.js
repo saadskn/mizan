@@ -194,6 +194,32 @@ describe('findMatches', () => {
     expect(totalsSimilar(a, { protein: 34, carbs: 30, fats: 34, calories: 520, price_sar: 20 })).toBe(false);
   });
 
+  it('collapses same-chain overlapping combos with identical scored outcome (Albaik bug)', () => {
+    // Real-world case: "2x 2-Piece Chicken + Fillet Sandwich" vs
+    // "4-Piece Meal + 2x Fillet Sandwich" — share the fillet, both exactly
+    // P100 on a protein-only goal, but different carbs/calories. Still the
+    // same kind of order; only one should survive.
+    const menu = [
+      mk('Albaik', '2pc', { protein: 38, carbs: 18, fats: 28, calories: 480 }, 12),
+      mk('Albaik', 'meal4', { protein: 52, carbs: 72, fats: 48, calories: 950 }, 19),
+      mk('Albaik', 'fillet', { protein: 24, carbs: 44, fats: 18, calories: 430 }, 10),
+    ];
+    const res = findMatches(menu, { protein: 100 });
+    const hundreds = res.filter((r) => r.chain === 'Albaik' && r.score === 100);
+    expect(hundreds).toHaveLength(1);
+    expect(hundreds[0].totals.price_sar).toBe(34); // the cheaper of the two
+  });
+
+  it('keeps same-chain combos with equal scored outcome when they share no items', () => {
+    // Different foods hitting the same protein target are legitimate variety.
+    const menu = [
+      mk('X', 'chicken', { protein: 50, carbs: 10, fats: 20, calories: 400 }, 20),
+      mk('X', 'shrimp', { protein: 50, carbs: 60, fats: 10, calories: 550 }, 30),
+    ];
+    const res = findMatches(menu, { protein: 50 });
+    expect(res.filter((r) => r.score === 100)).toHaveLength(2);
+  });
+
   it('tie-breaks equal scores by lower price', () => {
     const menu = [
       mk('A', 'exp', { protein: 25, carbs: 0, fats: 0, calories: 0 }, 20),

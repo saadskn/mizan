@@ -22,7 +22,7 @@ Deployment: GitHub Pages at https://saadskn.github.io/macromenu-riyadh/ via `.gi
 
 ## What this app is
 
-A fully client-side "reverse macro calculator": the user enters remaining daily macros (protein/carbs/fats/calories) and the app brute-forces real 1–3 item combos from 100 Riyadh fast-food chains, ranked by closeness to those targets. No backend, no router, no state library.
+**Mizan · ميزان** (tagline: كل بميزان) — a fully client-side "reverse macro calculator": the user enters remaining daily macros (protein/carbs/fats/calories) and the app brute-forces real 1–3 item combos from Riyadh fast-food chains, ranked by closeness to those targets. No backend, no router, no state library. The repo/URL keeps the old working name `macromenu-riyadh`; the product name in the UI is Mizan. Roster and item counts are locked by tests in `src/data/index.test.js` — treat those assertions as the source of truth, and update them deliberately with any roster change.
 
 Authoritative design docs: `docs/superpowers/specs/2026-07-10-macromenu-riyadh-design.md` (approved spec) and `docs/superpowers/plans/2026-07-10-macromenu-riyadh.md` (implementation plan). When behavior questions arise, the spec wins.
 
@@ -35,6 +35,15 @@ Three layers with strict boundaries:
 2. **Data — `src/data/chains/*.js` aggregated by `src/data/index.js`.** One file per cuisine category; each default-exports an item array. `validateMenu` enforces the schema (`id, chain, name, category: main|side|dessert, calories, protein, carbs, fats, price_sar, estimated`) plus a beverage-name regex ban — **no drinks may ever enter the dataset**. `estimated: true` marks calculated macros vs. published nutrition data. Tests in `src/data/index.test.js` lock the roster: exactly 91 chains (originally 100; user-directed removals and additions on 2026-07-11 — see the spec amendments), ≥5 items per chain, 450–1000 items total — adding/removing a chain means updating those assertions deliberately, and swaps should come from the bench list in the spec (§4). Item ids are kebab-case `<chain-slug>-<item-slug>` and must be globally unique.
 
 3. **UI — `src/App.jsx` + `src/components/`.** App owns all state: theme/lang via `usePersistedState` (localStorage keys `mm_theme`, `mm_lang`; defaults: system color scheme + English), raw input strings, parsed goals, the cuisine checklist (`CategoryFilter` — multi-select chips, all on by default; the aggregator stamps a `cuisine` field on every item and the menu is filtered before `findMatches`), and results. Results only render after the user clicks Find My Order — never automatically. Components receive `t = STRINGS[lang]` and render no hard-coded UI text.
+
+## Design language ("sadu heritage" — user-approved, don't drift from it)
+
+- **Tokens live in `@theme` in `src/index.css`** and are the only source of color. Light: `oat` page, white cards, `ink`/`mut`/`faint` text, `oasis`(+`oasis-2`) green, `sand`/`sand-lt`/`edge` neutrals, `date` brown, `warm`/`clay` for misses. Dark: iOS-grey surfaces (`olive*` tokens, #1C1C1E family) with `cream*` text and `mint2`/`sand-dk`/`date-lt` accents.
+- **Type:** `font-display` (Fraunces) for the logo, restaurant names, prices, dial %, and section headings; Inter/IBM Plex Sans Arabic for everything else.
+- **Signature elements:** the Najdi roofline SVG in the Hero (draws in via `.najdi-line`), woven textures (`.weave-*` utilities) for macro bars and the results divider, `.stitched` dotted card top edges, and the Mizan dial in `MealCard.jsx` — a semicircular gauge whose needle swings to the match % with a JS count-up.
+- **Backgrounds:** two fixed layers behind everything — `.bg-lattice` (faint sadu diamond grid) and `.bg-wash` (drifting warm radial gradients; the drift is intentionally disabled in dark mode because low-alpha gradients band/shimmer when animated on dark surfaces — don't re-enable).
+- **Motion rules:** primitives are `.anim-rise/.anim-word/.anim-weave/.anim-grow-x` plus hover-only loops (logo tilt, dial sway, button sheen). Pacing: 0.6–1.2s, springy ease-outs, nothing loops unless hovered. Entrance animations and count-ups must start **when the element scrolls into view** (`useInView` hook), never on mount timers — users miss timer-based fills during the post-search scroll. The `prefers-reduced-motion` guard freezes all animations (the user's own Windows machine had reduced motion enabled once — if "animations stopped working", check that before debugging).
+- The results grid remounts per search (`key={searchId}` in `App.jsx`) so the sequence replays on every search.
 
 ## Non-negotiable product rules (from the approved spec)
 

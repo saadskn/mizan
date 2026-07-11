@@ -63,4 +63,11 @@ export default [
   { id: 'maqsaf-fries', chain: 'MAQSAF', name: 'French Fries', category: 'side', calories: 320, protein: 4, carbs: 42, fats: 15, price_sar: 10, estimated: true },
   { id: 'maqsaf-cookie', chain: 'MAQSAF', name: 'Butter Cookie', category: 'dessert', calories: 260, protein: 4, carbs: 34, fats: 12, price_sar: 9, estimated: true },
 
+  // ── Lolivo ─────────────────────────────────────────────────────
+  { id: 'lolivo-smoked-turkey', chain: 'Lolivo', name: 'Smoked Turkey Sandwich', category: 'main', calories: 430, protein: 26, carbs: 44, fats: 16, price_sar: 28, estimated: true },
+  { id: 'lolivo-italian-tuna', chain: 'Lolivo', name: 'Italian Tuna Sandwich', category: 'main', calories: 470, protein: 25, carbs: 44, fats: 21, price_sar: 27, estimated: true },
+  { id: 'lolivo-steak-truffle', chain: 'Lolivo', name: 'Steak Truffle Sandwich', category: 'main', calories: 540, protein: 32, carbs: 46, fats: 24, price_sar: 36, estimated: true },
+  { id: 'lolivo-chicken-mortadella', chain: 'Lolivo', name: 'Chicken Mortadella Sandwich', category: 'main', calories: 460, protein: 27, carbs: 45, fats: 18, price_sar: 28, estimated: true },
+  { id: 'lolivo-bresaola', chain: 'Lolivo', name: 'Bresaola Sandwich', category: 'main', calories: 410, protein: 28, carbs: 42, fats: 14, price_sar: 32, estimated: true },
+  { id: 'lolivo-salad', chain: 'Lolivo', name: 'Lolivo Salad', category: 'main', calories: 280, protein: 12, carbs: 18, fats: 18, price_sar: 26, estimated: true },
 ];

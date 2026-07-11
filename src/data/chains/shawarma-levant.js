@@ -125,4 +125,19 @@ export default [
   { id: 'opfalafel-hummus-pine', chain: 'Operation Falafel', name: 'Hummus with Pine Nuts', category: 'side', calories: 250, protein: 8, carbs: 20, fats: 15, price_sar: 14, estimated: true },
   { id: 'opfalafel-fattoush', chain: 'Operation Falafel', name: 'Fattoush', category: 'side', calories: 170, protein: 3, carbs: 20, fats: 9, price_sar: 13, estimated: true },
   { id: 'opfalafel-knafeh', chain: 'Operation Falafel', name: 'Knafeh', category: 'dessert', calories: 440, protein: 9, carbs: 54, fats: 21, price_sar: 18, estimated: true },
+
+  // ── Oven of Damascus Patties ───────────────────────────────────
+  { id: 'ovendamascus-cheese-fatayer', chain: 'Oven of Damascus Patties', name: 'Cheese Fatayer', category: 'main', calories: 410, protein: 16, carbs: 48, fats: 17, price_sar: 8, estimated: true },
+  { id: 'ovendamascus-zaatar-manousheh', chain: 'Oven of Damascus Patties', name: 'Zaatar Manousheh', category: 'main', calories: 350, protein: 9, carbs: 48, fats: 13, price_sar: 5, estimated: true },
+  { id: 'ovendamascus-meat-sfiha', chain: 'Oven of Damascus Patties', name: 'Meat Sfiha (4 pc)', category: 'main', calories: 480, protein: 22, carbs: 50, fats: 21, price_sar: 12, estimated: true },
+  { id: 'ovendamascus-spinach-fatayer', chain: 'Oven of Damascus Patties', name: 'Spinach Fatayer (3 pc)', category: 'main', calories: 330, protein: 8, carbs: 46, fats: 12, price_sar: 8, estimated: true },
+  { id: 'ovendamascus-cheese-veg-fatayer', chain: 'Oven of Damascus Patties', name: 'Cheese & Vegetable Fatayer', category: 'main', calories: 400, protein: 15, carbs: 46, fats: 17, price_sar: 9, estimated: true },
+
+  // ── ALLIWAN ────────────────────────────────────────────────────
+  { id: 'alliwan-shawarma-large', chain: 'ALLIWAN', name: 'Chicken Shawarma (Large)', category: 'main', calories: 450, protein: 27, carbs: 42, fats: 18, price_sar: 12, estimated: true },
+  { id: 'alliwan-shawarma-small', chain: 'ALLIWAN', name: 'Chicken Shawarma (Small)', category: 'main', calories: 300, protein: 18, carbs: 30, fats: 12, price_sar: 7, estimated: true },
+  { id: 'alliwan-broasted-meal', chain: 'ALLIWAN', name: 'Broasted Chicken Meal (2 pc with Fries)', category: 'main', calories: 720, protein: 38, carbs: 62, fats: 36, price_sar: 18, estimated: true },
+  { id: 'alliwan-shawarma-plate', chain: 'ALLIWAN', name: 'Shawarma Plate', category: 'main', calories: 650, protein: 35, carbs: 58, fats: 28, price_sar: 22, estimated: true },
+  { id: 'alliwan-mexican-sandwich', chain: 'ALLIWAN', name: 'Mexican Chicken Sandwich', category: 'main', calories: 480, protein: 25, carbs: 46, fats: 21, price_sar: 14, estimated: true },
+  { id: 'alliwan-fries', chain: 'ALLIWAN', name: 'French Fries', category: 'side', calories: 300, protein: 4, carbs: 40, fats: 14, price_sar: 7, estimated: true },
 ];

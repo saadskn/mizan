@@ -41,8 +41,8 @@ describe('MENU', () => {
 });
 
 describe('final dataset', () => {
-  it('covers exactly 81 chains (100 minus 19 removed by user on 2026-07-11)', () => {
-    expect(CHAINS).toHaveLength(81);
+  it('covers exactly 92 chains (see roster amendments in the spec)', () => {
+    expect(CHAINS).toHaveLength(92);
   });
 
   it('has at least 5 items per chain and 450-1000 items total', () => {

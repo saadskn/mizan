@@ -1,6 +1,6 @@
 // International burger chains operating in Riyadh.
 // Tier 1 (published nutrition): McDonald's KSA, Burger King, Hardee's, Five Guys.
-// Tier 2 (partial data / estimates): Fuddruckers, Johnny Rockets, Black Tap.
+// Tier 2 (partial data / estimates): Johnny Rockets, Black Tap.
 
 export default [
   // ── McDonald's KSA ─────────────────────────────────────────────
@@ -54,15 +54,6 @@ export default [
   { id: 'fiveguys-fries-little', chain: 'Five Guys', name: 'Little Fries', category: 'side', calories: 530, protein: 8, carbs: 72, fats: 23, price_sar: 17, estimated: false },
   { id: 'fiveguys-fries-regular', chain: 'Five Guys', name: 'Regular Fries', category: 'side', calories: 950, protein: 15, carbs: 131, fats: 41, price_sar: 23, estimated: false },
 
-  // ── Fuddruckers ────────────────────────────────────────────────
-  { id: 'fuddruckers-original-third', chain: 'Fuddruckers', name: 'The Original 1/3 lb Burger', category: 'main', calories: 660, protein: 35, carbs: 44, fats: 37, price_sar: 34, estimated: false },
-  { id: 'fuddruckers-half-pound', chain: 'Fuddruckers', name: '1/2 lb Burger', category: 'main', calories: 840, protein: 50, carbs: 45, fats: 51, price_sar: 42, estimated: false },
-  { id: 'fuddruckers-crispy-chicken', chain: 'Fuddruckers', name: 'Crispy Chicken Sandwich', category: 'main', calories: 570, protein: 28, carbs: 52, fats: 27, price_sar: 29, estimated: false },
-  { id: 'fuddruckers-grilled-chicken', chain: 'Fuddruckers', name: 'Grilled Chicken Sandwich', category: 'main', calories: 440, protein: 34, carbs: 41, fats: 15, price_sar: 29, estimated: false },
-  { id: 'fuddruckers-hot-dog', chain: 'Fuddruckers', name: 'Hot Dog', category: 'main', calories: 510, protein: 17, carbs: 42, fats: 30, price_sar: 24, estimated: true },
-  { id: 'fuddruckers-wedge-fries', chain: 'Fuddruckers', name: 'Wedge Fries', category: 'side', calories: 430, protein: 6, carbs: 56, fats: 20, price_sar: 14, estimated: false },
-  { id: 'fuddruckers-brownie', chain: 'Fuddruckers', name: 'Chocolate Brownie', category: 'dessert', calories: 480, protein: 6, carbs: 64, fats: 23, price_sar: 15, estimated: false },
-
   // ── Johnny Rockets ─────────────────────────────────────────────
   { id: 'johnnyrockets-original', chain: 'Johnny Rockets', name: 'The Original', category: 'main', calories: 590, protein: 28, carbs: 45, fats: 33, price_sar: 32, estimated: false },
   { id: 'johnnyrockets-smokehouse', chain: 'Johnny Rockets', name: 'Smoke House Burger', category: 'main', calories: 780, protein: 36, carbs: 54, fats: 46, price_sar: 38, estimated: false },
@@ -79,4 +70,22 @@ export default [
   { id: 'blacktap-falafel-burger', chain: 'Black Tap', name: 'Falafel Burger', category: 'main', calories: 570, protein: 16, carbs: 62, fats: 27, price_sar: 39, estimated: true },
   { id: 'blacktap-texan-burger', chain: 'Black Tap', name: 'The Texan Burger', category: 'main', calories: 880, protein: 44, carbs: 50, fats: 55, price_sar: 59, estimated: true },
   { id: 'blacktap-fries', chain: 'Black Tap', name: 'French Fries', category: 'side', calories: 420, protein: 5, carbs: 55, fats: 20, price_sar: 19, estimated: true },
+
+  // ── Wendy's ────────────────────────────────────────────────────
+  { id: 'wendys-daves-single', chain: "Wendy's", name: "Dave's Single", category: 'main', calories: 570, protein: 29, carbs: 39, fats: 34, price_sar: 26, estimated: false },
+  { id: 'wendys-daves-double', chain: "Wendy's", name: "Dave's Double", category: 'main', calories: 810, protein: 48, carbs: 40, fats: 50, price_sar: 34, estimated: false },
+  { id: 'wendys-jr-cheeseburger', chain: "Wendy's", name: 'Jr. Cheeseburger', category: 'main', calories: 290, protein: 16, carbs: 26, fats: 14, price_sar: 12, estimated: false },
+  { id: 'wendys-spicy-chicken', chain: "Wendy's", name: 'Spicy Chicken Sandwich', category: 'main', calories: 500, protein: 28, carbs: 49, fats: 21, price_sar: 24, estimated: false },
+  { id: 'wendys-grilled-chicken', chain: "Wendy's", name: 'Grilled Chicken Sandwich', category: 'main', calories: 370, protein: 34, carbs: 38, fats: 10, price_sar: 24, estimated: false },
+  { id: 'wendys-nuggets-6pc', chain: "Wendy's", name: '6-Piece Chicken Nuggets', category: 'side', calories: 270, protein: 14, carbs: 13, fats: 18, price_sar: 13, estimated: false },
+  { id: 'wendys-fries-medium', chain: "Wendy's", name: 'French Fries (Medium)', category: 'side', calories: 350, protein: 5, carbs: 47, fats: 15, price_sar: 10, estimated: false },
+  { id: 'wendys-frosty-small', chain: "Wendy's", name: 'Chocolate Frosty (Small)', category: 'dessert', calories: 340, protein: 9, carbs: 57, fats: 9, price_sar: 10, estimated: false },
+
+  // ── NYF (New York Fries) ───────────────────────────────────────
+  { id: 'nyf-regular-fries', chain: 'NYF', name: 'Regular Fries', category: 'side', calories: 430, protein: 6, carbs: 59, fats: 19, price_sar: 15, estimated: false },
+  { id: 'nyf-large-fries', chain: 'NYF', name: 'Large Fries', category: 'side', calories: 600, protein: 8, carbs: 82, fats: 26, price_sar: 19, estimated: false },
+  { id: 'nyf-classic-poutine', chain: 'NYF', name: 'Classic Poutine', category: 'main', calories: 740, protein: 17, carbs: 70, fats: 44, price_sar: 26, estimated: false },
+  { id: 'nyf-butter-chicken-poutine', chain: 'NYF', name: 'Butter Chicken Poutine', category: 'main', calories: 820, protein: 27, carbs: 74, fats: 46, price_sar: 30, estimated: true },
+  { id: 'nyf-the-works-poutine', chain: 'NYF', name: 'The Works Poutine', category: 'main', calories: 860, protein: 22, carbs: 72, fats: 52, price_sar: 32, estimated: true },
+  { id: 'nyf-classic-hot-dog', chain: 'NYF', name: 'Classic Hot Dog', category: 'main', calories: 390, protein: 13, carbs: 34, fats: 22, price_sar: 17, estimated: false },
 ];

@@ -1,12 +1,12 @@
 # MacroMenu Riyadh 🥗
 
 A reverse macro calculator for Riyadh. Type the protein, carbs, fats, and
-calories you have **left** for the day — get real fast-food orders from 81
+calories you have **left** for the day — get real fast-food orders from 92
 Riyadh chains that match them as closely as mathematically possible.
 
 - 100% client-side. No server, no database, no accounts.
 - English / العربية with full RTL. Light & dark themes.
-- 540+ menu items across 81 chains; macros from official nutrition data
+- 600+ menu items across 92 chains; macros from official nutrition data
   where published, careful estimates elsewhere (flagged `estimated` in the data).
 
 ## Run locally

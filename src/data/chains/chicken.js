@@ -1,7 +1,7 @@
 // Fried & grilled chicken chains operating in Riyadh.
 // Tier 1 (published nutrition): Albaik, KFC, Texas Chicken, Popeyes,
 // Raising Cane's, Dave's Hot Chicken, Wingstop, Jollibee, Al Tazaj.
-// Tier 2: Buffalo Wild Wings, Buffalo Wings & Rings. Tier 3: Birdlot.
+// Tier 2: Buffalo Wild Wings. Tier 3: Birdlot.
 
 export default [
   // ── Albaik ─────────────────────────────────────────────────────
@@ -107,17 +107,32 @@ export default [
   { id: 'bww-fries', chain: 'Buffalo Wild Wings', name: 'French Fries', category: 'side', calories: 380, protein: 5, carbs: 49, fats: 18, price_sar: 13, estimated: false },
   { id: 'bww-carrots-celery', chain: 'Buffalo Wild Wings', name: 'Carrots & Celery', category: 'side', calories: 30, protein: 1, carbs: 6, fats: 0, price_sar: 6, estimated: false },
 
-  // ── Buffalo Wings & Rings ──────────────────────────────────────
-  { id: 'bwr-6-traditional', chain: 'Buffalo Wings & Rings', name: 'Traditional Wings (6 pc)', category: 'main', calories: 440, protein: 36, carbs: 3, fats: 30, price_sar: 27, estimated: true },
-  { id: 'bwr-8-boneless', chain: 'Buffalo Wings & Rings', name: 'Boneless Wings (8 pc)', category: 'main', calories: 560, protein: 33, carbs: 40, fats: 28, price_sar: 29, estimated: true },
-  { id: 'bwr-chicken-sandwich', chain: 'Buffalo Wings & Rings', name: 'Chicken Sandwich', category: 'main', calories: 580, protein: 29, carbs: 52, fats: 28, price_sar: 28, estimated: true },
-  { id: 'bwr-onion-rings', chain: 'Buffalo Wings & Rings', name: 'Onion Rings', category: 'side', calories: 480, protein: 6, carbs: 56, fats: 25, price_sar: 14, estimated: true },
-  { id: 'bwr-fries', chain: 'Buffalo Wings & Rings', name: 'French Fries', category: 'side', calories: 370, protein: 5, carbs: 48, fats: 17, price_sar: 12, estimated: true },
-
   // ── Birdlot ────────────────────────────────────────────────────
   { id: 'birdlot-classic-burger', chain: 'Birdlot', name: 'Classic Fried Chicken Burger', category: 'main', calories: 560, protein: 28, carbs: 48, fats: 28, price_sar: 26, estimated: true },
   { id: 'birdlot-spicy-burger', chain: 'Birdlot', name: 'Spicy Fried Chicken Burger', category: 'main', calories: 580, protein: 28, carbs: 49, fats: 30, price_sar: 27, estimated: true },
   { id: 'birdlot-tenders-3pc', chain: 'Birdlot', name: 'Chicken Tenders (3 pc)', category: 'main', calories: 400, protein: 30, carbs: 26, fats: 19, price_sar: 24, estimated: true },
   { id: 'birdlot-loaded-fries', chain: 'Birdlot', name: 'Loaded Fries', category: 'side', calories: 520, protein: 14, carbs: 56, fats: 26, price_sar: 19, estimated: true },
   { id: 'birdlot-fries', chain: 'Birdlot', name: 'French Fries', category: 'side', calories: 330, protein: 4, carbs: 43, fats: 15, price_sar: 11, estimated: true },
+
+  // ── BROASTEDkey ────────────────────────────────────────────────
+  { id: 'broastedkey-nashville-meal', chain: 'BROASTEDkey', name: 'Nashville Broasted Meal (3 pc with Fries)', category: 'main', calories: 780, protein: 42, carbs: 64, fats: 40, price_sar: 27, estimated: true },
+  { id: 'broastedkey-nashville-sandwich', chain: 'BROASTEDkey', name: 'Nashville Broasted Sandwich', category: 'main', calories: 560, protein: 28, carbs: 50, fats: 27, price_sar: 19, estimated: true },
+  { id: 'broastedkey-spicy-2pc', chain: 'BROASTEDkey', name: 'Spicy Broasted (2 pc)', category: 'main', calories: 490, protein: 34, carbs: 20, fats: 30, price_sar: 16, estimated: true },
+  { id: 'broastedkey-strips-4pc', chain: 'BROASTEDkey', name: 'Chicken Strips (4 pc)', category: 'main', calories: 400, protein: 30, carbs: 26, fats: 19, price_sar: 18, estimated: true },
+  { id: 'broastedkey-loaded-fries', chain: 'BROASTEDkey', name: 'Loaded Fries', category: 'side', calories: 480, protein: 12, carbs: 52, fats: 24, price_sar: 15, estimated: true },
+
+  // ── Kantaka ────────────────────────────────────────────────────
+  { id: 'kantaka-combo', chain: 'Kantaka', name: 'Kantaka Combo (3 pc Broast + 3 Strips + Fries + Bread)', category: 'main', calories: 1050, protein: 58, carbs: 92, fats: 48, price_sar: 23, estimated: true },
+  { id: 'kantaka-broast-meal-2pc', chain: 'Kantaka', name: 'Broast Meal (2 pc with Fries)', category: 'main', calories: 650, protein: 36, carbs: 56, fats: 32, price_sar: 15, estimated: true },
+  { id: 'kantaka-broast-sandwich', chain: 'Kantaka', name: 'Broast Sandwich', category: 'main', calories: 520, protein: 26, carbs: 48, fats: 25, price_sar: 12, estimated: true },
+  { id: 'kantaka-strips-5pc', chain: 'Kantaka', name: 'Chicken Strips (5 pc)', category: 'main', calories: 480, protein: 36, carbs: 30, fats: 23, price_sar: 14, estimated: true },
+  { id: 'kantaka-fries', chain: 'Kantaka', name: 'French Fries', category: 'side', calories: 300, protein: 4, carbs: 40, fats: 14, price_sar: 6, estimated: true },
+
+  // ── Broast Line ────────────────────────────────────────────────
+  { id: 'broastline-regular-meal', chain: 'Broast Line', name: 'Regular Broast Meal (2 pc with Fries + Bread)', category: 'main', calories: 700, protein: 38, carbs: 60, fats: 34, price_sar: 16, estimated: true },
+  { id: 'broastline-spicy-meal', chain: 'Broast Line', name: 'Spicy Broast Meal (2 pc with Fries + Bread)', category: 'main', calories: 710, protein: 38, carbs: 60, fats: 35, price_sar: 16, estimated: true },
+  { id: 'broastline-fish-steak', chain: 'Broast Line', name: 'Fish Steak Meal', category: 'main', calories: 560, protein: 30, carbs: 52, fats: 24, price_sar: 18, estimated: true },
+  { id: 'broastline-sandwich', chain: 'Broast Line', name: 'Broast Sandwich', category: 'main', calories: 500, protein: 25, carbs: 46, fats: 24, price_sar: 11, estimated: true },
+  { id: 'broastline-family-8pc', chain: 'Broast Line', name: 'Family Broast (8 pc, Chicken Only)', category: 'main', calories: 1400, protein: 104, carbs: 56, fats: 84, price_sar: 42, estimated: true },
+  { id: 'broastline-coleslaw', chain: 'Broast Line', name: 'Coleslaw', category: 'side', calories: 130, protein: 1, carbs: 13, fats: 8, price_sar: 4, estimated: true },
 ];

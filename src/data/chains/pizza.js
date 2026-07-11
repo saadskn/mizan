@@ -51,4 +51,25 @@ export default [
   { id: 'pizzainn-chicken-tikka-small', chain: 'Pizza Inn', name: 'Chicken Tikka Pizza (Small)', category: 'main', calories: 670, protein: 31, carbs: 74, fats: 27, price_sar: 19, estimated: true },
   { id: 'pizzainn-garlic-bread', chain: 'Pizza Inn', name: 'Garlic Bread', category: 'side', calories: 300, protein: 8, carbs: 42, fats: 11, price_sar: 8, estimated: true },
   { id: 'pizzainn-wedges', chain: 'Pizza Inn', name: 'Potato Wedges', category: 'side', calories: 270, protein: 4, carbs: 36, fats: 12, price_sar: 8, estimated: true },
+
+  // ── CasaPasta ──────────────────────────────────────────────────
+  { id: 'casapasta-chicken-alfredo', chain: 'CasaPasta', name: 'Chicken Alfredo Pasta', category: 'main', calories: 720, protein: 32, carbs: 74, fats: 32, price_sar: 27, estimated: true },
+  { id: 'casapasta-makrona-hamra', chain: 'CasaPasta', name: 'Makrona Hamra (Saudi Red Pasta)', category: 'main', calories: 650, protein: 28, carbs: 78, fats: 24, price_sar: 23, estimated: true },
+  { id: 'casapasta-bolognese', chain: 'CasaPasta', name: 'Beef Bolognese Pasta', category: 'main', calories: 680, protein: 30, carbs: 76, fats: 26, price_sar: 26, estimated: true },
+  { id: 'casapasta-shrimp-pasta', chain: 'CasaPasta', name: 'Shrimp Pasta', category: 'main', calories: 640, protein: 28, carbs: 72, fats: 24, price_sar: 29, estimated: true },
+  { id: 'casapasta-garlic-bread', chain: 'CasaPasta', name: 'Garlic Bread', category: 'side', calories: 300, protein: 8, carbs: 42, fats: 11, price_sar: 8, estimated: true },
+
+  // ── Pizzaratti ─────────────────────────────────────────────────
+  { id: 'pizzaratti-margherita', chain: 'Pizzaratti', name: 'Margherita Neapolitan Pizza', category: 'main', calories: 760, protein: 30, carbs: 92, fats: 28, price_sar: 32, estimated: true },
+  { id: 'pizzaratti-pepperoni', chain: 'Pizzaratti', name: 'Pepperoni Neapolitan Pizza', category: 'main', calories: 840, protein: 34, carbs: 90, fats: 36, price_sar: 38, estimated: true },
+  { id: 'pizzaratti-chicken-bbq', chain: 'Pizzaratti', name: 'Chicken BBQ Neapolitan Pizza', category: 'main', calories: 820, protein: 38, carbs: 92, fats: 32, price_sar: 36, estimated: true },
+  { id: 'pizzaratti-fettuccine-alfredo', chain: 'Pizzaratti', name: 'Fettuccine Alfredo', category: 'main', calories: 690, protein: 26, carbs: 70, fats: 34, price_sar: 29, estimated: true },
+  { id: 'pizzaratti-tiramisu', chain: 'Pizzaratti', name: 'Tiramisu', category: 'dessert', calories: 420, protein: 7, carbs: 44, fats: 23, price_sar: 18, estimated: true },
+
+  // ── Let's Pizza ────────────────────────────────────────────────
+  { id: 'letspizza-margherita', chain: "Let's Pizza", name: 'Margherita (Wood-Fired)', category: 'main', calories: 700, protein: 28, carbs: 86, fats: 26, price_sar: 42, estimated: true },
+  { id: 'letspizza-lets-special', chain: "Let's Pizza", name: 'Lets Pizza (Chicken, Potato & Ranch)', category: 'main', calories: 820, protein: 34, carbs: 88, fats: 36, price_sar: 42, estimated: true },
+  { id: 'letspizza-pepperoni', chain: "Let's Pizza", name: 'Pepperoni (Wood-Fired)', category: 'main', calories: 780, protein: 32, carbs: 84, fats: 33, price_sar: 46, estimated: true },
+  { id: 'letspizza-arrabiata', chain: "Let's Pizza", name: 'Pasta Arrabiata', category: 'main', calories: 560, protein: 18, carbs: 74, fats: 20, price_sar: 34, estimated: true },
+  { id: 'letspizza-caesar-salad', chain: "Let's Pizza", name: 'Chicken Caesar Salad', category: 'main', calories: 330, protein: 26, carbs: 12, fats: 19, price_sar: 28, estimated: true },
 ];

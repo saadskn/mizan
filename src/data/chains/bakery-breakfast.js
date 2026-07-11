@@ -49,4 +49,12 @@ export default [
   { id: 'toastable-chicken-zaatar', chain: 'Toastable', name: 'Chicken Zaatar Toast', category: 'main', calories: 460, protein: 26, carbs: 45, fats: 19, price_sar: 25, estimated: true },
   { id: 'toastable-shakshuka-toast', chain: 'Toastable', name: 'Spicy Shakshuka Toast', category: 'main', calories: 420, protein: 17, carbs: 46, fats: 19, price_sar: 23, estimated: true },
   { id: 'toastable-nutella-banana', chain: 'Toastable', name: 'Nutella Banana Toast', category: 'dessert', calories: 490, protein: 10, carbs: 64, fats: 21, price_sar: 21, estimated: true },
+
+  // ── Dawar Alsaada ──────────────────────────────────────────────
+  { id: 'dawaralsaada-egg-pastry', chain: 'Dawar Alsaada', name: 'Egg Pastry', category: 'main', calories: 380, protein: 14, carbs: 44, fats: 16, price_sar: 7, estimated: true },
+  { id: 'dawaralsaada-cheese-thyme', chain: 'Dawar Alsaada', name: 'Cheese & Thyme Pastry', category: 'main', calories: 420, protein: 15, carbs: 48, fats: 18, price_sar: 8, estimated: true },
+  { id: 'dawaralsaada-liquid-cheese', chain: 'Dawar Alsaada', name: 'Liquid Cheese Pastry', category: 'main', calories: 450, protein: 14, carbs: 50, fats: 21, price_sar: 9, estimated: true },
+  { id: 'dawaralsaada-liver-cheese', chain: 'Dawar Alsaada', name: 'Liver with Cheese Pastry', category: 'main', calories: 460, protein: 22, carbs: 44, fats: 21, price_sar: 12, estimated: true },
+  { id: 'dawaralsaada-chicken-pastry', chain: 'Dawar Alsaada', name: 'Chicken Pastry', category: 'main', calories: 430, protein: 20, carbs: 46, fats: 18, price_sar: 10, estimated: true },
+  { id: 'dawaralsaada-honey-cheese', chain: 'Dawar Alsaada', name: 'Honey & Cheese Pastry', category: 'dessert', calories: 470, protein: 13, carbs: 56, fats: 20, price_sar: 10, estimated: true },
 ];

@@ -7,12 +7,16 @@
 
 import burgersIntl from './chains/burgers-intl.js';
 import burgersSaudi from './chains/burgers-saudi.js';
+import chicken from './chains/chicken.js';
+import pizza from './chains/pizza.js';
 
 const CATEGORY_FILES = [
   burgersIntl,
   burgersSaudi,
-  // appended by dataset tasks: chicken, pizza, sandwiches, shawarma-levant,
-  // saudi-traditional, seafood, asian, healthy, bakery-breakfast, desserts
+  chicken,
+  pizza,
+  // appended by dataset tasks: sandwiches, shawarma-levant, saudi-traditional,
+  // seafood, asian, healthy, bakery-breakfast, desserts
 ];
 
 export const MENU = CATEGORY_FILES.flat();

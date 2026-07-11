@@ -1,33 +1,34 @@
 import { FLOORS } from '../lib/matching.js';
 
-export default function MacroBar({ t, macroKey, value, goal }) {
+// Visual reference widths for macros the user didn't set a goal for.
+const INFO_REF = { protein: 60, carbs: 80, fats: 40, calories: 1000 };
+
+export default function MacroBar({ t, macroKey, value, goal, delayMs = 300 }) {
   const hasGoal = Number.isFinite(goal);
-  let color;
+  let weave;
   let pct;
   if (hasGoal) {
     const dist = Math.abs(value - goal) / Math.max(goal, FLOORS[macroKey]);
-    color =
-      dist <= 0.1
-        ? 'bg-emerald-500 dark:bg-emerald-400'
-        : dist <= 0.3
-          ? 'bg-amber-500'
-          : 'bg-red-400';
+    weave = dist <= 0.1 ? 'weave-green' : dist <= 0.3 ? 'weave-amber' : 'weave-clay';
     pct = goal > 0 ? Math.min(value / goal, 1) * 100 : value > 0 ? 100 : 0;
   } else {
-    // No target for this macro — informational row: empty track, value + unit.
-    color = '';
-    pct = 0;
+    // No target — informational sand bar, scaled against a fixed reference.
+    weave = 'bg-sand dark:bg-olive-edge';
+    pct = Math.min(value / INFO_REF[macroKey], 1) * 100;
   }
   const unit = macroKey === 'calories' ? t.kcal : t.g;
   return (
     <div className="flex items-center gap-2.5 text-xs">
-      <span className="w-20 shrink-0 whitespace-nowrap text-slate-500 dark:text-slate-400">
+      <span className="w-20 shrink-0 whitespace-nowrap text-faint dark:text-cream-mut">
         {t[`${macroKey}Short`]}
       </span>
-      <div className="flex-1 h-1.5 rounded-full bg-slate-100 dark:bg-page-dark overflow-hidden">
-        {hasGoal && <div className={`h-full rounded-full ${color}`} style={{ width: `${pct}%` }} />}
+      <div className="flex-1 h-[9px] rounded-[3px] bg-sand-lt dark:bg-olive-track overflow-hidden">
+        <div
+          className={`h-full rounded-[3px] anim-weave ${weave}`}
+          style={{ width: `${pct}%`, animationDelay: `${delayMs}ms` }}
+        />
       </div>
-      <span dir="ltr" className="w-20 shrink-0 text-end text-slate-600 dark:text-slate-300">
+      <span dir="ltr" className="w-20 shrink-0 text-end font-medium text-ink/80 dark:text-cream/85">
         {hasGoal ? `${Math.round(value)} ${t.of} ${Math.round(goal)}` : `${Math.round(value)} ${unit}`}
       </span>
     </div>

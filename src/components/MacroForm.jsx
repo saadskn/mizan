@@ -21,7 +21,8 @@ function sanitize(raw) {
 export default function MacroForm({ t, values, onChange, onSubmit, error, children }) {
   return (
     <form
-      className="max-w-3xl mx-auto px-5"
+      className="anim-rise max-w-3xl mx-auto px-5"
+      style={{ animationDelay: '1.3s' }}
       onSubmit={(e) => {
         e.preventDefault();
         onSubmit();
@@ -30,7 +31,7 @@ export default function MacroForm({ t, values, onChange, onSubmit, error, childr
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {FIELDS.map((k) => (
           <label key={k} className="block">
-            <span className="text-sm font-semibold text-slate-600 dark:text-slate-300">{t[k]}</span>
+            <span className="text-sm font-semibold text-mut dark:text-cream-mut">{t[k]}</span>
             <input
               type="text"
               inputMode="decimal"
@@ -38,26 +39,28 @@ export default function MacroForm({ t, values, onChange, onSubmit, error, childr
               placeholder={t.placeholder}
               value={values[k]}
               onChange={(e) => onChange(k, sanitize(e.target.value))}
-              className="mt-1 w-full rounded-xl px-3 py-2.5 text-base
-                         bg-white dark:bg-card-dark
-                         border border-slate-200 dark:border-edge-dark
-                         text-slate-800 dark:text-slate-100
-                         placeholder:text-slate-400 dark:placeholder:text-slate-500
-                         focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400"
+              className="mt-1 w-full rounded-2xl px-3.5 py-2.5 text-lg font-semibold
+                         bg-white dark:bg-olive-card
+                         border border-edge dark:border-olive-edge
+                         text-ink dark:text-cream
+                         placeholder:font-normal placeholder:text-faint dark:placeholder:text-cream-mut/60
+                         focus:outline-none focus:ring-2 focus:ring-oasis dark:focus:ring-mint2 focus:border-transparent
+                         transition-shadow"
             />
           </label>
         ))}
       </div>
       {children}
       {error && (
-        <p className="mt-3 text-sm font-medium text-red-500 dark:text-red-400">{t[error]}</p>
+        <p className="mt-3 text-sm font-medium text-clay dark:text-date-lt">{t[error]}</p>
       )}
       <button
         type="submit"
-        className="mt-5 w-full sm:w-auto sm:mx-auto sm:px-12 block rounded-xl px-6 py-3
-                   text-base font-bold text-white
-                   bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-400 dark:hover:bg-emerald-300
-                   dark:text-slate-900 shadow-lg shadow-emerald-500/25 transition-colors"
+        className="mt-6 w-full sm:w-auto sm:mx-auto sm:px-14 block rounded-2xl px-6 py-3.5
+                   text-base font-bold text-oat
+                   bg-oasis hover:bg-date dark:bg-mint2 dark:hover:bg-date-lt dark:text-olive
+                   shadow-lg shadow-oasis/25 dark:shadow-mint2/20
+                   hover:-translate-y-0.5 active:translate-y-0 active:scale-[.98] transition-all"
       >
         {t.find}
       </button>

@@ -1,6 +1,9 @@
 export const STRINGS = {
   en: {
-    tagline: 'Type the macros you have left today — we build the perfect Riyadh fast-food order for them.',
+    heroPlain: "What's left today,",
+    heroAccent: 'habibi?',
+    jingle: 'كل بميزان',
+    tagline: "Riyadh's menus on one scale — type what's left, order what fits.",
     protein: 'Protein (g)',
     carbs: 'Carbs (g)',
     fats: 'Fats (g)',
@@ -37,7 +40,10 @@ export const STRINGS = {
     placeholder: 'e.g. 40',
   },
   ar: {
-    tagline: 'اكتب الماكروز المتبقية لك اليوم — ونبني لك طلب الوجبات السريعة المثالي في الرياض.',
+    heroPlain: 'وش باقي لك',
+    heroAccent: 'اليوم؟',
+    jingle: 'كل بميزان',
+    tagline: 'قوائم الرياض على ميزان واحد — اكتب اللي باقي لك، واطلب اللي يوزن.',
     protein: 'بروتين (غ)',
     carbs: 'كربوهيدرات (غ)',
     fats: 'دهون (غ)',

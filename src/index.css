@@ -3,14 +3,97 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-page: #fafaf8;
-  --color-page-dark: #1a2332;
-  --color-card-dark: #232f42;
-  --color-edge-dark: #324158;
-  --color-sage: #7dd3b0;
+  /* Mizan sadu palette — light */
+  --color-oat: #faf7f0;
+  --color-ink: #2a2e2a;
+  --color-mut: #7a7460;
+  --color-faint: #9a9074;
+  --color-oasis: #0e7a5f;
+  --color-oasis-2: #12987a;
+  --color-sand: #e4d5b8;
+  --color-sand-lt: #f1eadb;
+  --color-date: #6b3f2a;
+  --color-edge: #e8dfcc;
+  --color-warm: #b77729;
+  --color-clay: #c25e45;
+  /* dark — deep olive-charcoal, never pitch black */
+  --color-olive: #1f241c;
+  --color-olive-card: #2a3025;
+  --color-olive-edge: #3a4233;
+  --color-olive-track: #161a12;
+  --color-cream: #f0eee6;
+  --color-cream-mut: #a8a493;
+  --color-mint2: #3dbd92;
+  --color-sand-dk: #c9b98f;
+  --color-date-lt: #c98a5e;
+
   --font-sans: 'Inter', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces', 'IBM Plex Sans Arabic', ui-serif, serif;
 }
 
 html[lang='ar'] body {
   font-family: 'IBM Plex Sans Arabic', 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ── ambient background layers (sadu lattice + warm drifting wash) ── */
+.bg-lattice {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.05;
+  background-image:
+    repeating-linear-gradient(45deg, var(--color-date) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(-45deg, var(--color-date) 0 1px, transparent 1px 26px);
+}
+.dark .bg-lattice {
+  opacity: 0.045;
+  background-image:
+    repeating-linear-gradient(45deg, var(--color-sand-dk) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(-45deg, var(--color-sand-dk) 0 1px, transparent 1px 26px);
+}
+.bg-wash { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.bg-wash::before, .bg-wash::after {
+  content: ''; position: absolute; width: 70vw; height: 70vw; border-radius: 50%; filter: blur(80px);
+}
+.bg-wash::before { background: rgba(228, 213, 184, 0.40); top: -30vw; right: -20vw; animation: drift1 22s ease-in-out infinite alternate; }
+.bg-wash::after { background: rgba(14, 122, 95, 0.11); bottom: -35vw; left: -20vw; animation: drift2 26s ease-in-out infinite alternate; }
+.dark .bg-wash::before { background: rgba(201, 185, 143, 0.07); }
+.dark .bg-wash::after { background: rgba(61, 189, 146, 0.06); }
+@keyframes drift1 { to { transform: translate(-9vw, 7vw) scale(1.15); } }
+@keyframes drift2 { to { transform: translate(8vw, -6vw) scale(1.1); } }
+
+/* ── motion primitives ── */
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes wordrise { from { opacity: 0; transform: translateY(14px) rotate(1.5deg); } to { opacity: 1; transform: none; } }
+@keyframes weave { from { width: 0; } }
+@keyframes drawline { to { stroke-dashoffset: 0; } }
+.anim-rise { animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
+.anim-word { display: inline-block; animation: wordrise 0.55s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
+.anim-weave { animation: weave 0.9s cubic-bezier(0.25, 0.9, 0.3, 1) both; }
+.najdi-line {
+  fill: none; stroke: var(--color-oasis); stroke-width: 2.5;
+  stroke-dasharray: 1200; stroke-dashoffset: 1200;
+  animation: drawline 1.5s 0.15s ease-out forwards;
+}
+.dark .najdi-line { stroke: var(--color-mint2); }
+
+/* ── woven textures ── */
+.weave-green { background: repeating-linear-gradient(45deg, var(--color-oasis) 0 5px, var(--color-oasis-2) 5px 10px); }
+.dark .weave-green { background: repeating-linear-gradient(45deg, var(--color-mint2) 0 5px, #2ea67c 5px 10px); }
+.weave-amber { background: repeating-linear-gradient(45deg, #b77729 0 5px, #d19243 5px 10px); }
+.weave-clay { background: repeating-linear-gradient(45deg, #c25e45 0 5px, #d97b62 5px 10px); }
+.weave-band { background: repeating-linear-gradient(45deg, var(--color-oasis) 0 5px, var(--color-sand) 5px 10px, var(--color-date) 10px 15px, var(--color-sand) 15px 20px); }
+.dark .weave-band { background: repeating-linear-gradient(45deg, var(--color-mint2) 0 5px, var(--color-olive-edge) 5px 10px, var(--color-sand-dk) 10px 15px, var(--color-olive-edge) 15px 20px); }
+
+/* stitched card top edge */
+.stitched { position: relative; }
+.stitched::before {
+  content: ''; position: absolute; top: 0; left: 22px; right: 22px; height: 3px;
+  border-radius: 0 0 3px 3px; opacity: 0.5;
+  background: repeating-linear-gradient(90deg, var(--color-oasis) 0 8px, transparent 8px 12px);
+}
+.dark .stitched::before {
+  opacity: 0.4;
+  background: repeating-linear-gradient(90deg, var(--color-mint2) 0 8px, transparent 8px 12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-delay: 0ms !important; }
 }

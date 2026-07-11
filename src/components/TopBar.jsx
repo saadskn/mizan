@@ -3,9 +3,14 @@ import LangToggle from './LangToggle.jsx';
 
 export default function TopBar({ t, theme, setTheme, lang, setLang }) {
   return (
-    <header className="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
-      <span dir="ltr" className="font-bold text-lg tracking-tight text-slate-800 dark:text-slate-100">
-        MacroMenu <span className="text-emerald-500 dark:text-emerald-400">Riyadh</span>
+    <header className="max-w-6xl mx-auto flex items-center justify-between px-5 py-5">
+      <span className="flex items-baseline gap-2.5">
+        <span dir="ltr" className="font-display font-bold text-2xl tracking-tight text-ink dark:text-cream">
+          Mizan
+        </span>
+        <span dir="rtl" className="font-bold text-lg text-oasis dark:text-mint2">
+          ميزان
+        </span>
       </span>
       <div className="flex items-center gap-2">
         <ThemeToggle t={t} theme={theme} setTheme={setTheme} />

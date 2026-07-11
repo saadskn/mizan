@@ -21,6 +21,7 @@ export default function App() {
   const [error, setError] = useState(null);
   const [results, setResults] = useState(null);
   const [goals, setGoals] = useState(null);
+  const [searchId, setSearchId] = useState(0);
   const resultsRef = useRef(null);
   const t = STRINGS[lang];
 
@@ -35,7 +36,7 @@ export default function App() {
 
   useEffect(() => {
     if (results) resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [results]);
+  }, [results, searchId]);
 
   function toggleCat(c) {
     setCats((prev) => {
@@ -61,23 +62,28 @@ export default function App() {
     setError(null);
     setGoals(parsed);
     setResults(findMatches(MENU.filter((i) => cats.has(i.cuisine)), parsed));
+    setSearchId((s) => s + 1); // remounts the grid so the entrance animations replay
   }
 
   return (
-    <div className="min-h-screen bg-page dark:bg-page-dark transition-colors pb-16">
-      <TopBar t={t} theme={theme} setTheme={setTheme} lang={lang} setLang={setLang} />
-      <Hero t={t} />
-      <MacroForm
-        t={t}
-        values={values}
-        onChange={(k, v) => setValues((prev) => ({ ...prev, [k]: v }))}
-        onSubmit={handleSubmit}
-        error={error}
-      >
-        <CategoryFilter t={t} selected={cats} onToggle={toggleCat} />
-      </MacroForm>
-      <div ref={resultsRef}>
-        <ResultsGrid t={t} results={results} goals={goals ?? {}} />
+    <div className="min-h-screen bg-oat dark:bg-olive text-ink dark:text-cream transition-colors">
+      <div aria-hidden="true" className="bg-lattice" />
+      <div aria-hidden="true" className="bg-wash" />
+      <div className="relative z-10 pb-16">
+        <TopBar t={t} theme={theme} setTheme={setTheme} lang={lang} setLang={setLang} />
+        <Hero t={t} />
+        <MacroForm
+          t={t}
+          values={values}
+          onChange={(k, v) => setValues((prev) => ({ ...prev, [k]: v }))}
+          onSubmit={handleSubmit}
+          error={error}
+        >
+          <CategoryFilter t={t} selected={cats} onToggle={toggleCat} />
+        </MacroForm>
+        <div ref={resultsRef}>
+          <ResultsGrid key={searchId} t={t} results={results} goals={goals ?? {}} />
+        </div>
       </div>
     </div>
   );

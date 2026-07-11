@@ -16,11 +16,12 @@
   --color-edge: #e8dfcc;
   --color-warm: #b77729;
   --color-clay: #c25e45;
-  /* dark — deep olive-charcoal, never pitch black */
-  --color-olive: #1f241c;
-  --color-olive-card: #2a3025;
-  --color-olive-edge: #3a4233;
-  --color-olive-track: #161a12;
+  /* dark — iOS-style neutral greys (user's pick; token names kept from the
+     earlier olive palette to avoid churn across components) */
+  --color-olive: #1c1c1e;
+  --color-olive-card: #2c2c2e;
+  --color-olive-edge: #3a3a3c;
+  --color-olive-track: #131315;
   --color-cream: #f0eee6;
   --color-cream-mut: #a8a493;
   --color-mint2: #3dbd92;

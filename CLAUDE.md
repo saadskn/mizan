@@ -41,6 +41,6 @@ Three layers with strict boundaries:
 - Restaurant `chain` and item `name` values are always English and never translated; in Arabic (RTL) mode they are wrapped in `dir="ltr"` spans.
 - Arabic mode flips the whole layout (`<html dir="rtl" lang="ar">`); numbers stay Western digits (123) in both languages — no locale digit conversion.
 - All UI strings live in `src/i18n/strings.js` with identical `en`/`ar` key sets (enforced by a parity test). The trigger button copy is pinned by test: "Find My Order" / "ابحث عن وجبتي".
-- Dark mode is class-based (`.dark` on `<html>`; Tailwind v4 `@custom-variant` in `src/index.css`) using deep slate tokens (`page-dark`, `card-dark`, `edge-dark`) — never pitch black. Custom theme colors are defined in `@theme` in `src/index.css`.
+- Dark mode is class-based (`.dark` on `<html>`; Tailwind v4 `@custom-variant` in `src/index.css`) using iOS-style neutral grey tokens confusingly still named `olive`/`olive-card`/`olive-edge`/`olive-track` (#1C1C1E family — renaming them would churn every component; values live in `@theme` in `src/index.css`). Warm accents (mint2, sand-dk, date-lt) stay.
 - Macro bar colors key off distance from goal: ≤10% emerald, ≤30% amber, >30% soft red (same floors as the engine).
 - Dessert-only chains (e.g., Krispy Kreme) intentionally produce single-item results — max-one-dessert is a feature, not a bug.

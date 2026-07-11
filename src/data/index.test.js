@@ -41,8 +41,8 @@ describe('MENU', () => {
 });
 
 describe('final dataset', () => {
-  it('covers exactly 91 chains (see roster amendments in the spec)', () => {
-    expect(CHAINS).toHaveLength(91);
+  it('covers exactly 94 chains (see roster amendments in the spec)', () => {
+    expect(CHAINS).toHaveLength(94);
   });
 
   it('tags every item with a known cuisine', () => {

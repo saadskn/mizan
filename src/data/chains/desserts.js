@@ -105,4 +105,19 @@ export default [
   { id: 'haagendazs-cookies-cream', chain: 'Häagen-Dazs', name: 'Cookies & Cream Scoop', category: 'dessert', calories: 270, protein: 5, carbs: 24, fats: 17, price_sar: 14, estimated: false },
   { id: 'haagendazs-double-scoop', chain: 'Häagen-Dazs', name: 'Double Scoop Cup', category: 'dessert', calories: 520, protein: 9, carbs: 46, fats: 34, price_sar: 24, estimated: false },
   { id: 'haagendazs-macadamia', chain: 'Häagen-Dazs', name: 'Macadamia Nut Brittle Scoop', category: 'dessert', calories: 280, protein: 4, carbs: 25, fats: 18, price_sar: 14, estimated: false },
+
+  // ── BLABAN ─────────────────────────────────────────────────────
+  // HungerStation SFDA calorie labels (2026-07). Only internally consistent
+  // items kept — the rice pudding / kashtouta / koshary / Om Ali sections all
+  // carry copy-pasted ~1200-1360 labels (Nutella variant listed BELOW plain)
+  // and were rejected wholesale. Dabadibo sizes scale exactly 3x, Sankorita/
+  // Metkandara sizes scale exactly 2x with price — those pass.
+  { id: 'blaban-dabadibo-small', chain: 'BLABAN', name: 'Dabadibo Teddy Bear (Small)', category: 'dessert', calories: 408, protein: 6, carbs: 48, fats: 21, price_sar: 13, estimated: true, family: 'blaban-dabadibo', units: 1 },
+  { id: 'blaban-dabadibo-large', chain: 'BLABAN', name: 'Dabadibo Teddy Bears (Large, 3 pc)', category: 'dessert', calories: 1224, protein: 18, carbs: 144, fats: 63, price_sar: 31, estimated: true, family: 'blaban-dabadibo', units: 3 },
+  { id: 'blaban-fazaa-small', chain: 'BLABAN', name: 'Fazaa Chocolate Cake (Small)', category: 'dessert', calories: 1307, protein: 16, carbs: 150, fats: 71, price_sar: 30, estimated: true },
+  { id: 'blaban-el-habba-small', chain: 'BLABAN', name: 'El Habba Chocolate Cake (Small)', category: 'dessert', calories: 1239, protein: 20, carbs: 135, fats: 68, price_sar: 37, estimated: true },
+  { id: 'blaban-de-paris-small', chain: 'BLABAN', name: 'De Paris Cake (Small)', category: 'dessert', calories: 1738, protein: 22, carbs: 192, fats: 98, price_sar: 42, estimated: true },
+  { id: 'blaban-sankorita-large', chain: 'BLABAN', name: 'Sankorita (Large)', category: 'dessert', calories: 1333, protein: 24, carbs: 140, fats: 76, price_sar: 35.72, estimated: true },
+  { id: 'blaban-metkandara-medium', chain: 'BLABAN', name: 'Metkandara (Medium)', category: 'dessert', calories: 1760, protein: 26, carbs: 184, fats: 102, price_sar: 48, estimated: true },
+  { id: 'blaban-ellouaa', chain: 'BLABAN', name: 'Ellouaa Mille-Feuille', category: 'dessert', calories: 895, protein: 12, carbs: 92, fats: 53, price_sar: 31, estimated: true },
 ];

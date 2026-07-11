@@ -1,7 +1,7 @@
 // Fried & grilled chicken chains operating in Riyadh.
 // Tier 1 (published nutrition): Albaik, KFC, Texas Chicken, Popeyes,
 // Raising Cane's, Dave's Hot Chicken, Wingstop, Jollibee, Al Tazaj.
-// Tier 2: Buffalo Wild Wings, Buffalo Wings & Rings, ChicKing. Tier 3: Birdlot.
+// Tier 2: Buffalo Wild Wings, Buffalo Wings & Rings. Tier 3: Birdlot.
 
 export default [
   // ── Albaik ─────────────────────────────────────────────────────
@@ -113,14 +113,6 @@ export default [
   { id: 'bwr-chicken-sandwich', chain: 'Buffalo Wings & Rings', name: 'Chicken Sandwich', category: 'main', calories: 580, protein: 29, carbs: 52, fats: 28, price_sar: 28, estimated: true },
   { id: 'bwr-onion-rings', chain: 'Buffalo Wings & Rings', name: 'Onion Rings', category: 'side', calories: 480, protein: 6, carbs: 56, fats: 25, price_sar: 14, estimated: true },
   { id: 'bwr-fries', chain: 'Buffalo Wings & Rings', name: 'French Fries', category: 'side', calories: 370, protein: 5, carbs: 48, fats: 17, price_sar: 12, estimated: true },
-
-  // ── ChicKing ───────────────────────────────────────────────────
-  { id: 'chicking-2pc', chain: 'ChicKing', name: '2-Piece Fried Chicken', category: 'main', calories: 460, protein: 34, carbs: 16, fats: 29, price_sar: 12, estimated: true },
-  { id: 'chicking-crunchy-burger', chain: 'ChicKing', name: 'Crunchy Chicken Burger', category: 'main', calories: 470, protein: 23, carbs: 45, fats: 22, price_sar: 13, estimated: true },
-  { id: 'chicking-spicy-wings-5pc', chain: 'ChicKing', name: 'Spicy Wings (5 pc)', category: 'main', calories: 380, protein: 28, carbs: 12, fats: 25, price_sar: 13, estimated: true },
-  { id: 'chicking-strips-3pc', chain: 'ChicKing', name: 'Chicken Strips (3 pc)', category: 'side', calories: 310, protein: 24, carbs: 20, fats: 14, price_sar: 12, estimated: true },
-  { id: 'chicking-fries', chain: 'ChicKing', name: 'French Fries', category: 'side', calories: 300, protein: 4, carbs: 40, fats: 13, price_sar: 7, estimated: true },
-  { id: 'chicking-coleslaw', chain: 'ChicKing', name: 'Coleslaw', category: 'side', calories: 120, protein: 1, carbs: 12, fats: 8, price_sar: 5, estimated: true },
 
   // ── Birdlot ────────────────────────────────────────────────────
   { id: 'birdlot-classic-burger', chain: 'Birdlot', name: 'Classic Fried Chicken Burger', category: 'main', calories: 560, protein: 28, carbs: 48, fats: 28, price_sar: 26, estimated: true },

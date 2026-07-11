@@ -1,9 +1,8 @@
 // Shawarma, saj & Levantine chains operating in Riyadh.
 // Tier 1: Shawarmer. Tier 2: Mama Noura, Shawarma House, German Doner Kebab,
 // Barbar, Malak Al Tawouk, Allo Beirut, Zaatar w Zeit, Operation Falafel.
-// Tier 3 (estimates): Shawarma Classic, Shawarma Plus, Shawarmasters, Shawarmix,
-// Shawarma Factory, Golden Saj, Shawarma Jalilah, Usta Asim, Mareez,
-// Assaraya Turkish Restaurant, Alsaaj Alreefi.
+// Tier 3 (estimates): Shawarma Classic, Golden Saj, Shawarma Jalilah,
+// Usta Asim, Mareez, Alsaaj Alreefi.
 
 export default [
   // ── Shawarmer ──────────────────────────────────────────────────
@@ -41,34 +40,6 @@ export default [
   { id: 'shawarmaclassic-box', chain: 'Shawarma Classic', name: 'Shawarma Box with Fries', category: 'main', calories: 560, protein: 28, carbs: 54, fats: 25, price_sar: 17, estimated: true },
   { id: 'shawarmaclassic-fries', chain: 'Shawarma Classic', name: 'French Fries', category: 'side', calories: 290, protein: 4, carbs: 39, fats: 13, price_sar: 7, estimated: true },
 
-  // ── Shawarma Plus ──────────────────────────────────────────────
-  { id: 'shawarmaplus-chicken', chain: 'Shawarma Plus', name: 'Chicken Shawarma Plus', category: 'main', calories: 340, protein: 21, carbs: 34, fats: 13, price_sar: 9, estimated: true },
-  { id: 'shawarmaplus-double', chain: 'Shawarma Plus', name: 'Double Chicken Shawarma', category: 'main', calories: 480, protein: 30, carbs: 40, fats: 19, price_sar: 13, estimated: true },
-  { id: 'shawarmaplus-meat', chain: 'Shawarma Plus', name: 'Meat Shawarma Plus', category: 'main', calories: 370, protein: 21, carbs: 34, fats: 16, price_sar: 11, estimated: true },
-  { id: 'shawarmaplus-platter', chain: 'Shawarma Plus', name: 'Shawarma Platter', category: 'main', calories: 640, protein: 34, carbs: 58, fats: 28, price_sar: 22, estimated: true },
-  { id: 'shawarmaplus-fries', chain: 'Shawarma Plus', name: 'French Fries', category: 'side', calories: 290, protein: 4, carbs: 39, fats: 13, price_sar: 7, estimated: true },
-
-  // ── Shawarmasters ──────────────────────────────────────────────
-  { id: 'shawarmasters-chicken', chain: 'Shawarmasters', name: 'Master Chicken Shawarma', category: 'main', calories: 360, protein: 22, carbs: 35, fats: 14, price_sar: 11, estimated: true },
-  { id: 'shawarmasters-meat', chain: 'Shawarmasters', name: 'Master Meat Shawarma', category: 'main', calories: 390, protein: 22, carbs: 34, fats: 18, price_sar: 13, estimated: true },
-  { id: 'shawarmasters-bowl', chain: 'Shawarmasters', name: 'Shawarma Bowl', category: 'main', calories: 520, protein: 32, carbs: 48, fats: 20, price_sar: 19, estimated: true },
-  { id: 'shawarmasters-saj-special', chain: 'Shawarmasters', name: 'Saj Wrap Special', category: 'main', calories: 420, protein: 24, carbs: 42, fats: 17, price_sar: 14, estimated: true },
-  { id: 'shawarmasters-fries', chain: 'Shawarmasters', name: 'French Fries', category: 'side', calories: 300, protein: 4, carbs: 40, fats: 14, price_sar: 8, estimated: true },
-
-  // ── Shawarmix ──────────────────────────────────────────────────
-  { id: 'shawarmix-chicken', chain: 'Shawarmix', name: 'Mix Chicken Shawarma', category: 'main', calories: 340, protein: 21, carbs: 34, fats: 13, price_sar: 9, estimated: true },
-  { id: 'shawarmix-meat', chain: 'Shawarmix', name: 'Mix Meat Shawarma', category: 'main', calories: 370, protein: 21, carbs: 33, fats: 16, price_sar: 11, estimated: true },
-  { id: 'shawarmix-plate', chain: 'Shawarmix', name: 'Mixed Shawarma Plate', category: 'main', calories: 650, protein: 36, carbs: 56, fats: 29, price_sar: 23, estimated: true },
-  { id: 'shawarmix-cheese', chain: 'Shawarmix', name: 'Cheese Shawarma', category: 'main', calories: 430, protein: 24, carbs: 36, fats: 21, price_sar: 12, estimated: true },
-  { id: 'shawarmix-fries', chain: 'Shawarmix', name: 'French Fries', category: 'side', calories: 290, protein: 4, carbs: 39, fats: 13, price_sar: 7, estimated: true },
-
-  // ── Shawarma Factory ───────────────────────────────────────────
-  { id: 'shawarmafactory-chicken', chain: 'Shawarma Factory', name: 'Factory Chicken Shawarma', category: 'main', calories: 350, protein: 21, carbs: 34, fats: 14, price_sar: 10, estimated: true },
-  { id: 'shawarmafactory-meat', chain: 'Shawarma Factory', name: 'Factory Meat Shawarma', category: 'main', calories: 380, protein: 22, carbs: 34, fats: 17, price_sar: 12, estimated: true },
-  { id: 'shawarmafactory-family-box', chain: 'Shawarma Factory', name: 'Family Shawarma Box', category: 'main', calories: 890, protein: 46, carbs: 88, fats: 38, price_sar: 29, estimated: true },
-  { id: 'shawarmafactory-salad-bowl', chain: 'Shawarma Factory', name: 'Shawarma Salad Bowl', category: 'main', calories: 380, protein: 28, carbs: 26, fats: 18, price_sar: 17, estimated: true },
-  { id: 'shawarmafactory-fries', chain: 'Shawarma Factory', name: 'French Fries', category: 'side', calories: 300, protein: 4, carbs: 40, fats: 14, price_sar: 8, estimated: true },
-
   // ── Golden Saj ─────────────────────────────────────────────────
   { id: 'goldensaj-chicken-wrap', chain: 'Golden Saj', name: 'Golden Chicken Saj Wrap', category: 'main', calories: 380, protein: 23, carbs: 38, fats: 15, price_sar: 12, estimated: true },
   { id: 'goldensaj-meat-wrap', chain: 'Golden Saj', name: 'Golden Meat Saj Wrap', category: 'main', calories: 410, protein: 23, carbs: 37, fats: 19, price_sar: 14, estimated: true },
@@ -96,14 +67,6 @@ export default [
   { id: 'mareez-special-wrap', chain: 'Mareez', name: 'Mareez Special Wrap', category: 'main', calories: 480, protein: 27, carbs: 44, fats: 21, price_sar: 18, estimated: true },
   { id: 'mareez-fries', chain: 'Mareez', name: 'French Fries', category: 'side', calories: 300, protein: 4, carbs: 40, fats: 14, price_sar: 8, estimated: true },
   { id: 'mareez-hummus', chain: 'Mareez', name: 'Hummus', category: 'side', calories: 180, protein: 6, carbs: 16, fats: 10, price_sar: 7, estimated: true },
-
-  // ── Assaraya Turkish Restaurant ────────────────────────────────
-  { id: 'assaraya-chicken-doner', chain: 'Assaraya Turkish Restaurant', name: 'Chicken Doner Sandwich', category: 'main', calories: 410, protein: 24, carbs: 40, fats: 17, price_sar: 13, estimated: true },
-  { id: 'assaraya-meat-doner', chain: 'Assaraya Turkish Restaurant', name: 'Meat Doner Sandwich', category: 'main', calories: 450, protein: 25, carbs: 40, fats: 21, price_sar: 16, estimated: true },
-  { id: 'assaraya-mixed-grill', chain: 'Assaraya Turkish Restaurant', name: 'Mixed Grill Plate', category: 'main', calories: 820, protein: 52, carbs: 48, fats: 46, price_sar: 38, estimated: true },
-  { id: 'assaraya-adana-kebab', chain: 'Assaraya Turkish Restaurant', name: 'Adana Kebab Skewer', category: 'main', calories: 350, protein: 24, carbs: 10, fats: 24, price_sar: 22, estimated: true },
-  { id: 'assaraya-turkish-rice', chain: 'Assaraya Turkish Restaurant', name: 'Turkish Rice', category: 'side', calories: 280, protein: 5, carbs: 52, fats: 5, price_sar: 8, estimated: true },
-  { id: 'assaraya-kunafa', chain: 'Assaraya Turkish Restaurant', name: 'Kunafa', category: 'dessert', calories: 430, protein: 8, carbs: 54, fats: 20, price_sar: 16, estimated: true },
 
   // ── Alsaaj Alreefi ─────────────────────────────────────────────
   { id: 'alsaaj-chicken-saj', chain: 'Alsaaj Alreefi', name: 'Reefi Chicken Saj', category: 'main', calories: 380, protein: 23, carbs: 38, fats: 15, price_sar: 11, estimated: true },

@@ -1,5 +1,5 @@
 // Saudi traditional & grill chains operating in Riyadh.
-// Tier 2: Al Romansiah, Shawaya House, Hashi Basha, Meat Moot. Tier 3: Smokey Beards Q.
+// Tier 2: Al Romansiah, Shawaya House, Hashi Basha. Tier 3: Smokey Beards Q.
 
 export default [
   // ── Al Romansiah ───────────────────────────────────────────────
@@ -29,14 +29,6 @@ export default [
   { id: 'hashibasha-grilled-camel-plate', chain: 'Hashi Basha', name: 'Grilled Camel Meat Plate', category: 'main', calories: 460, protein: 44, carbs: 8, fats: 28, price_sar: 36, estimated: true },
   { id: 'hashibasha-green-salad', chain: 'Hashi Basha', name: 'Green Salad', category: 'side', calories: 60, protein: 2, carbs: 10, fats: 1, price_sar: 6, estimated: true },
   { id: 'hashibasha-creme-caramel', chain: 'Hashi Basha', name: 'Creme Caramel', category: 'dessert', calories: 280, protein: 6, carbs: 40, fats: 10, price_sar: 9, estimated: true },
-
-  // ── Meat Moot ──────────────────────────────────────────────────
-  { id: 'meatmoot-brisket-plate', chain: 'Meat Moot', name: 'Smoked Brisket Plate (250 g)', category: 'main', calories: 620, protein: 48, carbs: 6, fats: 45, price_sar: 65, estimated: true },
-  { id: 'meatmoot-beef-ribs', chain: 'Meat Moot', name: 'Smoked Beef Ribs (300 g)', category: 'main', calories: 780, protein: 52, carbs: 8, fats: 60, price_sar: 78, estimated: true },
-  { id: 'meatmoot-lamb-shank', chain: 'Meat Moot', name: 'Smoked Lamb Shank', category: 'main', calories: 690, protein: 50, carbs: 6, fats: 51, price_sar: 69, estimated: true },
-  { id: 'meatmoot-smoked-sandwich', chain: 'Meat Moot', name: 'Smoked Meat Sandwich', category: 'main', calories: 560, protein: 34, carbs: 44, fats: 26, price_sar: 39, estimated: true },
-  { id: 'meatmoot-mac-cheese', chain: 'Meat Moot', name: 'Mac & Cheese', category: 'side', calories: 390, protein: 13, carbs: 42, fats: 18, price_sar: 19, estimated: true },
-  { id: 'meatmoot-smoked-beans', chain: 'Meat Moot', name: 'Smoked Beans', category: 'side', calories: 220, protein: 11, carbs: 34, fats: 4, price_sar: 14, estimated: true },
 
   // ── Smokey Beards Q ────────────────────────────────────────────
   { id: 'smokeybeards-brisket-sandwich', chain: 'Smokey Beards Q', name: 'Brisket Sandwich', category: 'main', calories: 580, protein: 35, carbs: 46, fats: 28, price_sar: 36, estimated: true },

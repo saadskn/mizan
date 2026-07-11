@@ -1,6 +1,6 @@
 // International burger chains operating in Riyadh.
-// Tier 1 (published nutrition): McDonald's KSA, Burger King, Hardee's, Five Guys, Shake Shack.
-// Tier 2 (partial data / estimates): Fatburger, Fuddruckers, Johnny Rockets, BurgerFuel, Black Tap.
+// Tier 1 (published nutrition): McDonald's KSA, Burger King, Hardee's, Five Guys.
+// Tier 2 (partial data / estimates): Fuddruckers, Johnny Rockets, Black Tap.
 
 export default [
   // ── McDonald's KSA ─────────────────────────────────────────────
@@ -54,26 +54,6 @@ export default [
   { id: 'fiveguys-fries-little', chain: 'Five Guys', name: 'Little Fries', category: 'side', calories: 530, protein: 8, carbs: 72, fats: 23, price_sar: 17, estimated: false },
   { id: 'fiveguys-fries-regular', chain: 'Five Guys', name: 'Regular Fries', category: 'side', calories: 950, protein: 15, carbs: 131, fats: 41, price_sar: 23, estimated: false },
 
-  // ── Shake Shack ────────────────────────────────────────────────
-  { id: 'shackshack-shackburger', chain: 'Shake Shack', name: 'ShackBurger (Single)', category: 'main', calories: 500, protein: 29, carbs: 38, fats: 26, price_sar: 33, estimated: false },
-  { id: 'shackshack-shackburger-double', chain: 'Shake Shack', name: 'ShackBurger (Double)', category: 'main', calories: 770, protein: 51, carbs: 39, fats: 45, price_sar: 47, estimated: false },
-  { id: 'shackshack-smokeshack', chain: 'Shake Shack', name: 'SmokeShack', category: 'main', calories: 570, protein: 32, carbs: 39, fats: 31, price_sar: 39, estimated: false },
-  { id: 'shackshack-shack-stack', chain: 'Shake Shack', name: 'Shack Stack', category: 'main', calories: 770, protein: 38, carbs: 51, fats: 45, price_sar: 49, estimated: false },
-  { id: 'shackshack-shroom-burger', chain: 'Shake Shack', name: "'Shroom Burger", category: 'main', calories: 560, protein: 21, carbs: 49, fats: 32, price_sar: 37, estimated: false },
-  { id: 'shackshack-chicken-shack', chain: 'Shake Shack', name: 'Chicken Shack', category: 'main', calories: 590, protein: 34, carbs: 43, fats: 31, price_sar: 35, estimated: false },
-  { id: 'shackshack-hamburger', chain: 'Shake Shack', name: 'Hamburger', category: 'main', calories: 420, protein: 25, carbs: 37, fats: 19, price_sar: 28, estimated: false },
-  { id: 'shackshack-fries', chain: 'Shake Shack', name: 'Crinkle Cut Fries', category: 'side', calories: 470, protein: 6, carbs: 63, fats: 22, price_sar: 16, estimated: false },
-  { id: 'shackshack-cheese-fries', chain: 'Shake Shack', name: 'Cheese Fries', category: 'side', calories: 610, protein: 11, carbs: 67, fats: 33, price_sar: 21, estimated: false },
-
-  // ── Fatburger ──────────────────────────────────────────────────
-  { id: 'fatburger-original-medium', chain: 'Fatburger', name: 'Original Fatburger (Medium)', category: 'main', calories: 590, protein: 29, carbs: 48, fats: 32, price_sar: 29, estimated: false },
-  { id: 'fatburger-large', chain: 'Fatburger', name: 'Large Fatburger', category: 'main', calories: 760, protein: 43, carbs: 49, fats: 44, price_sar: 36, estimated: false },
-  { id: 'fatburger-baby-fat', chain: 'Fatburger', name: 'Baby Fat Burger', category: 'main', calories: 430, protein: 19, carbs: 42, fats: 21, price_sar: 22, estimated: false },
-  { id: 'fatburger-grilled-chicken', chain: 'Fatburger', name: 'Grilled Chicken Sandwich', category: 'main', calories: 480, protein: 33, carbs: 46, fats: 18, price_sar: 27, estimated: false },
-  { id: 'fatburger-crispy-chicken', chain: 'Fatburger', name: 'Crispy Chicken Sandwich', category: 'main', calories: 560, protein: 25, carbs: 56, fats: 26, price_sar: 27, estimated: false },
-  { id: 'fatburger-skinny-fries', chain: 'Fatburger', name: 'Skinny Fries', category: 'side', calories: 380, protein: 5, carbs: 50, fats: 18, price_sar: 13, estimated: false },
-  { id: 'fatburger-onion-rings', chain: 'Fatburger', name: 'Onion Rings', category: 'side', calories: 500, protein: 7, carbs: 60, fats: 26, price_sar: 15, estimated: false },
-
   // ── Fuddruckers ────────────────────────────────────────────────
   { id: 'fuddruckers-original-third', chain: 'Fuddruckers', name: 'The Original 1/3 lb Burger', category: 'main', calories: 660, protein: 35, carbs: 44, fats: 37, price_sar: 34, estimated: false },
   { id: 'fuddruckers-half-pound', chain: 'Fuddruckers', name: '1/2 lb Burger', category: 'main', calories: 840, protein: 50, carbs: 45, fats: 51, price_sar: 42, estimated: false },
@@ -91,14 +71,6 @@ export default [
   { id: 'johnnyrockets-tenders-4pc', chain: 'Johnny Rockets', name: 'Chicken Tenders (4 pc)', category: 'side', calories: 340, protein: 26, carbs: 18, fats: 18, price_sar: 24, estimated: false },
   { id: 'johnnyrockets-american-fries', chain: 'Johnny Rockets', name: 'American Fries', category: 'side', calories: 440, protein: 6, carbs: 58, fats: 20, price_sar: 14, estimated: false },
   { id: 'johnnyrockets-apple-pie', chain: 'Johnny Rockets', name: 'Apple Pie', category: 'dessert', calories: 350, protein: 3, carbs: 48, fats: 17, price_sar: 14, estimated: true },
-
-  // ── BurgerFuel ─────────────────────────────────────────────────
-  { id: 'burgerfuel-bio-fuel', chain: 'BurgerFuel', name: 'Bio Fuel', category: 'main', calories: 620, protein: 32, carbs: 48, fats: 33, price_sar: 35, estimated: true },
-  { id: 'burgerfuel-american-muscle', chain: 'BurgerFuel', name: 'American Muscle', category: 'main', calories: 780, protein: 42, carbs: 50, fats: 45, price_sar: 41, estimated: true },
-  { id: 'burgerfuel-combustion-tudor', chain: 'BurgerFuel', name: 'Combustion Tudor', category: 'main', calories: 560, protein: 28, carbs: 44, fats: 29, price_sar: 31, estimated: true },
-  { id: 'burgerfuel-cnc-chicken', chain: 'BurgerFuel', name: 'C.n.C Crispy Chicken', category: 'main', calories: 640, protein: 33, carbs: 55, fats: 30, price_sar: 33, estimated: true },
-  { id: 'burgerfuel-spud-fries', chain: 'BurgerFuel', name: 'Spud Fries', category: 'side', calories: 450, protein: 6, carbs: 58, fats: 21, price_sar: 15, estimated: true },
-  { id: 'burgerfuel-motobites', chain: 'BurgerFuel', name: 'Motobites', category: 'side', calories: 380, protein: 8, carbs: 46, fats: 18, price_sar: 17, estimated: true },
 
   // ── Black Tap ──────────────────────────────────────────────────
   { id: 'blacktap-all-american', chain: 'Black Tap', name: 'All-American Burger', category: 'main', calories: 780, protein: 38, carbs: 46, fats: 47, price_sar: 52, estimated: true },

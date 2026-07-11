@@ -110,6 +110,8 @@ Target total: ~700–900 items.
 
 Flagged for re-verification during dataset build: Pinkberry, Häagen-Dazs, Mang Inasal. Bench of substitutes if any chain fails re-verification: Karam Elsham, Maki, Kababji, Man'oushe Street, Ayedh Shawarma. Known-closed / rejected during research: Steak 'n Shake (closed KSA ~2017), "Wahat Al Rabie", "Sandwicher" (could not be confirmed).
 
+**Amendments during build:** Mang Inasal failed Riyadh re-verification (Philippines-only) and was replaced by Wakame (verified, wakame-ksa.com). **2026-07-11:** at the user's request, 19 chains were removed from the shipped roster — Shake Shack, Fatburger, BurgerFuel, Hamburgini, The Real Burger, Taxi, Salt, Nevermind, ChicKing, PAO, Crust Corner, Shawarma Plus, Shawarmasters, Shawarmix, Shawarma Factory, Assaraya Turkish Restaurant, Meat Moot, London Fish & Chips, Wakame — leaving **81 chains / ~540 items** (roster-lock tests updated accordingly).
+
 ### Sourcing methodology (per item)
 
 1. Official Saudi nutrition data (chain's KSA site/app) — preferred.
@@ -174,7 +176,7 @@ Responsive: 1 column (<640px), 2 (≥640px), 3 (≥1024px). 25 cards max.
 
 1. **Restaurant name** — bold, prominent (English always). Match % badge on the opposite corner.
 2. **Combo items** — English always, joined with "+", duplicates shown as "2× item".
-3. **Macro bars** — one per **filled** target (unfilled targets are omitted from the card): label, bar, "total / goal" numbers.
+3. **Macro bars** — all four rows always shown (amended 2026-07-11; originally only filled targets). Filled targets: color-coded bar with "total / goal" numbers. Unfilled targets: neutral slate bar with the combo's total only.
    - Fill width: `min(total/goal, 1) × 100%`.
    - Color by |distance| from goal: ≤10% → emerald/mint (on-target), 10–30% → amber, >30% → soft red. Applies to both over- and undershoot.
 4. **Footer:** item count (left) and **total price in SAR** (right), e.g., "35 SAR".

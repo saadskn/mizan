@@ -1,7 +1,6 @@
 // Saudi & regional burger chains operating in Riyadh.
-// Tier 1: Herfy (published nutrition). Tier 2: Hamburgini, Burgerizzr, Jan Burger,
-// Century Burger, Section-B, Salt. Tier 3 (estimates): Grill It, The Real Burger,
-// Taxi, Burger Boutique, Nevermind, GUNBUN.
+// Tier 1: Herfy (published nutrition). Tier 2: Burgerizzr, Jan Burger,
+// Century Burger, Section-B. Tier 3 (estimates): Grill It, Burger Boutique, GUNBUN.
 
 export default [
   // ── Herfy ──────────────────────────────────────────────────────
@@ -17,16 +16,6 @@ export default [
   { id: 'herfy-cheese-fries', chain: 'Herfy', name: 'Cheese Fries', category: 'side', calories: 420, protein: 8, carbs: 45, fats: 22, price_sar: 10, estimated: false },
   { id: 'herfy-apple-pie', chain: 'Herfy', name: 'Apple Pie', category: 'dessert', calories: 250, protein: 3, carbs: 34, fats: 11, price_sar: 6, estimated: false },
   { id: 'herfy-soft-serve', chain: 'Herfy', name: 'Soft Serve Cone', category: 'dessert', calories: 180, protein: 4, carbs: 29, fats: 5, price_sar: 3, estimated: false },
-
-  // ── Hamburgini ─────────────────────────────────────────────────
-  { id: 'hamburgini-classic', chain: 'Hamburgini', name: 'Classic Burger', category: 'main', calories: 450, protein: 22, carbs: 38, fats: 23, price_sar: 17, estimated: true },
-  { id: 'hamburgini-cheese', chain: 'Hamburgini', name: 'Cheese Burger', category: 'main', calories: 520, protein: 25, carbs: 39, fats: 28, price_sar: 19, estimated: true },
-  { id: 'hamburgini-double', chain: 'Hamburgini', name: 'Double Hamburgini', category: 'main', calories: 680, protein: 38, carbs: 40, fats: 38, price_sar: 26, estimated: true },
-  { id: 'hamburgini-chicken', chain: 'Hamburgini', name: 'Chicken Burger', category: 'main', calories: 470, protein: 24, carbs: 44, fats: 21, price_sar: 17, estimated: true },
-  { id: 'hamburgini-spicy-chicken', chain: 'Hamburgini', name: 'Spicy Chicken Burger', category: 'main', calories: 490, protein: 24, carbs: 45, fats: 23, price_sar: 18, estimated: true },
-  { id: 'hamburgini-mini-trio', chain: 'Hamburgini', name: 'Mini Burgers (3 Sliders)', category: 'main', calories: 600, protein: 28, carbs: 48, fats: 32, price_sar: 24, estimated: true },
-  { id: 'hamburgini-fries', chain: 'Hamburgini', name: 'French Fries', category: 'side', calories: 320, protein: 4, carbs: 42, fats: 15, price_sar: 9, estimated: true },
-  { id: 'hamburgini-cheese-fries', chain: 'Hamburgini', name: 'Cheese Fries', category: 'side', calories: 410, protein: 8, carbs: 44, fats: 21, price_sar: 13, estimated: true },
 
   // ── Burgerizzr ─────────────────────────────────────────────────
   { id: 'burgerizzr-classizzr', chain: 'Burgerizzr', name: 'Classizzr (Single)', category: 'main', calories: 480, protein: 24, carbs: 40, fats: 25, price_sar: 19, estimated: true },
@@ -65,14 +54,6 @@ export default [
   { id: 'sectionb-fries', chain: 'Section-B', name: 'French Fries', category: 'side', calories: 330, protein: 4, carbs: 43, fats: 15, price_sar: 10, estimated: true },
   { id: 'sectionb-cookie', chain: 'Section-B', name: 'Chocolate Chip Cookie', category: 'dessert', calories: 280, protein: 4, carbs: 36, fats: 13, price_sar: 9, estimated: true },
 
-  // ── Salt ───────────────────────────────────────────────────────
-  { id: 'salt-beef-slider', chain: 'Salt', name: 'Beef Slider', category: 'main', calories: 290, protein: 14, carbs: 24, fats: 15, price_sar: 14, estimated: true },
-  { id: 'salt-beef-sliders-duo', chain: 'Salt', name: 'Beef Sliders (2 pc)', category: 'main', calories: 580, protein: 28, carbs: 48, fats: 30, price_sar: 26, estimated: true },
-  { id: 'salt-chicken-slider', chain: 'Salt', name: 'Chicken Slider', category: 'main', calories: 270, protein: 15, carbs: 26, fats: 11, price_sar: 14, estimated: true },
-  { id: 'salt-chicken-sliders-duo', chain: 'Salt', name: 'Chicken Sliders (2 pc)', category: 'main', calories: 540, protein: 30, carbs: 52, fats: 22, price_sar: 26, estimated: true },
-  { id: 'salt-wagyu-slider', chain: 'Salt', name: 'Wagyu Slider', category: 'main', calories: 330, protein: 15, carbs: 24, fats: 19, price_sar: 18, estimated: true },
-  { id: 'salt-fries', chain: 'Salt', name: 'French Fries', category: 'side', calories: 320, protein: 4, carbs: 42, fats: 15, price_sar: 12, estimated: true },
-
   // ── Grill It ───────────────────────────────────────────────────
   { id: 'grillit-beef', chain: 'Grill It', name: 'Beef Burger', category: 'main', calories: 500, protein: 25, carbs: 41, fats: 26, price_sar: 20, estimated: true },
   { id: 'grillit-double-beef', chain: 'Grill It', name: 'Double Beef Burger', category: 'main', calories: 720, protein: 42, carbs: 42, fats: 41, price_sar: 28, estimated: true },
@@ -80,34 +61,12 @@ export default [
   { id: 'grillit-grilled-chicken', chain: 'Grill It', name: 'Grilled Chicken Sandwich', category: 'main', calories: 400, protein: 28, carbs: 38, fats: 14, price_sar: 19, estimated: true },
   { id: 'grillit-fries', chain: 'Grill It', name: 'French Fries', category: 'side', calories: 320, protein: 4, carbs: 42, fats: 15, price_sar: 9, estimated: true },
 
-  // ── The Real Burger ────────────────────────────────────────────
-  { id: 'realburger-classic', chain: 'The Real Burger', name: 'Real Classic Burger', category: 'main', calories: 490, protein: 24, carbs: 40, fats: 25, price_sar: 21, estimated: true },
-  { id: 'realburger-double', chain: 'The Real Burger', name: 'Real Double Burger', category: 'main', calories: 710, protein: 41, carbs: 41, fats: 41, price_sar: 29, estimated: true },
-  { id: 'realburger-chicken', chain: 'The Real Burger', name: 'Real Chicken Burger', category: 'main', calories: 470, protein: 25, carbs: 43, fats: 21, price_sar: 20, estimated: true },
-  { id: 'realburger-smoky', chain: 'The Real Burger', name: 'Smoky Burger', category: 'main', calories: 540, protein: 26, carbs: 42, fats: 29, price_sar: 24, estimated: true },
-  { id: 'realburger-fries', chain: 'The Real Burger', name: 'French Fries', category: 'side', calories: 330, protein: 4, carbs: 43, fats: 15, price_sar: 10, estimated: true },
-
-  // ── Taxi ───────────────────────────────────────────────────────
-  { id: 'taxi-burger', chain: 'Taxi', name: 'Taxi Burger', category: 'main', calories: 460, protein: 22, carbs: 40, fats: 23, price_sar: 14, estimated: true },
-  { id: 'taxi-double-burger', chain: 'Taxi', name: 'Double Taxi Burger', category: 'main', calories: 660, protein: 37, carbs: 41, fats: 36, price_sar: 20, estimated: true },
-  { id: 'taxi-chicken-sandwich', chain: 'Taxi', name: 'Chicken Taxi Sandwich', category: 'main', calories: 440, protein: 23, carbs: 42, fats: 19, price_sar: 13, estimated: true },
-  { id: 'taxi-halloumi-sandwich', chain: 'Taxi', name: 'Halloumi Sandwich', category: 'main', calories: 410, protein: 16, carbs: 43, fats: 19, price_sar: 11, estimated: true },
-  { id: 'taxi-fries', chain: 'Taxi', name: 'French Fries', category: 'side', calories: 300, protein: 4, carbs: 40, fats: 14, price_sar: 7, estimated: true },
-  { id: 'taxi-cheese-balls', chain: 'Taxi', name: 'Cheese Balls', category: 'side', calories: 340, protein: 9, carbs: 33, fats: 19, price_sar: 10, estimated: true },
-
   // ── Burger Boutique ────────────────────────────────────────────
   { id: 'burgerboutique-classic', chain: 'Burger Boutique', name: 'Classic Boutique Burger', category: 'main', calories: 560, protein: 28, carbs: 43, fats: 30, price_sar: 38, estimated: true },
   { id: 'burgerboutique-truffle', chain: 'Burger Boutique', name: 'Truffle Burger', category: 'main', calories: 640, protein: 30, carbs: 45, fats: 37, price_sar: 46, estimated: true },
   { id: 'burgerboutique-crispy-chicken', chain: 'Burger Boutique', name: 'Crispy Chicken Burger', category: 'main', calories: 580, protein: 27, carbs: 52, fats: 28, price_sar: 36, estimated: true },
   { id: 'burgerboutique-minis-3pc', chain: 'Burger Boutique', name: 'Mini Burgers (3 pc)', category: 'main', calories: 630, protein: 30, carbs: 50, fats: 33, price_sar: 42, estimated: true },
   { id: 'burgerboutique-sweet-potato-fries', chain: 'Burger Boutique', name: 'Sweet Potato Fries', category: 'side', calories: 380, protein: 4, carbs: 50, fats: 18, price_sar: 18, estimated: true },
-
-  // ── Nevermind ──────────────────────────────────────────────────
-  { id: 'nevermind-classic', chain: 'Nevermind', name: 'Nevermind Classic', category: 'main', calories: 500, protein: 25, carbs: 40, fats: 26, price_sar: 25, estimated: true },
-  { id: 'nevermind-double-trouble', chain: 'Nevermind', name: 'Double Trouble', category: 'main', calories: 720, protein: 42, carbs: 41, fats: 42, price_sar: 33, estimated: true },
-  { id: 'nevermind-crispy-chicken', chain: 'Nevermind', name: 'Crispy Chicken Burger', category: 'main', calories: 540, protein: 26, carbs: 50, fats: 26, price_sar: 25, estimated: true },
-  { id: 'nevermind-smash', chain: 'Nevermind', name: 'Smash Burger', category: 'main', calories: 470, protein: 24, carbs: 38, fats: 24, price_sar: 24, estimated: true },
-  { id: 'nevermind-fries', chain: 'Nevermind', name: 'French Fries', category: 'side', calories: 330, protein: 4, carbs: 43, fats: 15, price_sar: 11, estimated: true },
 
   // ── GUNBUN ─────────────────────────────────────────────────────
   { id: 'gunbun-classic', chain: 'GUNBUN', name: 'GUNBUN Classic', category: 'main', calories: 530, protein: 26, carbs: 44, fats: 27, price_sar: 28, estimated: true },

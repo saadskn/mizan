@@ -1,14 +1,6 @@
 // Seafood quick-service chains operating in Riyadh (all Tier 2).
 
 export default [
-  // ── London Fish & Chips ────────────────────────────────────────
-  { id: 'londonfish-2pc', chain: 'London Fish & Chips', name: 'Fish & Chips (2 pc Cod)', category: 'main', calories: 820, protein: 42, carbs: 74, fats: 40, price_sar: 34, estimated: true },
-  { id: 'londonfish-1pc', chain: 'London Fish & Chips', name: 'Fish & Chips (1 pc)', category: 'main', calories: 560, protein: 28, carbs: 56, fats: 25, price_sar: 24, estimated: true },
-  { id: 'londonfish-burger', chain: 'London Fish & Chips', name: 'Fish Burger', category: 'main', calories: 470, protein: 22, carbs: 48, fats: 21, price_sar: 18, estimated: true },
-  { id: 'londonfish-grilled-rice', chain: 'London Fish & Chips', name: 'Grilled Fish Fillet with Rice', category: 'main', calories: 520, protein: 36, carbs: 52, fats: 16, price_sar: 28, estimated: true },
-  { id: 'londonfish-calamari', chain: 'London Fish & Chips', name: 'Calamari (6 pc)', category: 'side', calories: 340, protein: 16, carbs: 30, fats: 17, price_sar: 19, estimated: true },
-  { id: 'londonfish-chips', chain: 'London Fish & Chips', name: 'Chips', category: 'side', calories: 380, protein: 5, carbs: 50, fats: 18, price_sar: 9, estimated: true },
-  { id: 'londonfish-coleslaw', chain: 'London Fish & Chips', name: 'Coleslaw', category: 'side', calories: 130, protein: 1, carbs: 13, fats: 8, price_sar: 6, estimated: true },
 
   // ── Shrimp Nation ──────────────────────────────────────────────
   { id: 'shrimpnation-cajun-boil', chain: 'Shrimp Nation', name: 'Cajun Shrimp Boil (1/2 kg)', category: 'main', calories: 620, protein: 52, carbs: 24, fats: 36, price_sar: 65, estimated: true },

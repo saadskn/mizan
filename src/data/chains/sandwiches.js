@@ -1,6 +1,6 @@
 // Sandwich & sub chains operating in Riyadh.
 // Tier 1: Subway, Kudu. Tier 2: Charleys Philly Steaks.
-// Tier 3 (estimates): Dank Sandwich, Shwkat, The Sandwich Company, PAO, MAQSAF, Crust Corner.
+// Tier 3 (estimates): Dank Sandwich, Shwkat, The Sandwich Company, MAQSAF.
 
 export default [
   // ── Subway ─────────────────────────────────────────────────────
@@ -56,13 +56,6 @@ export default [
   { id: 'sandwichco-turkey-melt', chain: 'The Sandwich Company', name: 'Turkey Melt', category: 'main', calories: 470, protein: 26, carbs: 44, fats: 20, price_sar: 27, estimated: true },
   { id: 'sandwichco-house-fries', chain: 'The Sandwich Company', name: 'House Fries', category: 'side', calories: 340, protein: 4, carbs: 44, fats: 16, price_sar: 12, estimated: true },
 
-  // ── PAO ────────────────────────────────────────────────────────
-  { id: 'pao-chicken', chain: 'PAO', name: 'PAO Chicken Sandwich', category: 'main', calories: 500, protein: 27, carbs: 48, fats: 22, price_sar: 27, estimated: true },
-  { id: 'pao-beef', chain: 'PAO', name: 'PAO Beef Sandwich', category: 'main', calories: 540, protein: 29, carbs: 48, fats: 26, price_sar: 30, estimated: true },
-  { id: 'pao-spicy-chicken', chain: 'PAO', name: 'Spicy Chicken PAO', category: 'main', calories: 520, protein: 27, carbs: 49, fats: 24, price_sar: 28, estimated: true },
-  { id: 'pao-truffle-fries', chain: 'PAO', name: 'Truffle Fries', category: 'side', calories: 430, protein: 6, carbs: 46, fats: 23, price_sar: 17, estimated: true },
-  { id: 'pao-fries', chain: 'PAO', name: 'French Fries', category: 'side', calories: 330, protein: 4, carbs: 43, fats: 15, price_sar: 12, estimated: true },
-
   // ── MAQSAF ─────────────────────────────────────────────────────
   { id: 'maqsaf-chicken', chain: 'MAQSAF', name: 'Maqsaf Chicken Sandwich', category: 'main', calories: 470, protein: 26, carbs: 46, fats: 19, price_sar: 22, estimated: true },
   { id: 'maqsaf-beef', chain: 'MAQSAF', name: 'Maqsaf Beef Sandwich', category: 'main', calories: 510, protein: 28, carbs: 46, fats: 23, price_sar: 25, estimated: true },
@@ -70,10 +63,4 @@ export default [
   { id: 'maqsaf-fries', chain: 'MAQSAF', name: 'French Fries', category: 'side', calories: 320, protein: 4, carbs: 42, fats: 15, price_sar: 10, estimated: true },
   { id: 'maqsaf-cookie', chain: 'MAQSAF', name: 'Butter Cookie', category: 'dessert', calories: 260, protein: 4, carbs: 34, fats: 12, price_sar: 9, estimated: true },
 
-  // ── Crust Corner ───────────────────────────────────────────────
-  { id: 'crustcorner-chicken', chain: 'Crust Corner', name: 'Crust Chicken Sandwich', category: 'main', calories: 490, protein: 27, carbs: 47, fats: 21, price_sar: 24, estimated: true },
-  { id: 'crustcorner-beef-smash', chain: 'Crust Corner', name: 'Beef Smash Sandwich', category: 'main', calories: 530, protein: 29, carbs: 46, fats: 25, price_sar: 27, estimated: true },
-  { id: 'crustcorner-halloumi', chain: 'Crust Corner', name: 'Grilled Halloumi Sandwich', category: 'main', calories: 460, protein: 17, carbs: 48, fats: 22, price_sar: 21, estimated: true },
-  { id: 'crustcorner-garlic-fries', chain: 'Crust Corner', name: 'Garlic Fries', category: 'side', calories: 380, protein: 5, carbs: 46, fats: 19, price_sar: 14, estimated: true },
-  { id: 'crustcorner-brownie', chain: 'Crust Corner', name: 'Chocolate Brownie', category: 'dessert', calories: 340, protein: 4, carbs: 42, fats: 17, price_sar: 12, estimated: true },
 ];

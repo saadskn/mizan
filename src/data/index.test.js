@@ -41,15 +41,15 @@ describe('MENU', () => {
 });
 
 describe('final dataset', () => {
-  it('covers exactly 100 chains', () => {
-    expect(CHAINS).toHaveLength(100);
+  it('covers exactly 81 chains (100 minus 19 removed by user on 2026-07-11)', () => {
+    expect(CHAINS).toHaveLength(81);
   });
 
-  it('has at least 5 items per chain and 600-1000 items total', () => {
+  it('has at least 5 items per chain and 450-1000 items total', () => {
     const counts = new Map();
     for (const i of MENU) counts.set(i.chain, (counts.get(i.chain) || 0) + 1);
     for (const [chain, n] of counts) expect(n, chain).toBeGreaterThanOrEqual(5);
-    expect(MENU.length).toBeGreaterThanOrEqual(600);
+    expect(MENU.length).toBeGreaterThanOrEqual(450);
     expect(MENU.length).toBeLessThanOrEqual(1000);
   });
 });

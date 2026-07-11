@@ -5,10 +5,14 @@
 // Item schema: { id, chain, name, category: 'main'|'side'|'dessert',
 //                calories, protein, carbs, fats, price_sar, estimated }
 
+import burgersIntl from './chains/burgers-intl.js';
+import burgersSaudi from './chains/burgers-saudi.js';
+
 const CATEGORY_FILES = [
-  // appended by dataset tasks: burgers-intl, burgers-saudi, chicken, pizza,
-  // sandwiches, shawarma-levant, saudi-traditional, seafood, asian, healthy,
-  // bakery-breakfast, desserts
+  burgersIntl,
+  burgersSaudi,
+  // appended by dataset tasks: chicken, pizza, sandwiches, shawarma-levant,
+  // saudi-traditional, seafood, asian, healthy, bakery-breakfast, desserts
 ];
 
 export const MENU = CATEGORY_FILES.flat();

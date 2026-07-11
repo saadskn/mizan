@@ -1,6 +1,6 @@
 // Sandwich & sub chains operating in Riyadh.
 // Tier 1: Subway, Kudu. Tier 2: Charleys Philly Steaks.
-// Tier 3 (estimates): Dank Sandwich, Shwkat, The Sandwich Company, MAQSAF.
+// Tier 3 (estimates): Shwkat, The Sandwich Company, MAQSAF, Lolivo.
 
 export default [
   // ── Subway ─────────────────────────────────────────────────────
@@ -34,13 +34,6 @@ export default [
   { id: 'charleys-buffalo-chicken', chain: 'Charleys Philly Steaks', name: 'Chicken Buffalo Philly (Small)', category: 'main', calories: 480, protein: 29, carbs: 46, fats: 20, price_sar: 25, estimated: false },
   { id: 'charleys-gourmet-fries', chain: 'Charleys Philly Steaks', name: 'Gourmet Fries', category: 'side', calories: 420, protein: 5, carbs: 54, fats: 20, price_sar: 13, estimated: false },
   { id: 'charleys-loaded-fries', chain: 'Charleys Philly Steaks', name: 'Loaded Fries', category: 'side', calories: 560, protein: 13, carbs: 58, fats: 30, price_sar: 19, estimated: false },
-
-  // ── Dank Sandwich ──────────────────────────────────────────────
-  { id: 'dank-philly-steak', chain: 'Dank Sandwich', name: 'Philly Steak Sandwich', category: 'main', calories: 560, protein: 30, carbs: 50, fats: 26, price_sar: 29, estimated: true },
-  { id: 'dank-smoky-chicken', chain: 'Dank Sandwich', name: 'Smoky Chicken Sandwich', category: 'main', calories: 520, protein: 30, carbs: 48, fats: 22, price_sar: 27, estimated: true },
-  { id: 'dank-club', chain: 'Dank Sandwich', name: 'Dank Club', category: 'main', calories: 590, protein: 32, carbs: 52, fats: 28, price_sar: 31, estimated: true },
-  { id: 'dank-halloumi', chain: 'Dank Sandwich', name: 'Halloumi Sandwich', category: 'main', calories: 470, protein: 18, carbs: 48, fats: 23, price_sar: 24, estimated: true },
-  { id: 'dank-paprika-fries', chain: 'Dank Sandwich', name: 'Paprika Fries', category: 'side', calories: 360, protein: 5, carbs: 46, fats: 17, price_sar: 12, estimated: true },
 
   // ── Shwkat ─────────────────────────────────────────────────────
   { id: 'shwkat-philly-sub', chain: 'Shwkat', name: 'Philly Cheesesteak Sub', category: 'main', calories: 620, protein: 34, carbs: 52, fats: 30, price_sar: 28, estimated: true },

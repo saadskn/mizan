@@ -52,9 +52,9 @@ export default [
   { id: 'popeyes-apple-pie', chain: 'Popeyes', name: 'Cinnamon Apple Pie', category: 'dessert', calories: 230, protein: 2, carbs: 33, fats: 10, price_sar: 6, estimated: false },
 
   // ── Raising Cane's ─────────────────────────────────────────────
-  { id: 'canes-3-fingers', chain: "Raising Cane's", name: 'Chicken Fingers (3 pc)', category: 'main', calories: 390, protein: 39, carbs: 24, fats: 15, price_sar: 19, estimated: false },
-  { id: 'canes-4-fingers', chain: "Raising Cane's", name: 'Chicken Fingers (4 pc)', category: 'main', calories: 520, protein: 52, carbs: 32, fats: 20, price_sar: 24, estimated: false },
-  { id: 'canes-6-fingers', chain: "Raising Cane's", name: 'Chicken Fingers (6 pc)', category: 'main', calories: 780, protein: 78, carbs: 48, fats: 30, price_sar: 33, estimated: false },
+  { id: 'canes-3-fingers', chain: "Raising Cane's", name: 'Chicken Fingers (3 pc)', category: 'main', calories: 390, protein: 39, carbs: 24, fats: 15, price_sar: 19, family: 'canes-fingers', units: 3, estimated: false },
+  { id: 'canes-4-fingers', chain: "Raising Cane's", name: 'Chicken Fingers (4 pc)', category: 'main', calories: 520, protein: 52, carbs: 32, fats: 20, price_sar: 24, family: 'canes-fingers', units: 4, estimated: false },
+  { id: 'canes-6-fingers', chain: "Raising Cane's", name: 'Chicken Fingers (6 pc)', category: 'main', calories: 780, protein: 78, carbs: 48, fats: 30, price_sar: 33, family: 'canes-fingers', units: 6, estimated: false },
   { id: 'canes-sandwich', chain: "Raising Cane's", name: "Cane's Chicken Sandwich", category: 'main', calories: 640, protein: 39, carbs: 50, fats: 31, price_sar: 26, estimated: false },
   { id: 'canes-crinkle-fries', chain: "Raising Cane's", name: 'Crinkle-Cut Fries', category: 'side', calories: 390, protein: 5, carbs: 51, fats: 17, price_sar: 10, estimated: false },
   { id: 'canes-texas-toast', chain: "Raising Cane's", name: 'Texas Toast', category: 'side', calories: 150, protein: 4, carbs: 25, fats: 4, price_sar: 5, estimated: false },
@@ -79,8 +79,8 @@ export default [
   { id: 'wingstop-veggie-sticks', chain: 'Wingstop', name: 'Veggie Sticks', category: 'side', calories: 35, protein: 1, carbs: 7, fats: 0, price_sar: 5, estimated: false },
 
   // ── Jollibee ───────────────────────────────────────────────────
-  { id: 'jollibee-chickenjoy-1pc', chain: 'Jollibee', name: 'Chickenjoy (1 pc)', category: 'main', calories: 260, protein: 17, carbs: 11, fats: 17, price_sar: 12, estimated: false },
-  { id: 'jollibee-chickenjoy-2pc', chain: 'Jollibee', name: 'Chickenjoy (2 pc)', category: 'main', calories: 520, protein: 34, carbs: 22, fats: 34, price_sar: 20, estimated: false },
+  { id: 'jollibee-chickenjoy-1pc', chain: 'Jollibee', name: 'Chickenjoy (1 pc)', category: 'main', calories: 260, protein: 17, carbs: 11, fats: 17, price_sar: 12, family: 'chickenjoy', units: 1, estimated: false },
+  { id: 'jollibee-chickenjoy-2pc', chain: 'Jollibee', name: 'Chickenjoy (2 pc)', category: 'main', calories: 520, protein: 34, carbs: 22, fats: 34, price_sar: 20, family: 'chickenjoy', units: 2, estimated: false },
   { id: 'jollibee-spicy-chickenjoy', chain: 'Jollibee', name: 'Spicy Chickenjoy (1 pc)', category: 'main', calories: 270, protein: 17, carbs: 12, fats: 18, price_sar: 12, estimated: false },
   { id: 'jollibee-yumburger', chain: 'Jollibee', name: 'Yumburger', category: 'main', calories: 320, protein: 14, carbs: 34, fats: 14, price_sar: 8, estimated: false },
   { id: 'jollibee-spaghetti', chain: 'Jollibee', name: 'Jolly Spaghetti', category: 'main', calories: 550, protein: 20, carbs: 74, fats: 19, price_sar: 14, estimated: false },
@@ -89,10 +89,10 @@ export default [
   { id: 'jollibee-peach-mango-pie', chain: 'Jollibee', name: 'Peach Mango Pie', category: 'dessert', calories: 240, protein: 2, carbs: 35, fats: 10, price_sar: 5, estimated: false },
 
   // ── Al Tazaj ───────────────────────────────────────────────────
-  { id: 'altazaj-bbq-half', chain: 'Al Tazaj', name: 'BBQ Grilled Chicken (Half)', category: 'main', calories: 390, protein: 46, carbs: 2, fats: 22, price_sar: 21, estimated: false },
-  { id: 'altazaj-bbq-full', chain: 'Al Tazaj', name: 'BBQ Grilled Chicken (Full)', category: 'main', calories: 780, protein: 92, carbs: 4, fats: 44, price_sar: 36, estimated: false },
-  { id: 'altazaj-quarter-rice', chain: 'Al Tazaj', name: 'Quarter Chicken with Rice', category: 'main', calories: 560, protein: 33, carbs: 58, fats: 21, price_sar: 19, estimated: true },
-  { id: 'altazaj-half-rice', chain: 'Al Tazaj', name: 'Half Chicken with Rice', category: 'main', calories: 690, protein: 50, carbs: 48, fats: 30, price_sar: 27, estimated: true },
+  { id: 'altazaj-bbq-half', chain: 'Al Tazaj', name: 'BBQ Grilled Chicken (Half)', category: 'main', calories: 390, protein: 46, carbs: 2, fats: 22, price_sar: 21, family: 'tazaj-bbq', units: 1, estimated: false },
+  { id: 'altazaj-bbq-full', chain: 'Al Tazaj', name: 'BBQ Grilled Chicken (Full)', category: 'main', calories: 780, protein: 92, carbs: 4, fats: 44, price_sar: 36, family: 'tazaj-bbq', units: 2, estimated: false },
+  { id: 'altazaj-quarter-rice', chain: 'Al Tazaj', name: 'Quarter Chicken with Rice', category: 'main', calories: 560, protein: 33, carbs: 58, fats: 21, price_sar: 19, family: 'tazaj-rice', units: 1, estimated: true },
+  { id: 'altazaj-half-rice', chain: 'Al Tazaj', name: 'Half Chicken with Rice', category: 'main', calories: 690, protein: 50, carbs: 48, fats: 30, price_sar: 27, family: 'tazaj-rice', units: 2, estimated: true },
   { id: 'altazaj-chicken-sandwich', chain: 'Al Tazaj', name: 'Tazaj Chicken Sandwich', category: 'main', calories: 380, protein: 26, carbs: 40, fats: 12, price_sar: 13, estimated: true },
   { id: 'altazaj-kabab-skewer', chain: 'Al Tazaj', name: 'Chicken Kabab Skewer', category: 'main', calories: 220, protein: 28, carbs: 6, fats: 9, price_sar: 14, estimated: true },
   { id: 'altazaj-hummus', chain: 'Al Tazaj', name: 'Hummus', category: 'side', calories: 180, protein: 6, carbs: 16, fats: 10, price_sar: 6, estimated: false },
@@ -100,8 +100,8 @@ export default [
   { id: 'altazaj-rice-side', chain: 'Al Tazaj', name: 'Rice (Side)', category: 'side', calories: 310, protein: 6, carbs: 58, fats: 5, price_sar: 7, estimated: true },
 
   // ── Buffalo Wild Wings ─────────────────────────────────────────
-  { id: 'bww-6-traditional', chain: 'Buffalo Wild Wings', name: 'Traditional Wings (6 pc)', category: 'main', calories: 430, protein: 36, carbs: 2, fats: 30, price_sar: 29, estimated: false },
-  { id: 'bww-10-traditional', chain: 'Buffalo Wild Wings', name: 'Traditional Wings (10 pc)', category: 'main', calories: 720, protein: 60, carbs: 3, fats: 50, price_sar: 42, estimated: false },
+  { id: 'bww-6-traditional', chain: 'Buffalo Wild Wings', name: 'Traditional Wings (6 pc)', category: 'main', calories: 430, protein: 36, carbs: 2, fats: 30, price_sar: 29, family: 'bww-traditional', units: 3, estimated: false },
+  { id: 'bww-10-traditional', chain: 'Buffalo Wild Wings', name: 'Traditional Wings (10 pc)', category: 'main', calories: 720, protein: 60, carbs: 3, fats: 50, price_sar: 42, family: 'bww-traditional', units: 5, estimated: false },
   { id: 'bww-6-boneless', chain: 'Buffalo Wild Wings', name: 'Boneless Wings (6 pc)', category: 'main', calories: 490, protein: 29, carbs: 36, fats: 25, price_sar: 27, estimated: false },
   { id: 'bww-crispy-chicken-sandwich', chain: 'Buffalo Wild Wings', name: 'Crispy Chicken Sandwich', category: 'main', calories: 600, protein: 30, carbs: 54, fats: 29, price_sar: 32, estimated: false },
   { id: 'bww-fries', chain: 'Buffalo Wild Wings', name: 'French Fries', category: 'side', calories: 380, protein: 5, carbs: 49, fats: 18, price_sar: 13, estimated: false },

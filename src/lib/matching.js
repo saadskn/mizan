@@ -53,17 +53,28 @@ export function generateCombos(items) {
   return combos;
 }
 
+// Items that are size variants of the same food carry `family` + `units` tags
+// (e.g. quarter=1 / half=2 / whole=4 chicken). Combos are compared on their
+// family-unit composition, so "2x half" and "1x whole" read as identical.
+function unitMap(items) {
+  const m = new Map();
+  for (const i of items) {
+    const key = i.family ?? i.id;
+    m.set(key, (m.get(key) || 0) + (i.units ?? 1));
+  }
+  return m;
+}
+
 export function overlapRatio(a, b) {
-  const count = (arr) => {
-    const m = new Map();
-    for (const i of arr) m.set(i.id, (m.get(i.id) || 0) + 1);
-    return m;
-  };
-  const ca = count(a);
-  const cb = count(b);
+  const ca = unitMap(a);
+  const cb = unitMap(b);
   let inter = 0;
-  for (const [id, n] of ca) inter += Math.min(n, cb.get(id) || 0);
-  return inter / Math.max(a.length, b.length);
+  let ta = 0;
+  let tb = 0;
+  for (const v of ca.values()) ta += v;
+  for (const v of cb.values()) tb += v;
+  for (const [key, n] of ca) inter += Math.min(n, cb.get(key) || 0);
+  return inter / Math.max(ta, tb);
 }
 
 // Two combos from the same chain can be the "same order" without sharing any

@@ -16,14 +16,14 @@ export default [
   { id: 'shawarmer-fries', chain: 'Shawarmer', name: 'French Fries', category: 'side', calories: 300, protein: 4, carbs: 40, fats: 14, price_sar: 8, estimated: false },
 
   // ── Mama Noura ─────────────────────────────────────────────────
-  { id: 'mamanoura-chicken-saj', chain: 'Mama Noura', name: 'Chicken Shawarma Sandwich (Small)', category: 'main', calories: 345, protein: 21, carbs: 34, fats: 14, price_sar: 10, estimated: true },
+  { id: 'mamanoura-chicken-saj', chain: 'Mama Noura', name: 'Chicken Shawarma Sandwich (Small)', category: 'main', calories: 345, protein: 21, carbs: 34, fats: 14, price_sar: 10, family: 'mn-chicken-shawarma', units: 1, estimated: true },
   { id: 'mamanoura-chicken-meal', chain: 'Mama Noura', name: 'Chicken Shawarma Plate', category: 'main', calories: 780, protein: 44, carbs: 72, fats: 34, price_sar: 40, estimated: true },
   { id: 'mamanoura-meat-plate', chain: 'Mama Noura', name: 'Meat Shawarma Plate', category: 'main', calories: 840, protein: 46, carbs: 76, fats: 38, price_sar: 45, estimated: true },
   { id: 'mamanoura-falafel', chain: 'Mama Noura', name: 'Falafel Sandwich', category: 'main', calories: 410, protein: 12, carbs: 56, fats: 15, price_sar: 10, estimated: true },
   { id: 'mamanoura-mixed-grills', chain: 'Mama Noura', name: 'Mixed Grills Plate', category: 'main', calories: 920, protein: 64, carbs: 60, fats: 46, price_sar: 60, estimated: true },
-  { id: 'mamanoura-large-shawarma', chain: 'Mama Noura', name: 'Chicken Shawarma Sandwich (Large)', category: 'main', calories: 620, protein: 36, carbs: 58, fats: 26, price_sar: 16, estimated: true },
-  { id: 'mamanoura-meat-shawarma', chain: 'Mama Noura', name: 'Beef Shawarma Sandwich (Small)', category: 'main', calories: 380, protein: 22, carbs: 34, fats: 17, price_sar: 11, estimated: true },
-  { id: 'mamanoura-beef-large', chain: 'Mama Noura', name: 'Beef Shawarma Sandwich (Large)', category: 'main', calories: 690, protein: 40, carbs: 62, fats: 31, price_sar: 18, estimated: true },
+  { id: 'mamanoura-large-shawarma', chain: 'Mama Noura', name: 'Chicken Shawarma Sandwich (Large)', category: 'main', calories: 620, protein: 36, carbs: 58, fats: 26, price_sar: 16, family: 'mn-chicken-shawarma', units: 2, estimated: true },
+  { id: 'mamanoura-meat-shawarma', chain: 'Mama Noura', name: 'Beef Shawarma Sandwich (Small)', category: 'main', calories: 380, protein: 22, carbs: 34, fats: 17, price_sar: 11, family: 'mn-beef-shawarma', units: 1, estimated: true },
+  { id: 'mamanoura-beef-large', chain: 'Mama Noura', name: 'Beef Shawarma Sandwich (Large)', category: 'main', calories: 690, protein: 40, carbs: 62, fats: 31, price_sar: 18, family: 'mn-beef-shawarma', units: 2, estimated: true },
   { id: 'mamanoura-tawook', chain: 'Mama Noura', name: 'Grilled Tawook Sandwich', category: 'main', calories: 330, protein: 24, carbs: 32, fats: 11, price_sar: 11, estimated: true },
   { id: 'mamanoura-hummus', chain: 'Mama Noura', name: 'Hummus', category: 'side', calories: 190, protein: 6, carbs: 17, fats: 11, price_sar: 8, estimated: true },
   { id: 'mamanoura-tabbouleh', chain: 'Mama Noura', name: 'Tabbouleh', category: 'side', calories: 150, protein: 3, carbs: 18, fats: 7, price_sar: 9, estimated: true },

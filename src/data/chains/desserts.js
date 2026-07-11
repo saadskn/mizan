@@ -6,11 +6,11 @@
 
 export default [
   // ── Krispy Kreme ───────────────────────────────────────────────
-  { id: 'krispykreme-original-glazed', chain: 'Krispy Kreme', name: 'Original Glazed Doughnut', category: 'dessert', calories: 190, protein: 3, carbs: 22, fats: 11, price_sar: 5, estimated: false },
+  { id: 'krispykreme-original-glazed', chain: 'Krispy Kreme', name: 'Original Glazed Doughnut', category: 'dessert', calories: 190, protein: 3, carbs: 22, fats: 11, price_sar: 5, family: 'kk-glazed', units: 1, estimated: false },
   { id: 'krispykreme-chocolate-iced', chain: 'Krispy Kreme', name: 'Chocolate Iced Glazed', category: 'dessert', calories: 240, protein: 3, carbs: 33, fats: 11, price_sar: 6, estimated: false },
   { id: 'krispykreme-kreme-filled', chain: 'Krispy Kreme', name: 'Glazed Kreme Filled', category: 'dessert', calories: 340, protein: 4, carbs: 39, fats: 19, price_sar: 7, estimated: false },
   { id: 'krispykreme-cinnamon-sugar', chain: 'Krispy Kreme', name: 'Cinnamon Sugar Doughnut', category: 'dessert', calories: 210, protein: 3, carbs: 25, fats: 11, price_sar: 5, estimated: false },
-  { id: 'krispykreme-glazed-3pc', chain: 'Krispy Kreme', name: 'Original Glazed (3 pc)', category: 'dessert', calories: 570, protein: 9, carbs: 66, fats: 33, price_sar: 14, estimated: false },
+  { id: 'krispykreme-glazed-3pc', chain: 'Krispy Kreme', name: 'Original Glazed (3 pc)', category: 'dessert', calories: 570, protein: 9, carbs: 66, fats: 33, price_sar: 14, family: 'kk-glazed', units: 3, estimated: false },
 
   // ── Dunkin' ────────────────────────────────────────────────────
   { id: 'dunkin-glazed', chain: "Dunkin'", name: 'Glazed Donut', category: 'dessert', calories: 240, protein: 4, carbs: 33, fats: 11, price_sar: 5, estimated: false },

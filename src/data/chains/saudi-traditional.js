@@ -3,8 +3,8 @@
 
 export default [
   // ── Al Romansiah ───────────────────────────────────────────────
-  { id: 'romansiah-chicken-kabsa-quarter', chain: 'Al Romansiah', name: 'Chicken Kabsa (Quarter Chicken)', category: 'main', calories: 620, protein: 35, carbs: 72, fats: 20, price_sar: 17, estimated: true },
-  { id: 'romansiah-chicken-kabsa-half', chain: 'Al Romansiah', name: 'Chicken Kabsa (Half Chicken)', category: 'main', calories: 850, protein: 55, carbs: 74, fats: 34, price_sar: 24, estimated: true },
+  { id: 'romansiah-chicken-kabsa-quarter', chain: 'Al Romansiah', name: 'Chicken Kabsa (Quarter Chicken)', category: 'main', calories: 620, protein: 35, carbs: 72, fats: 20, price_sar: 17, family: 'romansiah-kabsa', units: 1, estimated: true },
+  { id: 'romansiah-chicken-kabsa-half', chain: 'Al Romansiah', name: 'Chicken Kabsa (Half Chicken)', category: 'main', calories: 850, protein: 55, carbs: 74, fats: 34, price_sar: 24, family: 'romansiah-kabsa', units: 2, estimated: true },
   { id: 'romansiah-lamb-kabsa', chain: 'Al Romansiah', name: 'Lamb Kabsa (Regular)', category: 'main', calories: 890, protein: 48, carbs: 76, fats: 42, price_sar: 38, estimated: true },
   { id: 'romansiah-chicken-mandi', chain: 'Al Romansiah', name: 'Chicken Mandi (Half, with Rice)', category: 'main', calories: 1061, protein: 56, carbs: 122, fats: 38, price_sar: 31, estimated: true },
   { id: 'romansiah-madghout', chain: 'Al Romansiah', name: 'Chicken Madghout (Half, with Rice)', category: 'main', calories: 1180, protein: 58, carbs: 136, fats: 44, price_sar: 32, estimated: true },
@@ -16,13 +16,13 @@ export default [
   { id: 'romansiah-green-salad', chain: 'Al Romansiah', name: 'Green Salad', category: 'side', calories: 60, protein: 2, carbs: 10, fats: 1, price_sar: 5, estimated: true },
 
   // ── Shawaya House ──────────────────────────────────────────────
-  { id: 'shawayahouse-half-rice', chain: 'Shawaya House', name: 'Half Shawaya Chicken (With Rice)', category: 'main', calories: 2094, protein: 96, carbs: 262, fats: 74, price_sar: 22, estimated: true },
-  { id: 'shawayahouse-full', chain: 'Shawaya House', name: 'Half Shawaya Chicken (No Rice)', category: 'main', calories: 673, protein: 74, carbs: 6, fats: 38, price_sar: 16, estimated: true },
-  { id: 'shawayahouse-whole-rice', chain: 'Shawaya House', name: 'Whole Shawaya Chicken (With Rice)', category: 'main', calories: 3398, protein: 160, carbs: 420, fats: 118, price_sar: 42, estimated: true },
+  { id: 'shawayahouse-half-rice', chain: 'Shawaya House', name: 'Half Shawaya Chicken (With Rice)', category: 'main', calories: 2094, protein: 96, carbs: 262, fats: 74, price_sar: 22, family: 'shawaya-rice', units: 2, estimated: true },
+  { id: 'shawayahouse-full', chain: 'Shawaya House', name: 'Half Shawaya Chicken (No Rice)', category: 'main', calories: 673, protein: 74, carbs: 6, fats: 38, price_sar: 16, family: 'shawaya-plain', units: 2, estimated: true },
+  { id: 'shawayahouse-whole-rice', chain: 'Shawaya House', name: 'Whole Shawaya Chicken (With Rice)', category: 'main', calories: 3398, protein: 160, carbs: 420, fats: 118, price_sar: 42, family: 'shawaya-rice', units: 4, estimated: true },
   { id: 'shawayahouse-kabsa', chain: 'Shawaya House', name: 'Chicken Kabsa', category: 'main', calories: 1628, protein: 70, carbs: 210, fats: 55, price_sar: 24, estimated: true },
   { id: 'shawayahouse-macaroni', chain: 'Shawaya House', name: 'Macaroni Bechamel', category: 'main', calories: 1127, protein: 38, carbs: 126, fats: 52, price_sar: 15, estimated: true },
   { id: 'shawayahouse-kunafa', chain: 'Shawaya House', name: 'Cream Kunafa', category: 'dessert', calories: 1263, protein: 22, carbs: 168, fats: 55, price_sar: 10, estimated: true },
-  { id: 'shawayahouse-quarter-rice', chain: 'Shawaya House', name: 'Shawaya Chicken (Quarter) with Rice', category: 'main', calories: 540, protein: 30, carbs: 56, fats: 19, price_sar: 14, estimated: true },
+  { id: 'shawayahouse-quarter-rice', chain: 'Shawaya House', name: 'Shawaya Chicken (Quarter) with Rice', category: 'main', calories: 540, protein: 30, carbs: 56, fats: 19, price_sar: 14, family: 'shawaya-rice', units: 1, estimated: true },
   { id: 'shawayahouse-shawarma', chain: 'Shawaya House', name: 'Chicken Shawarma Sandwich', category: 'main', calories: 330, protein: 20, carbs: 32, fats: 13, price_sar: 8, estimated: true },
   { id: 'shawayahouse-rice-side', chain: 'Shawaya House', name: 'Rice (Side)', category: 'side', calories: 300, protein: 6, carbs: 56, fats: 5, price_sar: 6, estimated: true },
   { id: 'shawayahouse-dakous-salad', chain: 'Shawaya House', name: 'Dakous & Salad', category: 'side', calories: 50, protein: 1, carbs: 9, fats: 1, price_sar: 4, estimated: true },

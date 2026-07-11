@@ -220,6 +220,36 @@ describe('findMatches', () => {
     expect(res.filter((r) => r.score === 100)).toHaveLength(2);
   });
 
+  it('collapses same-chain size-family refactorings (Shawaya bug)', () => {
+    // "2x half chicken" and "1x whole chicken" are the same food even though
+    // the ids differ and macros are only roughly double. family/units tags
+    // make the overlap check see them as identical compositions.
+    const menu = [
+      mk('SH', 'half', { protein: 30, carbs: 40, fats: 10, calories: 500, family: 'shawaya', units: 2 }, 12),
+      mk('SH', 'whole', { protein: 66, carbs: 84, fats: 22, calories: 1060, family: 'shawaya', units: 4 }, 22),
+      mk('SH', 'kunafa', { protein: 10, carbs: 60, fats: 20, calories: 460 }, 10, 'dessert'),
+    ];
+    const res = findMatches(menu, { protein: 60 });
+    // {half,half} vs {whole}: family units 4 vs 4 -> overlap 1 -> collapse.
+    const chickenOnly = res.filter((r) => r.items.every((i) => i.id.includes('half') || i.id.includes('whole')));
+    const unitSums = chickenOnly.map((r) =>
+      r.items.reduce((s, i) => s + (i.units ?? 1), 0)
+    );
+    expect(new Set(unitSums).size).toBe(unitSums.length); // no two pure-chicken combos with equal units
+  });
+
+  it('family units also drive partial overlap with side items', () => {
+    // {whole, kunafa} vs {half, half}: 4 shared units of 5 vs 4 -> 4/5 >= 2/3 -> collapse.
+    const menu = [
+      mk('SH', 'half', { protein: 30, carbs: 40, fats: 10, calories: 500, family: 'shawaya', units: 2 }, 12),
+      mk('SH', 'whole', { protein: 66, carbs: 84, fats: 22, calories: 1060, family: 'shawaya', units: 4 }, 22),
+      mk('SH', 'kunafa', { protein: 10, carbs: 60, fats: 20, calories: 460 }, 10, 'dessert'),
+    ];
+    const a = [menu[1], menu[2]]; // whole + kunafa -> shawaya:4 + kunafa:1
+    const b = [menu[0], menu[0]]; // half x2      -> shawaya:4
+    expect(overlapRatio(a, b)).toBeGreaterThanOrEqual(2 / 3);
+  });
+
   it('tie-breaks equal scores by lower price', () => {
     const menu = [
       mk('A', 'exp', { protein: 25, carbs: 0, fats: 0, calories: 0 }, 20),

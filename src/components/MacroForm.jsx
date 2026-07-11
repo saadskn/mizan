@@ -56,11 +56,11 @@ export default function MacroForm({ t, values, onChange, onSubmit, error, childr
       )}
       <button
         type="submit"
-        className="mt-6 w-full sm:w-auto sm:mx-auto sm:px-14 block rounded-2xl px-6 py-3.5
+        className="btn-sheen mt-6 w-full sm:w-auto sm:mx-auto sm:px-14 block rounded-2xl px-6 py-3.5
                    text-base font-bold text-oat
                    bg-oasis hover:bg-date dark:bg-mint2 dark:hover:bg-date-lt dark:text-olive
                    shadow-lg shadow-oasis/25 dark:shadow-mint2/20
-                   hover:-translate-y-0.5 active:translate-y-0 active:scale-[.98] transition-all"
+                   hover:-translate-y-0.5 active:translate-y-0 active:scale-[.98] transition-all duration-300"
       >
         {t.find}
       </button>

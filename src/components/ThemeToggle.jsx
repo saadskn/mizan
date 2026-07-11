@@ -9,7 +9,7 @@ export default function ThemeToggle({ t, theme, setTheme }) {
                  bg-white dark:bg-olive-card border border-edge dark:border-olive-edge
                  shadow-sm hover:scale-105 active:scale-95 transition-transform"
     >
-      {dark ? '☀️' : '🌙'}
+      <span key={String(dark)} className="icon-spin">{dark ? '☀️' : '🌙'}</span>
     </button>
   );
 }

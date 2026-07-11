@@ -66,10 +66,11 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-oat dark:bg-olive text-ink dark:text-cream transition-colors">
+    <div className="min-h-screen bg-oat dark:bg-olive text-ink dark:text-cream transition-colors duration-500">
       <div aria-hidden="true" className="bg-lattice" />
       <div aria-hidden="true" className="bg-wash" />
-      <div className="relative z-10 pb-16">
+      {/* keyed by lang: switching language lets the whole page rise back in */}
+      <div key={lang} className="relative z-10 pb-16">
         <TopBar t={t} theme={theme} setTheme={setTheme} lang={lang} setLang={setLang} />
         <Hero t={t} />
         <MacroForm

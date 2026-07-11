@@ -8,7 +8,7 @@ export default function ResultsGrid({ t, results, goals }) {
         <h2 className="font-display font-bold text-2xl text-ink dark:text-cream">
           {t.resultsTitle}
         </h2>
-        <div className="weave-band flex-1 h-1.5 rounded-sm opacity-70" />
+        <div className="weave-band anim-grow-x flex-1 h-1.5 rounded-sm opacity-70" />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {results.map((r, idx) => (

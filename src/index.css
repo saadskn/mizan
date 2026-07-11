@@ -69,14 +69,36 @@ html[lang='ar'] body {
 @keyframes drift1 { to { transform: translate(-9vw, 7vw) scale(1.15); } }
 @keyframes drift2 { to { transform: translate(8vw, -6vw) scale(1.1); } }
 
-/* ── motion primitives ── */
+/* ── motion primitives ──
+   Pacing philosophy: 0.6–1.2s, springy ease-outs — slow enough to notice,
+   never looping except on explicit hover. */
 @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes wordrise { from { opacity: 0; transform: translateY(14px) rotate(1.5deg); } to { opacity: 1; transform: none; } }
 @keyframes weave { from { width: 0; } }
 @keyframes drawline { to { stroke-dashoffset: 0; } }
-.anim-rise { animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
-.anim-word { display: inline-block; animation: wordrise 0.55s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
-.anim-weave { animation: weave 0.9s cubic-bezier(0.25, 0.9, 0.3, 1) both; }
+@keyframes growx { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes chippop { 0% { transform: scale(1); } 45% { transform: scale(1.1); } 100% { transform: scale(1); } }
+@keyframes scaletilt { 0% { transform: rotate(0); } 30% { transform: rotate(-2.5deg); } 65% { transform: rotate(1.8deg); } 100% { transform: rotate(0); } }
+@keyframes needlesway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
+@keyframes iconspin { from { opacity: 0; transform: rotate(-120deg) scale(0.6); } to { opacity: 1; transform: none; } }
+@keyframes sheen { from { transform: translateX(-160%) skewX(-18deg); } to { transform: translateX(260%) skewX(-18deg); } }
+.anim-rise { animation: rise 0.7s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
+.anim-word { display: inline-block; animation: wordrise 0.6s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
+.anim-weave { animation: weave 1s cubic-bezier(0.25, 0.9, 0.3, 1) both; }
+.anim-grow-x { animation: growx 1.1s 0.25s cubic-bezier(0.25, 0.9, 0.3, 1) both; transform-origin: left; }
+[dir='rtl'] .anim-grow-x { transform-origin: right; }
+.chip-pop { animation: chippop 0.5s cubic-bezier(0.3, 1.4, 0.5, 1); }
+.logo-tilt { display: inline-flex; transform-origin: 50% 100%; }
+.logo-tilt:hover { animation: scaletilt 1.2s ease-in-out; }
+.icon-spin { display: inline-block; animation: iconspin 0.5s cubic-bezier(0.3, 1.2, 0.4, 1); }
+article:hover .dial-sway { animation: needlesway 1.8s ease-in-out infinite; }
+.btn-sheen { position: relative; overflow: hidden; }
+.btn-sheen::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: translateX(-160%) skewX(-18deg); pointer-events: none;
+}
+.btn-sheen:hover::after { animation: sheen 1.1s ease-in-out; }
 .najdi-line {
   fill: none; stroke: var(--color-oasis); stroke-width: 2.5;
   stroke-dasharray: 1200; stroke-dashoffset: 1200;

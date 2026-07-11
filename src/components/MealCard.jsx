@@ -56,9 +56,11 @@ function Dial({ score, delayMs }) {
               className="stroke-oasis dark:stroke-mint2 transition-[stroke-dashoffset]"
               strokeDasharray={ARC}
               strokeDashoffset={ARC * (1 - shown / 100)} />
-        <line x1="48" y1="50" x2="48" y2="17" strokeWidth="2.2" strokeLinecap="round"
-              className="stroke-date dark:stroke-date-lt"
-              style={{ transformOrigin: '48px 50px', transform: `rotate(${(shown / 100) * 180 - 90}deg)` }} />
+        <g className="dial-sway" style={{ transformOrigin: '48px 50px' }}>
+          <line x1="48" y1="50" x2="48" y2="17" strokeWidth="2.2" strokeLinecap="round"
+                className="stroke-date dark:stroke-date-lt"
+                style={{ transformOrigin: '48px 50px', transform: `rotate(${(shown / 100) * 180 - 90}deg)` }} />
+        </g>
         <circle cx="48" cy="50" r="4" className="fill-date dark:fill-date-lt" />
       </svg>
       <div className="font-display font-bold text-[17px] -mt-0.5 text-oasis dark:text-mint2">
@@ -70,7 +72,7 @@ function Dial({ score, delayMs }) {
 
 export default function MealCard({ t, result, goals, index = 0 }) {
   const { chain, items, totals, score } = result;
-  const baseDelay = 250 + index * 90;
+  const baseDelay = 300 + index * 130;
   return (
     <article
       className="stitched anim-rise rounded-2xl p-5 bg-white dark:bg-olive-card
@@ -78,7 +80,7 @@ export default function MealCard({ t, result, goals, index = 0 }) {
                  shadow-[0_10px_30px_rgba(107,63,42,0.07)] dark:shadow-none
                  hover:-translate-y-1 hover:shadow-[0_16px_38px_rgba(107,63,42,0.13)]
                  transition-all"
-      style={{ animationDelay: `${index * 90}ms` }}
+      style={{ animationDelay: `${index * 130}ms` }}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">

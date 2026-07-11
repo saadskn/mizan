@@ -48,7 +48,7 @@ export default function CategoryFilter({ t, selected, onToggle }) {
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm border
                 transition-all hover:-translate-y-px active:scale-95
                 ${on
-                  ? 'bg-oasis/10 dark:bg-mint2/10 border-oasis dark:border-mint2 text-oasis dark:text-mint2 font-semibold'
+                  ? 'chip-pop bg-oasis/10 dark:bg-mint2/10 border-oasis dark:border-mint2 text-oasis dark:text-mint2 font-semibold'
                   : 'bg-white dark:bg-olive-card border-edge dark:border-olive-edge text-faint dark:text-cream-mut'}`}
             >
               <svg viewBox="0 0 24 24" className="w-[17px] h-[17px] shrink-0"

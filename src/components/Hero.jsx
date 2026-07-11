@@ -10,7 +10,7 @@ export default function Hero({ t }) {
       </svg>
       <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-[3.4rem] tracking-tight text-ink dark:text-cream leading-tight">
         {words.map((w, i) => (
-          <span key={i} className="anim-word" style={{ animationDelay: `${0.55 + i * 0.11}s` }}>
+          <span key={i} className="anim-word" style={{ animationDelay: `${0.55 + i * 0.14}s` }}>
             {w === null ? (
               <em className="italic text-oasis dark:text-mint2">{t.heroAccent}</em>
             ) : (

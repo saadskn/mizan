@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import { STRINGS } from './i18n/strings.js';
 import { usePersistedState } from './hooks/usePersistedState.js';
 import { findMatches } from './lib/matching.js';
-import { MENU } from './data/index.js';
+import { MENU, CUISINES } from './data/index.js';
 import TopBar from './components/TopBar.jsx';
 import Hero from './components/Hero.jsx';
 import MacroForm, { parseGoals } from './components/MacroForm.jsx';
+import CategoryFilter from './components/CategoryFilter.jsx';
 import ResultsGrid from './components/ResultsGrid.jsx';
 
 function systemTheme() {
@@ -16,7 +17,8 @@ export default function App() {
   const [theme, setTheme] = usePersistedState('mm_theme', systemTheme());
   const [lang, setLang] = usePersistedState('mm_lang', 'en');
   const [values, setValues] = useState({ protein: '', carbs: '', fats: '', calories: '' });
-  const [error, setError] = useState(false);
+  const [cats, setCats] = useState(() => new Set(CUISINES));
+  const [error, setError] = useState(null);
   const [results, setResults] = useState(null);
   const [goals, setGoals] = useState(null);
   const resultsRef = useRef(null);
@@ -35,16 +37,30 @@ export default function App() {
     if (results) resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [results]);
 
+  function toggleCat(c) {
+    setCats((prev) => {
+      const next = new Set(prev);
+      if (next.has(c)) next.delete(c);
+      else next.add(c);
+      return next;
+    });
+  }
+
   function handleSubmit() {
     const parsed = parseGoals(values);
     if (Object.keys(parsed).length === 0) {
-      setError(true);
+      setError('errNoInput');
       setResults(null);
       return;
     }
-    setError(false);
+    if (cats.size === 0) {
+      setError('errNoCategory');
+      setResults(null);
+      return;
+    }
+    setError(null);
     setGoals(parsed);
-    setResults(findMatches(MENU, parsed));
+    setResults(findMatches(MENU.filter((i) => cats.has(i.cuisine)), parsed));
   }
 
   return (
@@ -57,7 +73,9 @@ export default function App() {
         onChange={(k, v) => setValues((prev) => ({ ...prev, [k]: v }))}
         onSubmit={handleSubmit}
         error={error}
-      />
+      >
+        <CategoryFilter t={t} selected={cats} onToggle={toggleCat} />
+      </MacroForm>
       <div ref={resultsRef}>
         <ResultsGrid t={t} results={results} goals={goals ?? {}} />
       </div>

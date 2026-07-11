@@ -18,22 +18,31 @@ import healthy from './chains/healthy.js';
 import bakeryBreakfast from './chains/bakery-breakfast.js';
 import desserts from './chains/desserts.js';
 
-const CATEGORY_FILES = [
-  burgersIntl,
-  burgersSaudi,
-  chicken,
-  pizza,
-  sandwiches,
-  shawarmaLevant,
-  saudiTraditional,
-  seafood,
-  asian,
-  healthy,
-  bakeryBreakfast,
-  desserts,
+// Each file is tagged with a cuisine so the UI can filter by category.
+const TAGGED_FILES = [
+  [burgersIntl, 'burgers'],
+  [burgersSaudi, 'burgers'],
+  [chicken, 'chicken'],
+  [pizza, 'pizza'],
+  [sandwiches, 'sandwiches'],
+  [shawarmaLevant, 'shawarma'],
+  [saudiTraditional, 'saudi'],
+  [seafood, 'seafood'],
+  [asian, 'asian'],
+  [healthy, 'healthy'],
+  [bakeryBreakfast, 'bakery'],
+  [desserts, 'desserts'],
 ];
 
-export const MENU = CATEGORY_FILES.flat();
+// Display order for the category checklist.
+export const CUISINES = [
+  'burgers', 'chicken', 'pizza', 'shawarma', 'sandwiches', 'saudi',
+  'seafood', 'asian', 'healthy', 'bakery', 'desserts',
+];
+
+export const MENU = TAGGED_FILES.flatMap(([items, cuisine]) =>
+  items.map((i) => ({ ...i, cuisine }))
+);
 export const CHAINS = [...new Set(MENU.map((i) => i.chain))];
 
 const CATEGORIES = new Set(['main', 'side', 'dessert']);

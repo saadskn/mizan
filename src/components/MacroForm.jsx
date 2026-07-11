@@ -18,7 +18,7 @@ function sanitize(raw) {
   return s;
 }
 
-export default function MacroForm({ t, values, onChange, onSubmit, error }) {
+export default function MacroForm({ t, values, onChange, onSubmit, error, children }) {
   return (
     <form
       className="max-w-3xl mx-auto px-5"
@@ -48,8 +48,9 @@ export default function MacroForm({ t, values, onChange, onSubmit, error }) {
           </label>
         ))}
       </div>
+      {children}
       {error && (
-        <p className="mt-3 text-sm font-medium text-red-500 dark:text-red-400">{t.errNoInput}</p>
+        <p className="mt-3 text-sm font-medium text-red-500 dark:text-red-400">{t[error]}</p>
       )}
       <button
         type="submit"

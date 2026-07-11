@@ -39,8 +39,6 @@ export default function MealCard({ t, result, goals }) {
       <div className="mt-4 pt-3 flex items-center justify-between border-t border-slate-100 dark:border-edge-dark">
         <span className="text-xs text-slate-400 dark:text-slate-500">
           {items.length} {items.length === 1 ? t.item : t.items}
-          {' · '}
-          {Math.round(totals.calories)} {t.kcal}
         </span>
         <span dir="ltr" className="font-bold text-emerald-700 dark:text-emerald-400">
           {totals.price_sar} {t.sar}

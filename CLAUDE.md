@@ -16,6 +16,10 @@ npm run preview      # serve the production build
 There is no lint setup. Tests use Vitest via the `test` key in `vite.config.js` (environment: node). On this machine Node was installed via winget; if a fresh shell can't find `node`, refresh PATH first:
 `$env:Path = [System.Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [System.Environment]::GetEnvironmentVariable('Path','User')`
 
+The engine and dataset are plain ES modules with no React imports, so real search scenarios can be exercised headlessly in Node (useful for sanity-checking data changes). On Windows, absolute imports in an ad-hoc `.mjs` script must be `file:///C:/...` URLs — bare `C:/...` paths throw `ERR_UNSUPPORTED_ESM_URL_SCHEME`.
+
+Deployment is user-managed (Vercel/Netlify import the GitHub repo; Vite auto-detected, build `npm run build`, publish dir `dist`). Don't set up CI or deploy config unless asked.
+
 ## What this app is
 
 A fully client-side "reverse macro calculator": the user enters remaining daily macros (protein/carbs/fats/calories) and the app brute-forces real 1–3 item combos from 100 Riyadh fast-food chains, ranked by closeness to those targets. No backend, no router, no state library.

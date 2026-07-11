@@ -41,9 +41,9 @@ export default [
   { id: 'coldstone-waffle-sweet-cream', chain: 'Cold Stone Creamery', name: 'Sweet Cream in Waffle Cone', category: 'dessert', calories: 600, protein: 9, carbs: 72, fats: 31, price_sar: 27, estimated: false },
 
   // ── House of Donuts ────────────────────────────────────────────
-  { id: 'houseofdonuts-glazed', chain: 'House of Donuts', name: 'Glazed Donut', category: 'dessert', calories: 230, protein: 4, carbs: 32, fats: 10, price_sar: 4, estimated: true },
-  { id: 'houseofdonuts-chocolate', chain: 'House of Donuts', name: 'Chocolate Donut', category: 'dessert', calories: 260, protein: 4, carbs: 35, fats: 12, price_sar: 5, estimated: true },
-  { id: 'houseofdonuts-cream-filled', chain: 'House of Donuts', name: 'Cream Filled Donut', category: 'dessert', calories: 310, protein: 5, carbs: 38, fats: 15, price_sar: 6, estimated: true },
+  { id: 'houseofdonuts-glazed', chain: 'House of Donuts', name: 'Glazed Donut', category: 'dessert', calories: 240, protein: 4, carbs: 33, fats: 10, price_sar: 7, estimated: true },
+  { id: 'houseofdonuts-chocolate', chain: 'House of Donuts', name: 'Chocolate Frosted Donut', category: 'dessert', calories: 260, protein: 4, carbs: 35, fats: 12, price_sar: 8, estimated: true },
+  { id: 'houseofdonuts-cream-filled', chain: 'House of Donuts', name: 'Cream Filled Donut', category: 'dessert', calories: 310, protein: 5, carbs: 38, fats: 15, price_sar: 9, estimated: true },
   { id: 'houseofdonuts-mini-6', chain: 'House of Donuts', name: 'Mini Donuts (6 pc)', category: 'dessert', calories: 390, protein: 6, carbs: 50, fats: 19, price_sar: 10, estimated: true },
   { id: 'houseofdonuts-cheesecake', chain: 'House of Donuts', name: 'Cheesecake Slice', category: 'dessert', calories: 420, protein: 7, carbs: 38, fats: 27, price_sar: 14, estimated: true },
 
@@ -52,11 +52,13 @@ export default [
   { id: 'munch-red-velvet-slice', chain: 'Munch Bakery', name: 'Red Velvet Cake Slice', category: 'dessert', calories: 470, protein: 5, carbs: 58, fats: 24, price_sar: 17, estimated: true },
   { id: 'munch-brownie', chain: 'Munch Bakery', name: 'Brownie', category: 'dessert', calories: 380, protein: 5, carbs: 46, fats: 20, price_sar: 12, estimated: true },
   { id: 'munch-mini-cupcakes-4', chain: 'Munch Bakery', name: 'Mini Cupcakes (4 pc)', category: 'dessert', calories: 420, protein: 4, carbs: 54, fats: 21, price_sar: 16, estimated: true },
+  { id: 'munch-red-velvet-cupcake', chain: 'Munch Bakery', name: 'Red Velvet Cupcake', category: 'dessert', calories: 320, protein: 4, carbs: 42, fats: 15, price_sar: 13, estimated: true },
   { id: 'munch-kunafa-cup', chain: 'Munch Bakery', name: 'Kunafa Cup', category: 'dessert', calories: 380, protein: 7, carbs: 48, fats: 18, price_sar: 15, estimated: true },
 
   // ── Saadeddin ──────────────────────────────────────────────────
   { id: 'saadeddin-kunafa-cheese', chain: 'Saadeddin', name: 'Kunafa Cheese (Slice)', category: 'dessert', calories: 450, protein: 9, carbs: 55, fats: 22, price_sar: 16, estimated: true },
-  { id: 'saadeddin-basbousa-2', chain: 'Saadeddin', name: 'Basbousa (2 pc)', category: 'dessert', calories: 380, protein: 5, carbs: 58, fats: 14, price_sar: 10, estimated: true },
+  { id: 'saadeddin-basbousa-2', chain: 'Saadeddin', name: 'Basbousa (2 pc)', category: 'dessert', calories: 380, protein: 5, carbs: 58, fats: 14, price_sar: 12, estimated: true },
+  { id: 'saadeddin-umm-ali', chain: 'Saadeddin', name: 'Umm Ali (Portion)', category: 'dessert', calories: 450, protein: 10, carbs: 52, fats: 22, price_sar: 15, estimated: true },
   { id: 'saadeddin-baklava-4', chain: 'Saadeddin', name: 'Baklava Assortment (4 pc)', category: 'dessert', calories: 420, protein: 6, carbs: 48, fats: 23, price_sar: 15, estimated: true },
   { id: 'saadeddin-cheesecake', chain: 'Saadeddin', name: 'Cheesecake Slice', category: 'dessert', calories: 430, protein: 7, carbs: 40, fats: 27, price_sar: 17, estimated: true },
   { id: 'saadeddin-maamoul-dates-3', chain: 'Saadeddin', name: 'Maamoul Dates (3 pc)', category: 'dessert', calories: 330, protein: 5, carbs: 48, fats: 13, price_sar: 10, estimated: true },

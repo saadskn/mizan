@@ -18,47 +18,48 @@ export default [
   { id: 'herfy-soft-serve', chain: 'Herfy', name: 'Soft Serve Cone', category: 'dessert', calories: 180, protein: 4, carbs: 29, fats: 5, price_sar: 3, estimated: false },
 
   // ── Burgerizzr ─────────────────────────────────────────────────
-  { id: 'burgerizzr-classizzr', chain: 'Burgerizzr', name: 'Classizzr (Single)', category: 'main', calories: 480, protein: 24, carbs: 40, fats: 25, price_sar: 19, estimated: true },
-  { id: 'burgerizzr-classizzr-double', chain: 'Burgerizzr', name: 'Classizzr (Double)', category: 'main', calories: 700, protein: 41, carbs: 41, fats: 40, price_sar: 27, estimated: true },
-  { id: 'burgerizzr-spicizzr', chain: 'Burgerizzr', name: 'Spicizzr', category: 'main', calories: 500, protein: 24, carbs: 41, fats: 27, price_sar: 20, estimated: true },
-  { id: 'burgerizzr-chickenizzr', chain: 'Burgerizzr', name: 'Chickenizzr', category: 'main', calories: 520, protein: 27, carbs: 46, fats: 24, price_sar: 19, estimated: true },
-  { id: 'burgerizzr-mushroomizzr', chain: 'Burgerizzr', name: 'Mushroomizzr', category: 'main', calories: 540, protein: 26, carbs: 42, fats: 29, price_sar: 22, estimated: true },
-  { id: 'burgerizzr-slider-duo', chain: 'Burgerizzr', name: 'Slider Duo', category: 'main', calories: 520, protein: 24, carbs: 44, fats: 27, price_sar: 19, estimated: true },
+  { id: 'burgerizzr-classizzr', chain: 'Burgerizzr', name: 'Classic Beef Burger', category: 'main', calories: 300, protein: 20, carbs: 24, fats: 13, price_sar: 30, estimated: true },
+  { id: 'burgerizzr-classic-chicken', chain: 'Burgerizzr', name: 'Classic Chicken Burger', category: 'main', calories: 300, protein: 21, carbs: 28, fats: 11, price_sar: 30, estimated: true },
+  { id: 'burgerizzr-meltizzr-beef', chain: 'Burgerizzr', name: 'Meltizzr Beef Burger', category: 'main', calories: 250, protein: 16, carbs: 20, fats: 11, price_sar: 25, estimated: true },
+  { id: 'burgerizzr-meltizzr-chicken', chain: 'Burgerizzr', name: 'Meltizzr Fried Chicken Burger', category: 'main', calories: 260, protein: 15, carbs: 24, fats: 11, price_sar: 26, estimated: true },
+  { id: 'burgerizzr-keto', chain: 'Burgerizzr', name: 'Classic Beef Keto (Lettuce Wrap)', category: 'main', calories: 210, protein: 18, carbs: 4, fats: 14, price_sar: 30, estimated: true },
+  { id: 'burgerizzr-frizzr', chain: 'Burgerizzr', name: 'Dbl Dbl Frizzr (Loaded Fries)', category: 'side', calories: 1000, protein: 34, carbs: 96, fats: 52, price_sar: 26, estimated: true },
   { id: 'burgerizzr-fries', chain: 'Burgerizzr', name: 'French Fries', category: 'side', calories: 330, protein: 4, carbs: 43, fats: 16, price_sar: 9, estimated: true },
   { id: 'burgerizzr-jalapeno-poppers', chain: 'Burgerizzr', name: 'Jalapeño Poppers', category: 'side', calories: 350, protein: 8, carbs: 36, fats: 19, price_sar: 13, estimated: true },
 
   // ── Jan Burger ─────────────────────────────────────────────────
-  { id: 'janburger-classic', chain: 'Jan Burger', name: 'Jan Classic Burger', category: 'main', calories: 470, protein: 23, carbs: 40, fats: 24, price_sar: 15, estimated: true },
+  { id: 'janburger-classic', chain: 'Jan Burger', name: 'Jan Classic Burger', category: 'main', calories: 470, protein: 23, carbs: 40, fats: 24, price_sar: 19, estimated: true },
   { id: 'janburger-double', chain: 'Jan Burger', name: 'Jan Double Burger', category: 'main', calories: 690, protein: 39, carbs: 41, fats: 39, price_sar: 23, estimated: true },
-  { id: 'janburger-chicken', chain: 'Jan Burger', name: 'Chicken Jan Burger', category: 'main', calories: 490, protein: 25, carbs: 45, fats: 22, price_sar: 15, estimated: true },
+  { id: 'janburger-chicken', chain: 'Jan Burger', name: 'Chicken Jan Burger', category: 'main', calories: 490, protein: 25, carbs: 45, fats: 22, price_sar: 21, estimated: true },
   { id: 'janburger-spicy', chain: 'Jan Burger', name: 'Spicy Jan Burger', category: 'main', calories: 490, protein: 23, carbs: 42, fats: 25, price_sar: 16, estimated: true },
   { id: 'janburger-sliders-2pc', chain: 'Jan Burger', name: 'Jan Sliders (2 pc)', category: 'main', calories: 430, protein: 20, carbs: 38, fats: 21, price_sar: 14, estimated: true },
   { id: 'janburger-fries', chain: 'Jan Burger', name: 'French Fries', category: 'side', calories: 310, protein: 4, carbs: 41, fats: 14, price_sar: 8, estimated: true },
   { id: 'janburger-onion-rings', chain: 'Jan Burger', name: 'Onion Rings', category: 'side', calories: 340, protein: 4, carbs: 42, fats: 17, price_sar: 10, estimated: true },
 
   // ── Century Burger ─────────────────────────────────────────────
-  { id: 'century-classic', chain: 'Century Burger', name: 'Century Classic', category: 'main', calories: 520, protein: 26, carbs: 42, fats: 27, price_sar: 24, estimated: true },
+  { id: 'century-classic', chain: 'Century Burger', name: 'Century Burger (Single)', category: 'main', calories: 610, protein: 30, carbs: 50, fats: 32, price_sar: 38, estimated: true },
   { id: 'century-double', chain: 'Century Burger', name: 'Double Century', category: 'main', calories: 760, protein: 44, carbs: 43, fats: 44, price_sar: 34, estimated: true },
   { id: 'century-mushroom-swiss', chain: 'Century Burger', name: 'Mushroom Swiss Burger', category: 'main', calories: 580, protein: 28, carbs: 44, fats: 31, price_sar: 28, estimated: true },
-  { id: 'century-crispy-chicken', chain: 'Century Burger', name: 'Crispy Chicken Burger', category: 'main', calories: 560, protein: 26, carbs: 52, fats: 26, price_sar: 24, estimated: true },
+  { id: 'century-crispy-chicken', chain: 'Century Burger', name: 'Country Chicken Crispy', category: 'main', calories: 740, protein: 34, carbs: 64, fats: 38, price_sar: 39, estimated: true },
   { id: 'century-halloumi', chain: 'Century Burger', name: 'Halloumi Burger', category: 'main', calories: 490, protein: 19, carbs: 46, fats: 25, price_sar: 22, estimated: true },
   { id: 'century-fries', chain: 'Century Burger', name: 'French Fries', category: 'side', calories: 340, protein: 4, carbs: 44, fats: 16, price_sar: 11, estimated: true },
   { id: 'century-truffle-fries', chain: 'Century Burger', name: 'Truffle Fries', category: 'side', calories: 450, protein: 6, carbs: 48, fats: 24, price_sar: 17, estimated: true },
 
   // ── Section-B ──────────────────────────────────────────────────
-  { id: 'sectionb-single', chain: 'Section-B', name: 'Single Burger', category: 'main', calories: 420, protein: 22, carbs: 34, fats: 21, price_sar: 19, estimated: true },
-  { id: 'sectionb-double', chain: 'Section-B', name: 'Double Burger', category: 'main', calories: 620, protein: 38, carbs: 35, fats: 35, price_sar: 27, estimated: true },
-  { id: 'sectionb-triple', chain: 'Section-B', name: 'Triple Burger', category: 'main', calories: 820, protein: 54, carbs: 36, fats: 49, price_sar: 35, estimated: true },
-  { id: 'sectionb-chicken', chain: 'Section-B', name: 'Chicken Burger', category: 'main', calories: 450, protein: 24, carbs: 40, fats: 20, price_sar: 19, estimated: true },
+  { id: 'sectionb-single', chain: 'Section-B', name: 'B Burger (Angus, Regular)', category: 'main', calories: 745, protein: 38, carbs: 52, fats: 42, price_sar: 39, estimated: true },
+  { id: 'sectionb-double', chain: 'Section-B', name: 'B Double Beef Burger', category: 'main', calories: 1020, protein: 58, carbs: 60, fats: 60, price_sar: 52, estimated: true },
+  { id: 'sectionb-wagyu', chain: 'Section-B', name: 'Wagyu Flip', category: 'main', calories: 680, protein: 36, carbs: 46, fats: 38, price_sar: 45, estimated: true },
+  { id: 'sectionb-sweet-potato', chain: 'Section-B', name: 'Sweet Potato Fries', category: 'side', calories: 390, protein: 4, carbs: 55, fats: 17, price_sar: 16, estimated: true },
+  { id: 'sectionb-chicken', chain: 'Section-B', name: 'C Burger (Crispy Chicken)', category: 'main', calories: 810, protein: 36, carbs: 72, fats: 42, price_sar: 39, estimated: true },
   { id: 'sectionb-cheese-fries', chain: 'Section-B', name: 'Cheese Fries', category: 'side', calories: 430, protein: 8, carbs: 46, fats: 23, price_sar: 14, estimated: true },
-  { id: 'sectionb-fries', chain: 'Section-B', name: 'French Fries', category: 'side', calories: 330, protein: 4, carbs: 43, fats: 15, price_sar: 10, estimated: true },
+  { id: 'sectionb-fries', chain: 'Section-B', name: 'French Fries', category: 'side', calories: 500, protein: 6, carbs: 62, fats: 24, price_sar: 13, estimated: true },
   { id: 'sectionb-cookie', chain: 'Section-B', name: 'Chocolate Chip Cookie', category: 'dessert', calories: 280, protein: 4, carbs: 36, fats: 13, price_sar: 9, estimated: true },
 
   // ── Grill It ───────────────────────────────────────────────────
   { id: 'grillit-beef', chain: 'Grill It', name: 'Beef Burger', category: 'main', calories: 500, protein: 25, carbs: 41, fats: 26, price_sar: 20, estimated: true },
   { id: 'grillit-double-beef', chain: 'Grill It', name: 'Double Beef Burger', category: 'main', calories: 720, protein: 42, carbs: 42, fats: 41, price_sar: 28, estimated: true },
   { id: 'grillit-chicken', chain: 'Grill It', name: 'Chicken Burger', category: 'main', calories: 480, protein: 26, carbs: 44, fats: 21, price_sar: 19, estimated: true },
-  { id: 'grillit-grilled-chicken', chain: 'Grill It', name: 'Grilled Chicken Sandwich', category: 'main', calories: 400, protein: 28, carbs: 38, fats: 14, price_sar: 19, estimated: true },
+  { id: 'grillit-grilled-chicken', chain: 'Grill It', name: 'Grilled Chicken Breast Sandwich', category: 'main', calories: 420, protein: 28, carbs: 44, fats: 14, price_sar: 22, estimated: true },
   { id: 'grillit-fries', chain: 'Grill It', name: 'French Fries', category: 'side', calories: 320, protein: 4, carbs: 42, fats: 15, price_sar: 9, estimated: true },
 
   // ── Burger Boutique ────────────────────────────────────────────
@@ -69,7 +70,7 @@ export default [
   { id: 'burgerboutique-sweet-potato-fries', chain: 'Burger Boutique', name: 'Sweet Potato Fries', category: 'side', calories: 380, protein: 4, carbs: 50, fats: 18, price_sar: 18, estimated: true },
 
   // ── GUNBUN ─────────────────────────────────────────────────────
-  { id: 'gunbun-classic', chain: 'GUNBUN', name: 'GUNBUN Classic', category: 'main', calories: 530, protein: 26, carbs: 44, fats: 27, price_sar: 28, estimated: true },
+  { id: 'gunbun-classic', chain: 'GUNBUN', name: 'GUNBUN Classic Beef', category: 'main', calories: 620, protein: 30, carbs: 52, fats: 32, price_sar: 42, estimated: true },
   { id: 'gunbun-double', chain: 'GUNBUN', name: 'Double GUNBUN', category: 'main', calories: 750, protein: 43, carbs: 45, fats: 42, price_sar: 37, estimated: true },
   { id: 'gunbun-chicken', chain: 'GUNBUN', name: 'Chicken GUNBUN', category: 'main', calories: 550, protein: 27, carbs: 50, fats: 26, price_sar: 28, estimated: true },
   { id: 'gunbun-truffle', chain: 'GUNBUN', name: 'Truffle GUNBUN', category: 'main', calories: 610, protein: 28, carbs: 46, fats: 34, price_sar: 34, estimated: true },

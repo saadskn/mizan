@@ -18,7 +18,7 @@ export default [
   { id: 'saldwich-caesar-salad', chain: 'Saldwich', name: 'Chicken Caesar Salad', category: 'main', calories: 340, protein: 28, carbs: 14, fats: 19, price_sar: 24, estimated: true },
   { id: 'saldwich-beetroot-salad', chain: 'Saldwich', name: 'Beetroot Salad', category: 'main', calories: 240, protein: 6, carbs: 28, fats: 11, price_sar: 21, estimated: true },
   { id: 'saldwich-gym-meal', chain: 'Saldwich', name: 'Gym Meal (Rice & Beef)', category: 'main', calories: 520, protein: 38, carbs: 54, fats: 14, price_sar: 29, estimated: true },
-  { id: 'saldwich-grilled-chicken', chain: 'Saldwich', name: 'Grilled Chicken Sandwich', category: 'main', calories: 450, protein: 30, carbs: 44, fats: 15, price_sar: 21, estimated: true },
-  { id: 'saldwich-chicken-mozzarella', chain: 'Saldwich', name: 'Marinated Chicken & Mozzarella Sandwich', category: 'main', calories: 490, protein: 31, carbs: 46, fats: 18, price_sar: 23, estimated: true },
+  { id: 'saldwich-grilled-chicken', chain: 'Saldwich', name: 'Grilled Chicken Sandwich', category: 'main', calories: 580, protein: 32, carbs: 54, fats: 26, price_sar: 24, estimated: true },
+  { id: 'saldwich-chicken-mozzarella', chain: 'Saldwich', name: 'Marinated Chicken & Mozzarella Sandwich', category: 'main', calories: 590, protein: 32, carbs: 56, fats: 26, price_sar: 26, estimated: true },
   { id: 'saldwich-daily-chips', chain: 'Saldwich', name: 'Daily Potato Chips', category: 'side', calories: 220, protein: 3, carbs: 28, fats: 11, price_sar: 8, estimated: true },
 ];

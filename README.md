@@ -6,7 +6,7 @@ Riyadh chains that match them as closely as mathematically possible.
 
 - 100% client-side. No server, no database, no accounts.
 - English / العربية with full RTL. Light & dark themes.
-- Nearly 600 menu items across 91 chains; macros from official nutrition data
+- 600+ menu items across 91 chains; macros from official nutrition data
   where published, careful estimates elsewhere (flagged `estimated` in the data).
 
 ## Run locally

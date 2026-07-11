@@ -17,7 +17,8 @@ export default [
   { id: 'paul-chicken-club', chain: 'PAUL', name: 'Chicken Club Sandwich', category: 'main', calories: 520, protein: 28, carbs: 46, fats: 24, price_sar: 39, estimated: true },
   { id: 'paul-croque-monsieur', chain: 'PAUL', name: 'Croque Monsieur', category: 'main', calories: 560, protein: 28, carbs: 40, fats: 32, price_sar: 42, estimated: true },
   { id: 'paul-caesar-salad', chain: 'PAUL', name: 'Chicken Caesar Salad', category: 'main', calories: 380, protein: 30, carbs: 14, fats: 23, price_sar: 44, estimated: true },
-  { id: 'paul-butter-croissant', chain: 'PAUL', name: 'Butter Croissant', category: 'main', calories: 280, protein: 5, carbs: 30, fats: 16, price_sar: 12, estimated: true },
+  { id: 'paul-butter-croissant', chain: 'PAUL', name: 'Butter Croissant', category: 'main', calories: 280, protein: 5, carbs: 30, fats: 16, price_sar: 14, estimated: true },
+  { id: 'paul-halloumi-baguette', chain: 'PAUL', name: 'Halloumi Tomato Baguette', category: 'main', calories: 610, protein: 26, carbs: 64, fats: 28, price_sar: 38, estimated: true },
   { id: 'paul-omelette-cheese', chain: 'PAUL', name: 'Cheese Omelette', category: 'main', calories: 350, protein: 21, carbs: 4, fats: 28, price_sar: 32, estimated: true },
   { id: 'paul-pain-au-chocolat', chain: 'PAUL', name: 'Pain au Chocolat', category: 'dessert', calories: 330, protein: 6, carbs: 36, fats: 18, price_sar: 14, estimated: true },
 
@@ -37,7 +38,7 @@ export default [
   { id: 'auntieannes-cinnamon-sugar', chain: "Auntie Anne's", name: 'Cinnamon Sugar Pretzel', category: 'dessert', calories: 470, protein: 8, carbs: 84, fats: 12, price_sar: 16, estimated: false },
 
   // ── EGGSACTLY ──────────────────────────────────────────────────
-  { id: 'eggsactly-classic-egg', chain: 'EGGSACTLY', name: 'Classic Egg Sandwich', category: 'main', calories: 400, protein: 18, carbs: 38, fats: 19, price_sar: 19, estimated: true },
+  { id: 'eggsactly-classic-egg', chain: 'EGGSACTLY', name: 'Egg & Cheese Brioche Sandwich', category: 'main', calories: 480, protein: 20, carbs: 42, fats: 26, price_sar: 24, estimated: true },
   { id: 'eggsactly-truffle-egg', chain: 'EGGSACTLY', name: 'Truffle Egg Sandwich', category: 'main', calories: 450, protein: 19, carbs: 40, fats: 24, price_sar: 24, estimated: true },
   { id: 'eggsactly-shakshuka', chain: 'EGGSACTLY', name: 'Shakshuka Plate', category: 'main', calories: 380, protein: 19, carbs: 22, fats: 24, price_sar: 26, estimated: true },
   { id: 'eggsactly-egg-cheese-croissant', chain: 'EGGSACTLY', name: 'Egg & Cheese Croissant', category: 'main', calories: 430, protein: 17, carbs: 34, fats: 25, price_sar: 22, estimated: true },

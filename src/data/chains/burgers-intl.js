@@ -64,7 +64,7 @@ export default [
   { id: 'johnnyrockets-apple-pie', chain: 'Johnny Rockets', name: 'Apple Pie', category: 'dessert', calories: 350, protein: 3, carbs: 48, fats: 17, price_sar: 14, estimated: true },
 
   // ── Black Tap ──────────────────────────────────────────────────
-  { id: 'blacktap-all-american', chain: 'Black Tap', name: 'All-American Burger', category: 'main', calories: 780, protein: 38, carbs: 46, fats: 47, price_sar: 52, estimated: true },
+  { id: 'blacktap-all-american', chain: 'Black Tap', name: 'All-American Burger', category: 'main', calories: 820, protein: 40, carbs: 52, fats: 50, price_sar: 70, estimated: true },
   { id: 'blacktap-greg-norman', chain: 'Black Tap', name: 'The Greg Norman (Wagyu)', category: 'main', calories: 850, protein: 40, carbs: 44, fats: 55, price_sar: 65, estimated: true },
   { id: 'blacktap-crispy-chicken', chain: 'Black Tap', name: 'Crispy Chicken Sandwich', category: 'main', calories: 720, protein: 34, carbs: 58, fats: 38, price_sar: 49, estimated: true },
   { id: 'blacktap-falafel-burger', chain: 'Black Tap', name: 'Falafel Burger', category: 'main', calories: 570, protein: 16, carbs: 62, fats: 27, price_sar: 39, estimated: true },

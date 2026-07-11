@@ -43,16 +43,16 @@ export default [
   { id: 'shwkat-fries', chain: 'Shwkat', name: 'French Fries', category: 'side', calories: 330, protein: 4, carbs: 43, fats: 15, price_sar: 10, estimated: true },
 
   // ── The Sandwich Company ───────────────────────────────────────
-  { id: 'sandwichco-grilled-chicken', chain: 'The Sandwich Company', name: 'Grilled Chicken Sandwich', category: 'main', calories: 480, protein: 28, carbs: 46, fats: 19, price_sar: 26, estimated: true },
-  { id: 'sandwichco-roast-beef', chain: 'The Sandwich Company', name: 'Roast Beef Sandwich', category: 'main', calories: 520, protein: 30, carbs: 46, fats: 23, price_sar: 29, estimated: true },
+  { id: 'sandwichco-grilled-chicken', chain: 'The Sandwich Company', name: 'Crispy Chicken Sandwich', category: 'main', calories: 520, protein: 30, carbs: 50, fats: 22, price_sar: 24, estimated: true },
+  { id: 'sandwichco-roast-beef', chain: 'The Sandwich Company', name: 'Philly Steak Sandwich', category: 'main', calories: 600, protein: 32, carbs: 54, fats: 28, price_sar: 29, estimated: true },
   { id: 'sandwichco-halloumi-avocado', chain: 'The Sandwich Company', name: 'Halloumi Avocado Sandwich', category: 'main', calories: 510, protein: 18, carbs: 50, fats: 26, price_sar: 25, estimated: true },
-  { id: 'sandwichco-turkey-melt', chain: 'The Sandwich Company', name: 'Turkey Melt', category: 'main', calories: 470, protein: 26, carbs: 44, fats: 20, price_sar: 27, estimated: true },
+  { id: 'sandwichco-turkey-melt', chain: 'The Sandwich Company', name: 'Smoked Turkey Sandwich', category: 'main', calories: 480, protein: 26, carbs: 48, fats: 20, price_sar: 22, estimated: true },
   { id: 'sandwichco-house-fries', chain: 'The Sandwich Company', name: 'House Fries', category: 'side', calories: 340, protein: 4, carbs: 44, fats: 16, price_sar: 12, estimated: true },
 
   // ── MAQSAF ─────────────────────────────────────────────────────
-  { id: 'maqsaf-chicken', chain: 'MAQSAF', name: 'Maqsaf Chicken Sandwich', category: 'main', calories: 470, protein: 26, carbs: 46, fats: 19, price_sar: 22, estimated: true },
-  { id: 'maqsaf-beef', chain: 'MAQSAF', name: 'Maqsaf Beef Sandwich', category: 'main', calories: 510, protein: 28, carbs: 46, fats: 23, price_sar: 25, estimated: true },
-  { id: 'maqsaf-egg', chain: 'MAQSAF', name: 'Egg Sandwich', category: 'main', calories: 380, protein: 17, carbs: 40, fats: 17, price_sar: 16, estimated: true },
+  { id: 'maqsaf-chicken', chain: 'MAQSAF', name: 'Chicken Sandwich (School-style)', category: 'main', calories: 380, protein: 18, carbs: 44, fats: 14, price_sar: 8, estimated: true },
+  { id: 'maqsaf-beef', chain: 'MAQSAF', name: 'Beef Sandwich (School-style)', category: 'main', calories: 410, protein: 19, carbs: 46, fats: 16, price_sar: 9, estimated: true },
+  { id: 'maqsaf-egg', chain: 'MAQSAF', name: 'Egg Sandwich (School-style)', category: 'main', calories: 340, protein: 14, carbs: 40, fats: 13, price_sar: 6, estimated: true },
   { id: 'maqsaf-fries', chain: 'MAQSAF', name: 'French Fries', category: 'side', calories: 320, protein: 4, carbs: 42, fats: 15, price_sar: 10, estimated: true },
   { id: 'maqsaf-cookie', chain: 'MAQSAF', name: 'Butter Cookie', category: 'dessert', calories: 260, protein: 4, carbs: 34, fats: 12, price_sar: 9, estimated: true },
 

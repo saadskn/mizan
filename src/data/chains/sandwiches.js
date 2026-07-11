@@ -12,6 +12,12 @@ export default [
   { id: 'subway-meatball-6', chain: 'Subway', name: 'Meatball Marinara (6-inch)', category: 'main', calories: 460, protein: 20, carbs: 56, fats: 16, price_sar: 14, estimated: false },
   { id: 'subway-veggie-delite-6', chain: 'Subway', name: 'Veggie Delite (6-inch)', category: 'main', calories: 200, protein: 8, carbs: 40, fats: 2, price_sar: 11, estimated: false },
   { id: 'subway-chicken-teriyaki-footlong', chain: 'Subway', name: 'Chicken Teriyaki (Footlong)', category: 'main', calories: 740, protein: 52, carbs: 92, fats: 18, price_sar: 30, estimated: false },
+  { id: 'subway-roasted-chicken-footlong', chain: 'Subway', name: 'Roasted Chicken Breast (Footlong)', category: 'main', calories: 640, protein: 48, carbs: 88, fats: 12, price_sar: 29, estimated: false },
+  { id: 'subway-turkey-footlong', chain: 'Subway', name: 'Turkey Breast (Footlong)', category: 'main', calories: 560, protein: 36, carbs: 88, fats: 8, price_sar: 27, estimated: false },
+  { id: 'subway-tuna-footlong', chain: 'Subway', name: 'Tuna (Footlong)', category: 'main', calories: 960, protein: 40, carbs: 84, fats: 50, price_sar: 29, estimated: false },
+  { id: 'subway-steak-cheese-footlong', chain: 'Subway', name: 'Steak & Cheese (Footlong)', category: 'main', calories: 760, protein: 52, carbs: 88, fats: 20, price_sar: 34, estimated: false },
+  { id: 'subway-meatball-footlong', chain: 'Subway', name: 'Meatball Marinara (Footlong)', category: 'main', calories: 920, protein: 40, carbs: 112, fats: 32, price_sar: 25, estimated: false },
+  { id: 'subway-veggie-delite-footlong', chain: 'Subway', name: 'Veggie Delite (Footlong)', category: 'main', calories: 400, protein: 16, carbs: 80, fats: 4, price_sar: 20, estimated: false },
   { id: 'subway-chicken-salad', chain: 'Subway', name: 'Rotisserie Chicken Salad', category: 'main', calories: 180, protein: 24, carbs: 10, fats: 5, price_sar: 20, estimated: false },
   { id: 'subway-cookie', chain: 'Subway', name: 'Chocolate Chip Cookie', category: 'dessert', calories: 220, protein: 2, carbs: 30, fats: 10, price_sar: 4, estimated: false },
 

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  FLOORS, comboTotals, scoreCombo, generateCombos, overlapRatio, findMatches,
+  FLOORS, comboTotals, scoreCombo, generateCombos, overlapRatio, totalsSimilar, findMatches,
 } from './matching.js';
 
 const item = (over = {}) => ({
@@ -163,6 +163,35 @@ describe('findMatches', () => {
         }
       }
     }
+  });
+
+  it('collapses same-chain size-variant duplicates with identical totals (Jollibee bug)', () => {
+    // Real-world case: "Chickenjoy (2 pc)" vs 2x "Chickenjoy (1 pc)" share no
+    // item IDs but are the same order. Dedup must also compare totals.
+    const menu = [
+      mk('Jollibee', '1pc', { protein: 17, carbs: 11, fats: 17, calories: 260 }, 12),
+      mk('Jollibee', '2pc', { protein: 34, carbs: 22, fats: 34, calories: 520 }, 20),
+    ];
+    const res = findMatches(menu, { protein: 40, carbs: 22, fats: 40 });
+    for (let i = 0; i < res.length; i++) {
+      for (let j = i + 1; j < res.length; j++) {
+        expect(
+          totalsSimilar(res[i].totals, res[j].totals),
+          `results ${i} and ${j} are effectively identical orders`
+        ).toBe(false);
+      }
+    }
+    // The cheaper representation of the 520-kcal order survives.
+    const winner = res.find((r) => r.totals.calories === 520);
+    expect(winner.totals.price_sar).toBe(20);
+  });
+
+  it('totalsSimilar tolerates rounding-level differences only', () => {
+    const a = { protein: 34, carbs: 22, fats: 34, calories: 520, price_sar: 20 };
+    expect(totalsSimilar(a, { ...a, price_sar: 24 })).toBe(true); // price ignored
+    expect(totalsSimilar(a, { protein: 34, carbs: 24, fats: 36, calories: 540, price_sar: 24 })).toBe(true);
+    expect(totalsSimilar(a, { protein: 40, carbs: 22, fats: 34, calories: 550, price_sar: 20 })).toBe(false);
+    expect(totalsSimilar(a, { protein: 34, carbs: 30, fats: 34, calories: 520, price_sar: 20 })).toBe(false);
   });
 
   it('tie-breaks equal scores by lower price', () => {

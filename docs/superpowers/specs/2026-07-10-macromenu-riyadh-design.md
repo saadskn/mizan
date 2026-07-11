@@ -148,8 +148,10 @@ Match %    = round(100 × (1 − mean(error_t over filled targets)))
 
 1. Score all combos; sort by Match % descending.
 2. **Near-duplicate collapse (per chain):** two combos from the same chain are near-duplicates when
-   `|multiset intersection| / max(|A|, |B|) ≥ 2/3`; keep only the higher-scoring one.
-   (So {A,B,C} vs {A,B,D} collapse; {A,B} vs {A,C} both survive — "significantly diverse" orders from one chain may both appear.)
+   `|multiset intersection| / max(|A|, |B|) ≥ 2/3`, **or** when all four macro totals are within
+   rounding-level tolerance (2 g / 20 kcal absolute, or 4% relative — price ignored); keep only the better-ranked one.
+   (So {A,B,C} vs {A,B,D} collapse; {A,B} vs {A,C} both survive — "significantly diverse" orders from one chain may both appear.
+   The totals rule catches size-variant duplicates that share no item ids, e.g. "Chickenjoy (2 pc)" vs 2× "Chickenjoy (1 pc)".)
 3. **Chain cap:** at most **10** combos from any single chain.
 4. Return the **top 25**.
 

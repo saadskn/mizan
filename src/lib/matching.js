@@ -66,6 +66,19 @@ export function overlapRatio(a, b) {
   return inter / Math.max(a.length, b.length);
 }
 
+// Two combos from the same chain can be the "same order" without sharing any
+// item ids (e.g. one "2 pc" item vs. the "1 pc" item twice). Such duplicates
+// are only visible in the totals: all four macro totals within rounding-level
+// tolerance (2 g / 20 kcal absolute, or 4% relative). Price is ignored.
+const SIMILARITY = { protein: 2, carbs: 2, fats: 2, calories: 20 };
+
+export function totalsSimilar(a, b) {
+  return Object.keys(SIMILARITY).every((k) => {
+    const tol = Math.max(SIMILARITY[k], 0.04 * Math.max(a[k], b[k]));
+    return Math.abs(a[k] - b[k]) <= tol;
+  });
+}
+
 export function findMatches(menu, goals, opts = {}) {
   const { limit = 25, perChainCap = 10, dupThreshold = 2 / 3 } = opts;
   if (filledGoalKeys(goals).length === 0) return [];
@@ -97,7 +110,11 @@ export function findMatches(menu, goals, opts = {}) {
     if ((perChain.get(cand.chain) || 0) >= perChainCap) continue;
     let dup = false;
     for (const r of results) {
-      if (r.chain === cand.chain && overlapRatio(r.items, cand.items) >= dupThreshold) {
+      if (
+        r.chain === cand.chain &&
+        (overlapRatio(r.items, cand.items) >= dupThreshold ||
+          totalsSimilar(r.totals, cand.totals))
+      ) {
         dup = true;
         break;
       }

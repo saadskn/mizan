@@ -38,8 +38,15 @@ export default function App() {
     if (results) resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [results, searchId]);
 
+  // The first chip click while everything is still on (the default) means
+  // "I want THIS" — isolate it instead of removing one of twelve. Only the
+  // first time: afterwards chips toggle normally so categories can be combined.
+  const catsTouched = useRef(false);
   function toggleCat(c) {
+    const firstTouch = !catsTouched.current;
+    catsTouched.current = true;
     setCats((prev) => {
+      if (firstTouch && prev.size === CUISINES.length) return new Set([c]);
       const next = new Set(prev);
       if (next.has(c)) next.delete(c);
       else next.add(c);

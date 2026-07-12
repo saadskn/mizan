@@ -21,8 +21,6 @@ export default function Hero({ t }) {
         ))}
       </h1>
       <p className="anim-rise mt-4 text-base sm:text-lg text-mut dark:text-cream-mut" style={{ animationDelay: '1.15s' }}>
-        <span className="font-semibold text-date dark:text-date-lt">{t.jingle}</span>
-        {' — '}
         {t.tagline}
       </p>
     </section>

@@ -2,8 +2,7 @@ export const STRINGS = {
   en: {
     heroPlain: "What's left today,",
     heroAccent: 'habibi?',
-    jingle: 'كل بميزان',
-    tagline: "Drop the numbers, get the meals. Straight from Riyadh's menus. That's ميزان",
+    tagline: "Drop the numbers, get the meals. Straight from Riyadh's menus. That's Mizan",
     protein: 'Protein (g)',
     carbs: 'Carbs (g)',
     fats: 'Fats (g)',
@@ -45,7 +44,6 @@ export const STRINGS = {
   ar: {
     heroPlain: 'وش باقي لك',
     heroAccent: 'اليوم؟',
-    jingle: 'كل بميزان',
     tagline: 'حط أرقامك وخذ وجباتك — مباشرة من قوائم الرياض. هذا هو ميزان',
     protein: 'بروتين (غ)',
     carbs: 'كربوهيدرات (غ)',

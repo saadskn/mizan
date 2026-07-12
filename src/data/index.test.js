@@ -41,8 +41,8 @@ describe('MENU', () => {
 });
 
 describe('final dataset', () => {
-  it('covers exactly 94 chains (see roster amendments in the spec)', () => {
-    expect(CHAINS).toHaveLength(94);
+  it('covers exactly 96 chains (see roster amendments in the spec)', () => {
+    expect(CHAINS).toHaveLength(96);
   });
 
   it('tags every item with a known cuisine', () => {
@@ -50,11 +50,11 @@ describe('final dataset', () => {
     for (const i of MENU) expect(known.has(i.cuisine), `${i.id}: ${i.cuisine}`).toBe(true);
   });
 
-  it('has at least 5 items per chain and 450-1000 items total', () => {
+  it('has at least 5 items per chain and 2500-3500 items total', () => {
     const counts = new Map();
     for (const i of MENU) counts.set(i.chain, (counts.get(i.chain) || 0) + 1);
     for (const [chain, n] of counts) expect(n, chain).toBeGreaterThanOrEqual(5);
-    expect(MENU.length).toBeGreaterThanOrEqual(450);
-    expect(MENU.length).toBeLessThanOrEqual(1000);
+    expect(MENU.length).toBeGreaterThanOrEqual(2500);
+    expect(MENU.length).toBeLessThanOrEqual(3500);
   });
 });

@@ -1,74 +1,311 @@
 // Bakery & breakfast chains operating in Riyadh (food items only — no drinks).
-// Tier 1: Tim Hortons. Tier 2: PAUL, Wooden Bakery, Auntie Anne's.
-// Tier 3 (estimates): EGGSACTLY, Toastable.
+// Tier 1: Tim Hortons. Tier 2: PAUL, Wooden Bakery.
+// Tier 3 (estimates): EGGSACTLY, TOASTIC.
 
 export default [
   // ── Tim Hortons ────────────────────────────────────────────────
-  { id: 'timhortons-grilled-chicken-wrap', chain: 'Tim Hortons', name: 'Grilled Chicken Wrap', category: 'main', calories: 380, protein: 22, carbs: 40, fats: 15, price_sar: 17, estimated: false },
-  { id: 'timhortons-turkey-cheese', chain: 'Tim Hortons', name: 'Turkey & Cheese Sandwich', category: 'main', calories: 420, protein: 24, carbs: 44, fats: 17, price_sar: 19, estimated: false },
-  { id: 'timhortons-plain-croissant', chain: 'Tim Hortons', name: 'Plain Croissant', category: 'main', calories: 270, protein: 5, carbs: 31, fats: 14, price_sar: 8, estimated: false },
-  { id: 'timhortons-cheese-croissant', chain: 'Tim Hortons', name: 'Cheese Croissant', category: 'main', calories: 340, protein: 10, carbs: 33, fats: 19, price_sar: 10, estimated: false },
-  { id: 'timhortons-bagel-cream-cheese', chain: 'Tim Hortons', name: 'Bagel with Cream Cheese', category: 'main', calories: 380, protein: 11, carbs: 56, fats: 12, price_sar: 12, estimated: false },
-  { id: 'timhortons-boston-cream', chain: 'Tim Hortons', name: 'Boston Cream Donut', category: 'dessert', calories: 250, protein: 4, carbs: 36, fats: 10, price_sar: 6, estimated: false },
-  { id: 'timhortons-chocolate-dip', chain: 'Tim Hortons', name: 'Chocolate Dip Donut', category: 'dessert', calories: 260, protein: 4, carbs: 37, fats: 11, price_sar: 6, estimated: false },
-  { id: 'timhortons-timbits-10', chain: 'Tim Hortons', name: 'Timbits (10 pc)', category: 'dessert', calories: 350, protein: 5, carbs: 50, fats: 15, price_sar: 12, estimated: false },
+  // Rebuilt 2026-07 from HS Malqa /54487 — old block had items not sold à la
+  // carte (grilled chicken wrap, cheese croissant, 10pc timbits at 12 SR) and
+  // wrong prices. Calories are HS labels; macros back-computed
+  // (estimated:true). All beverages (lattes, frappes, coolers, matcha, teas)
+  // excluded by the drink ban. Skipped: Take 5/Take 10 gathering boxes,
+  // 10/20/40 timbit packs (junk "1 cal" label / "share with loved ones"),
+  // Tims Dips Box (junk label), mini cookies/muffins gift tins (junk
+  // labels), coffee cans/bags, water/Red Bull.
+  { id: 'timhortons-falafel-wrap', chain: 'Tim Hortons', name: 'Falafel Wrap', category: 'main', calories: 340, protein: 10, carbs: 45, fats: 13, price_sar: 15, estimated: true },
+  { id: 'timhortons-caesar-wrap', chain: 'Tim Hortons', name: 'Chicken Caesar Wrap', category: 'main', calories: 270, protein: 16, carbs: 28, fats: 10, price_sar: 15, estimated: true },
+  { id: 'timhortons-halloumi-wrap', chain: 'Tim Hortons', name: 'Halloumi Wrap', category: 'main', calories: 220, protein: 10, carbs: 24, fats: 9, price_sar: 15, estimated: true },
+  { id: 'timhortons-halloumi-mint', chain: 'Tim Hortons', name: 'Halloumi Mint', category: 'main', calories: 260, protein: 12, carbs: 28, fats: 11, price_sar: 13, estimated: true },
+  { id: 'timhortons-turkey-croissant', chain: 'Tim Hortons', name: 'Turkey And Cheese Croissant', category: 'main', calories: 650, protein: 24, carbs: 55, fats: 37, price_sar: 19, estimated: true },
+  { id: 'timhortons-donut-wich', chain: 'Tim Hortons', name: 'Turkey Glaze Donut Wich', category: 'main', calories: 612, protein: 24, carbs: 60, fats: 30, price_sar: 19, estimated: true },
+  { id: 'timhortons-grilled-cheese', chain: 'Tim Hortons', name: 'Grilled Cheese', category: 'main', calories: 440, protein: 18, carbs: 40, fats: 23, price_sar: 20, estimated: true },
+  { id: 'timhortons-bagel-cream-cheese', chain: 'Tim Hortons', name: 'Bagel With Cream Cheese', category: 'side', calories: 430, protein: 12, carbs: 60, fats: 15, price_sar: 13, estimated: true },
+  { id: 'timhortons-12-grain-bagel', chain: 'Tim Hortons', name: '12 Grain Bagel', category: 'side', calories: 320, protein: 11, carbs: 58, fats: 5, price_sar: 11, estimated: true },
+  { id: 'timhortons-plain-bagel', chain: 'Tim Hortons', name: 'Plain Bagel', category: 'side', calories: 330, protein: 11, carbs: 64, fats: 3.5, price_sar: 11, estimated: true },
+  { id: 'timhortons-plain-croissant', chain: 'Tim Hortons', name: 'Plain Croissant', category: 'side', calories: 300, protein: 6, carbs: 32, fats: 16, price_sar: 10, estimated: true },
+  { id: 'timhortons-puff-feta-spinach', chain: 'Tim Hortons', name: 'Puff Feta & Spinach', category: 'side', calories: 337, protein: 10, carbs: 28, fats: 20, price_sar: 18, estimated: true },
+  { id: 'timhortons-honey-dip', chain: 'Tim Hortons', name: 'Honey Dip Donut', category: 'dessert', calories: 240, protein: 4, carbs: 37, fats: 8, price_sar: 6.5, estimated: true },
+  { id: 'timhortons-maple-dip', chain: 'Tim Hortons', name: 'Maple Dip Donut', category: 'dessert', calories: 210, protein: 4, carbs: 31, fats: 7, price_sar: 6.5, estimated: true },
+  { id: 'timhortons-chocolate-dip', chain: 'Tim Hortons', name: 'Chocolate Dip Donut', category: 'dessert', calories: 210, protein: 4, carbs: 30, fats: 8, price_sar: 6.5, estimated: true },
+  { id: 'timhortons-boston-cream', chain: 'Tim Hortons', name: 'Boston Cream Donut', category: 'dessert', calories: 290, protein: 4, carbs: 38, fats: 13, price_sar: 6.5, estimated: true },
+  { id: 'timhortons-choc-glazed-timbit', chain: 'Tim Hortons', name: 'Chocolate Glazed Timbit', category: 'dessert', calories: 80, protein: 1, carbs: 11, fats: 3.5, price_sar: 1.5, estimated: true },
+  { id: 'timhortons-honey-dip-timbit', chain: 'Tim Hortons', name: 'Honey Dip Timbit', category: 'dessert', calories: 45, protein: 0.5, carbs: 8, fats: 1, price_sar: 1.5, estimated: true },
+  { id: 'timhortons-old-fashion-timbit', chain: 'Tim Hortons', name: 'Old Fashion Glazed Timbit', category: 'dessert', calories: 70, protein: 1, carbs: 9, fats: 3.5, price_sar: 1.5, estimated: true },
+  { id: 'timhortons-apple-fritter', chain: 'Tim Hortons', name: 'Apple Fritter', category: 'dessert', calories: 330, protein: 5, carbs: 50, fats: 12, price_sar: 12, estimated: true },
+  { id: 'timhortons-chocolate-fudge', chain: 'Tim Hortons', name: 'Chocolate Fudge Cake', category: 'dessert', calories: 580, protein: 6, carbs: 70, fats: 30, price_sar: 27, estimated: true },
+  { id: 'timhortons-red-velvet-cake', chain: 'Tim Hortons', name: 'Red Velvet Cake', category: 'dessert', calories: 440, protein: 5, carbs: 55, fats: 22, price_sar: 27, estimated: true },
+  { id: 'timhortons-red-velvet-muffin', chain: 'Tim Hortons', name: 'Red Velvet Muffin', category: 'dessert', calories: 360, protein: 5, carbs: 50, fats: 15, price_sar: 12, estimated: true },
+  { id: 'timhortons-triple-choc-muffin', chain: 'Tim Hortons', name: 'Triple Chocolate Muffin', category: 'dessert', calories: 390, protein: 6, carbs: 52, fats: 17, price_sar: 12, estimated: true },
+  { id: 'timhortons-pistachio-kunafa-bar', chain: 'Tim Hortons', name: 'Pistachio Kunafa Milk Chocolate Bar', category: 'dessert', calories: 400, protein: 6, carbs: 40, fats: 24, price_sar: 32, estimated: true },
 
   // ── PAUL ───────────────────────────────────────────────────────
-  { id: 'paul-chicken-club', chain: 'PAUL', name: 'Chicken Club Sandwich', category: 'main', calories: 520, protein: 28, carbs: 46, fats: 24, price_sar: 39, estimated: true },
-  { id: 'paul-croque-monsieur', chain: 'PAUL', name: 'Croque Monsieur', category: 'main', calories: 560, protein: 28, carbs: 40, fats: 32, price_sar: 42, estimated: true },
-  { id: 'paul-caesar-salad', chain: 'PAUL', name: 'Chicken Caesar Salad', category: 'main', calories: 380, protein: 30, carbs: 14, fats: 23, price_sar: 44, estimated: true },
-  { id: 'paul-butter-croissant', chain: 'PAUL', name: 'Butter Croissant', category: 'main', calories: 280, protein: 5, carbs: 30, fats: 16, price_sar: 14, estimated: true },
-  { id: 'paul-halloumi-baguette', chain: 'PAUL', name: 'Halloumi Tomato Baguette', category: 'main', calories: 610, protein: 26, carbs: 64, fats: 28, price_sar: 38, estimated: true },
-  { id: 'paul-omelette-cheese', chain: 'PAUL', name: 'Cheese Omelette', category: 'main', calories: 350, protein: 21, carbs: 4, fats: 28, price_sar: 32, estimated: true },
-  { id: 'paul-pain-au-chocolat', chain: 'PAUL', name: 'Pain au Chocolat', category: 'dessert', calories: 330, protein: 6, carbs: 36, fats: 18, price_sar: 14, estimated: true },
+  // Rebuilt 2026-07 from HS Malqa /77326 ("Paul Restaurant") — old block was
+  // fabricated (no club sandwich/croissant à la carte; croissants not listed
+  // on this branch). Calories are HS labels; macros back-computed
+  // (estimated:true). Crusted Feta uses the 991 figure embedded in its own
+  // description (HS label is junk "1"). Skipped: World Cup trays + Buy-2-
+  // Get-1 (LTO/sharing), Summer Salads (seasonal), Spicy Tuna & Avocado
+  // (duplicate listing of Tuna Pesto Avo with a conflicting label), junk "1
+  // cal" mains (Poached Eggs Dauphinois, Croque Monsieur, Filet Mignon
+  // Omelette), Kids Menu (scrambled labels), Fleur De Lys whole cake
+  // (sharing), all beverages/coffee/frappes/signature drinks, retail jams.
+  { id: 'paul-smoked-salmon-sandwich', chain: 'PAUL', name: 'Smoked Salmon Sandwich', category: 'main', calories: 658, protein: 30, carbs: 55, fats: 35, price_sar: 79, estimated: true },
+  { id: 'paul-chicken-avocado-sandwich', chain: 'PAUL', name: 'Chicken Avocado Sandwich', category: 'main', calories: 450, protein: 28, carbs: 35, fats: 22, price_sar: 74, estimated: true },
+  { id: 'paul-halloumi-pesto-sandwich', chain: 'PAUL', name: 'Halloumi Pesto Sandwich', category: 'main', calories: 565, protein: 22, carbs: 50, fats: 30, price_sar: 62, estimated: true },
+  { id: 'paul-smoked-turkey-sandwich', chain: 'PAUL', name: 'Smoked Turkey Sandwich', category: 'main', calories: 381, protein: 22, carbs: 45, fats: 12, price_sar: 62, estimated: true },
+  { id: 'paul-tuna-pesto-avo', chain: 'PAUL', name: 'Tuna Pesto Avo Sandwich', category: 'main', calories: 792, protein: 30, carbs: 65, fats: 45, price_sar: 72, estimated: true },
+  { id: 'paul-triple-avocado-smash', chain: 'PAUL', name: 'Triple Avocado Smash', category: 'main', calories: 513, protein: 10, carbs: 45, fats: 32, price_sar: 59, estimated: true },
+  { id: 'paul-beef-katsu-sando', chain: 'PAUL', name: 'Beef Katsu Sando', category: 'main', calories: 1154, protein: 45, carbs: 110, fats: 58, price_sar: 84, estimated: true },
+  { id: 'paul-steak-frites-sandwich', chain: 'PAUL', name: 'Steak Frites Sandwich', category: 'main', calories: 1454, protein: 60, carbs: 120, fats: 80, price_sar: 89, estimated: true },
+  { id: 'paul-crunchy-slaw-burger', cuisine: 'burgers', chain: 'PAUL', name: 'Crunchy Slaw Burger', category: 'main', calories: 1050, protein: 40, carbs: 100, fats: 52, price_sar: 69, estimated: true },
+  { id: 'paul-bistro-burger', cuisine: 'burgers', chain: 'PAUL', name: 'Bistro Burger', category: 'main', calories: 980, protein: 42, carbs: 85, fats: 50, price_sar: 74, estimated: true },
+  { id: 'paul-steak-frites-french-dip', chain: 'PAUL', name: 'Steak Frites French Dip', category: 'main', calories: 680, protein: 40, carbs: 55, fats: 32, price_sar: 89, estimated: true },
+  { id: 'paul-halloumi-pesto-quinoa', chain: 'PAUL', name: 'Halloumi Pesto Quinoa', category: 'main', calories: 1195, protein: 40, carbs: 110, fats: 65, price_sar: 75, estimated: true },
+  { id: 'paul-french-fries', chain: 'PAUL', name: 'French Fries', category: 'side', calories: 500, protein: 6, carbs: 60, fats: 25, price_sar: 20, estimated: true },
+  { id: 'paul-truffle-parmesan-fries', chain: 'PAUL', name: 'Truffle Parmesan Fries', category: 'side', calories: 700, protein: 12, carbs: 75, fats: 37, price_sar: 46, estimated: true },
+  { id: 'paul-onion-soup', chain: 'PAUL', name: 'Traditional Onion Soup', category: 'side', calories: 745, protein: 28, carbs: 70, fats: 38, price_sar: 42, estimated: true },
+  { id: 'paul-mushroom-soup', chain: 'PAUL', name: 'Mushroom Soup', category: 'side', calories: 210, protein: 6, carbs: 15, fats: 14, price_sar: 42, estimated: true },
+  { id: 'paul-red-lentil-soup', chain: 'PAUL', name: 'Red Lentil Soup', category: 'side', calories: 310, protein: 14, carbs: 45, fats: 8, price_sar: 42, estimated: true },
+  { id: 'paul-crusted-feta', chain: 'PAUL', name: 'Crusted Feta Chili Honey', category: 'side', calories: 991, protein: 30, carbs: 80, fats: 60, price_sar: 64, estimated: true },
+  { id: 'paul-salmon-pizzetta', cuisine: 'pizza', chain: 'PAUL', name: 'Horseradish Salmon Pizzetta', category: 'main', calories: 571, protein: 30, carbs: 50, fats: 27, price_sar: 79, estimated: true },
+  { id: 'paul-bbq-steak-avocado', chain: 'PAUL', name: 'Bbq Steak And Avocado Salad', category: 'main', calories: 565, protein: 35, carbs: 30, fats: 32, price_sar: 89, estimated: true },
+  { id: 'paul-fermiere-salad', chain: 'PAUL', name: 'Fermiere Salad', category: 'main', calories: 522, protein: 30, carbs: 30, fats: 30, price_sar: 72, estimated: true },
+  { id: 'paul-avocado-fraicheur', chain: 'PAUL', name: 'Avocado Fraîcheur Salad', category: 'main', calories: 450, protein: 10, carbs: 30, fats: 32, price_sar: 82, estimated: true },
+  { id: 'paul-salmon-kale-quinoa', chain: 'PAUL', name: 'Salmon Kale Quinoa Salad', category: 'main', calories: 750, protein: 35, carbs: 50, fats: 45, price_sar: 89, estimated: true },
+  { id: 'paul-baby-gem-caesar', chain: 'PAUL', name: 'Baby Gem Chicken Caesar', category: 'main', calories: 790, protein: 40, carbs: 35, fats: 52, price_sar: 74, estimated: true },
+  { id: 'paul-goat-cheese-brulee', chain: 'PAUL', name: 'Goat Cheese Brûlée & Strawberries', category: 'main', calories: 1000, protein: 25, carbs: 70, fats: 68, price_sar: 78, estimated: true },
+  { id: 'paul-sesame-chicken', chain: 'PAUL', name: 'Sesame Chicken Salad', category: 'main', calories: 482, protein: 35, carbs: 35, fats: 22, price_sar: 74, estimated: true },
+  { id: 'paul-chicken-corn-bowl', chain: 'PAUL', name: 'Chicken & Corn Bowl', category: 'main', calories: 941, protein: 45, carbs: 90, fats: 42, price_sar: 89, estimated: true },
+  { id: 'paul-salmon-poke-bowl', chain: 'PAUL', name: 'Salmon Poke Bowl', category: 'main', calories: 993, protein: 45, carbs: 90, fats: 47, price_sar: 125, estimated: true },
+  { id: 'paul-shrimp-burrata-rose', chain: 'PAUL', name: 'Shrimp Burrata Rose', category: 'main', calories: 1053, protein: 40, carbs: 110, fats: 48, price_sar: 82, estimated: true },
+  { id: 'paul-chicken-tagliatelle', chain: 'PAUL', name: 'Chicken Tagliatelle', category: 'main', calories: 1091, protein: 50, carbs: 100, fats: 52, price_sar: 84, estimated: true },
+  { id: 'paul-house-lasagna', chain: 'PAUL', name: 'House Lasagna', category: 'main', calories: 1150, protein: 50, carbs: 95, fats: 62, price_sar: 78, estimated: true },
+  { id: 'paul-chicken-pesto-fusilli', chain: 'PAUL', name: 'Chicken Pesto Fusilli', category: 'main', calories: 988, protein: 48, carbs: 90, fats: 48, price_sar: 84, estimated: true },
+  { id: 'paul-pappardelle-bolognese', chain: 'PAUL', name: 'Pappardelle Bolognese', category: 'main', calories: 569, protein: 28, carbs: 70, fats: 18, price_sar: 72, estimated: true },
+  { id: 'paul-chicken-cordon-bleu', chain: 'PAUL', name: 'Chicken Cordon Bleu', category: 'main', calories: 702, protein: 50, carbs: 40, fats: 38, price_sar: 90, estimated: true },
+  { id: 'paul-healthy-grilled-chicken', chain: 'PAUL', name: 'Healthy Grilled Chicken', category: 'main', calories: 583, protein: 50, carbs: 25, fats: 30, price_sar: 84, estimated: true },
+  { id: 'paul-beef-tenderloin', chain: 'PAUL', name: 'Grilled Beef Tenderloin', category: 'main', calories: 811, protein: 55, carbs: 45, fats: 45, price_sar: 125, estimated: true },
+  { id: 'paul-labneh-harissa', chain: 'PAUL', name: 'Labneh Harissa & Fermented Olives', category: 'main', calories: 650, protein: 22, carbs: 50, fats: 40, price_sar: 57, estimated: true },
+  { id: 'paul-garlic-baguette', chain: 'PAUL', name: 'Garlic Baguette', category: 'side', calories: 700, protein: 18, carbs: 75, fats: 35, price_sar: 46, estimated: true },
+  { id: 'paul-entrecote-steak-frites', chain: 'PAUL', name: 'Entrecôte Steak And Frites', category: 'main', calories: 1150, protein: 65, carbs: 80, fats: 62, price_sar: 129, estimated: true },
+  { id: 'paul-seabass', chain: 'PAUL', name: 'Amandine Meunière Seabass', category: 'main', calories: 1100, protein: 55, carbs: 70, fats: 66, price_sar: 125, estimated: true },
+  { id: 'paul-chicken-al-limone', chain: 'PAUL', name: 'Chicken Al Limone', category: 'main', calories: 1250, protein: 55, carbs: 120, fats: 60, price_sar: 88, estimated: true },
+  { id: 'paul-chicken-supreme', chain: 'PAUL', name: 'Chicken Suprême', category: 'main', calories: 1432, protein: 60, carbs: 110, fats: 82, price_sar: 99, estimated: true },
+  { id: 'paul-macaron-chocolate', chain: 'PAUL', name: 'Macaron Chocolate', category: 'dessert', calories: 320, protein: 5, carbs: 40, fats: 15, price_sar: 29, estimated: true },
+  { id: 'paul-macaron-raspberry', chain: 'PAUL', name: 'Macaron Raspberry', category: 'dessert', calories: 430, protein: 6, carbs: 55, fats: 19, price_sar: 29, estimated: true },
+  { id: 'paul-macaron-vanilla', chain: 'PAUL', name: 'Macaron Vanilla', category: 'dessert', calories: 440, protein: 6, carbs: 55, fats: 20, price_sar: 29, estimated: true },
+  { id: 'paul-mini-macaron-12', chain: 'PAUL', name: '12pcs Mini Macaron', category: 'dessert', calories: 380, protein: 6, carbs: 48, fats: 17, price_sar: 79, estimated: true },
+  { id: 'paul-red-fruits-salad', chain: 'PAUL', name: 'Red Fruits And Berries Salad', category: 'dessert', calories: 369, protein: 4, carbs: 85, fats: 2, price_sar: 41, estimated: true },
+  { id: 'paul-apple-pie-slice', chain: 'PAUL', name: 'Apple Pie Slice', category: 'dessert', calories: 419, protein: 6, carbs: 50, fats: 21, price_sar: 27, estimated: true },
+  { id: 'paul-mono-marshmallow', chain: 'PAUL', name: 'Mono Marshmallow Chocolate', category: 'dessert', calories: 400, protein: 5, carbs: 55, fats: 17, price_sar: 29, estimated: true },
+  { id: 'paul-matcha-affogato', chain: 'PAUL', name: 'Matcha Affogato', category: 'dessert', calories: 80, protein: 2, carbs: 10, fats: 3.5, price_sar: 24, estimated: true },
 
   // ── Wooden Bakery ──────────────────────────────────────────────
-  { id: 'woodenbakery-zaatar-manoushe', chain: 'Wooden Bakery', name: 'Zaatar Manoushe', category: 'main', calories: 340, protein: 9, carbs: 48, fats: 12, price_sar: 7, estimated: true },
-  { id: 'woodenbakery-cheese-manoushe', chain: 'Wooden Bakery', name: 'Cheese Manoushe', category: 'main', calories: 440, protein: 17, carbs: 46, fats: 21, price_sar: 11, estimated: true },
-  { id: 'woodenbakery-chicken-sub', chain: 'Wooden Bakery', name: 'Chicken Sub Sandwich', category: 'main', calories: 470, protein: 26, carbs: 48, fats: 19, price_sar: 18, estimated: true },
-  { id: 'woodenbakery-halloumi', chain: 'Wooden Bakery', name: 'Halloumi Sandwich', category: 'main', calories: 420, protein: 18, carbs: 44, fats: 19, price_sar: 14, estimated: true },
-  { id: 'woodenbakery-spinach-fatayer', chain: 'Wooden Bakery', name: 'Spinach Fatayer (2 pc)', category: 'side', calories: 280, protein: 7, carbs: 40, fats: 10, price_sar: 8, estimated: true },
-  { id: 'woodenbakery-maamoul', chain: 'Wooden Bakery', name: 'Maamoul (2 pc)', category: 'dessert', calories: 300, protein: 4, carbs: 40, fats: 14, price_sar: 9, estimated: true },
+  // Rebuilt from HungerStation Malqa labels (2026-07); menu is broadly
+  // SFDA-labeled and internally consistent. Skipped: offers/family
+  // bundles/combos, grocery deli (Siniora by weight), plain bread SKUs
+  // beyond the notable pitas, kaak snack bags + sweets boxes (per-100g
+  // style labels), Ramadan section, whole cakes, drinks.
+  { id: 'woodenbakery-saj-zaatar', chain: 'Wooden Bakery', name: 'Saudi Bread Saj Zaatar', category: 'main', calories: 401, protein: 10, carbs: 60, fats: 13, price_sar: 9, estimated: true },
+  { id: 'woodenbakery-saj-zaatar-cheese', chain: 'Wooden Bakery', name: 'Saudi Bread Saj Zaatar & Cheese', category: 'main', calories: 431, protein: 14, carbs: 58, fats: 16, price_sar: 12, estimated: true },
+  { id: 'woodenbakery-saj-akawi', chain: 'Wooden Bakery', name: 'Saudi Bread Saj Akawi', category: 'main', calories: 359, protein: 14, carbs: 48, fats: 12, price_sar: 14, estimated: true },
+  { id: 'woodenbakery-saj-kashkawan', chain: 'Wooden Bakery', name: 'Saudi Bread Saj Kashkawan', category: 'main', calories: 333, protein: 13, carbs: 44, fats: 11, price_sar: 12, estimated: true },
+  { id: 'woodenbakery-saj-fetta', chain: 'Wooden Bakery', name: 'Saudi Bread Saj Fetta', category: 'main', calories: 319, protein: 12, carbs: 44, fats: 10, price_sar: 10, estimated: true },
+  { id: 'woodenbakery-saj-halloum', chain: 'Wooden Bakery', name: 'Saudi Bread Saj Halloum', category: 'main', calories: 329, protein: 13, carbs: 44, fats: 11, price_sar: 12, estimated: true },
+  { id: 'woodenbakery-saj-cheese-hot', chain: 'Wooden Bakery', name: 'Saudi Bread Saj Cheese Hot', category: 'main', calories: 365, protein: 14, carbs: 48, fats: 13, price_sar: 14, estimated: true },
+  { id: 'woodenbakery-saj-cheese-beef', chain: 'Wooden Bakery', name: 'Saudi Bread Saj Cheese & Beef Ham', category: 'main', calories: 353, protein: 15, carbs: 46, fats: 12, price_sar: 15, estimated: true },
+  { id: 'woodenbakery-saj-turkey-cheese', chain: 'Wooden Bakery', name: 'Saudi Bread Saj Turkey & Cheese', category: 'main', calories: 353, protein: 15, carbs: 46, fats: 12, price_sar: 15, estimated: true },
+  { id: 'woodenbakery-saj-special', chain: 'Wooden Bakery', name: 'Saudi Bread Saj Wooden Bakery Special', category: 'main', calories: 296, protein: 9, carbs: 44, fats: 9, price_sar: 14, estimated: true },
+  { id: 'woodenbakery-egg-soujouk', chain: 'Wooden Bakery', name: 'Egg Soujouk Breakfast', category: 'main', calories: 400, protein: 20, carbs: 24, fats: 24, price_sar: 20, estimated: true },
+  { id: 'woodenbakery-shakshuka', chain: 'Wooden Bakery', name: 'Shakshuka Breakfast', category: 'main', calories: 250, protein: 11, carbs: 16, fats: 15, price_sar: 16, estimated: true },
+  { id: 'woodenbakery-egg-white', chain: 'Wooden Bakery', name: 'Egg White Breakfast', category: 'main', calories: 350, protein: 20, carbs: 45, fats: 10, price_sar: 14, estimated: true },
+  { id: 'woodenbakery-egg-sunny', chain: 'Wooden Bakery', name: 'Egg Sunny Side Up Breakfast', category: 'main', calories: 240, protein: 11, carbs: 16, fats: 14, price_sar: 14, estimated: true },
+  { id: 'woodenbakery-scrambled-egg', chain: 'Wooden Bakery', name: 'Scrambled Egg Breakfast', category: 'main', calories: 240, protein: 11, carbs: 16, fats: 14, price_sar: 14, estimated: true },
+  { id: 'woodenbakery-fresh-bread', chain: 'Wooden Bakery', name: 'Fresh Bread (3 pc)', category: 'side', calories: 190, protein: 6, carbs: 38, fats: 1, price_sar: 2, estimated: true },
+  { id: 'woodenbakery-vegetable-plate', chain: 'Wooden Bakery', name: 'Vegetable Plate', category: 'side', calories: 90, protein: 3, carbs: 16, fats: 1, price_sar: 9, estimated: true },
+  { id: 'woodenbakery-pita-high-protein', chain: 'Wooden Bakery', name: 'Pita High Protein', category: 'side', calories: 279, protein: 20, carbs: 40, fats: 4, price_sar: 6, estimated: true },
+  { id: 'woodenbakery-pita-bran', chain: 'Wooden Bakery', name: 'Pita Bran', category: 'side', calories: 286, protein: 10, carbs: 56, fats: 3, price_sar: 2, estimated: true },
+  { id: 'woodenbakery-manoushe-zaatar', chain: 'Wooden Bakery', name: 'Zaatar Manoushe', category: 'main', calories: 619, protein: 12, carbs: 80, fats: 27, price_sar: 9, estimated: true },
+  { id: 'woodenbakery-manoushe-akawi', chain: 'Wooden Bakery', name: 'Akawi Cheese Manoushe', category: 'main', calories: 598, protein: 22, carbs: 70, fats: 25, price_sar: 14, estimated: true },
+  { id: 'woodenbakery-manoushe-zaatar-bran', chain: 'Wooden Bakery', name: 'Zaatar Bran Manoushe', category: 'main', calories: 588, protein: 12, carbs: 76, fats: 26, price_sar: 12, estimated: true },
+  { id: 'woodenbakery-manoushe-zaatar-cheese', chain: 'Wooden Bakery', name: 'Zaatar w Cheese Manoushe', category: 'main', calories: 744, protein: 20, carbs: 84, fats: 36, price_sar: 12, estimated: true },
+  { id: 'woodenbakery-manoushe-fetta', chain: 'Wooden Bakery', name: 'Cheese Fetta Manoushe', category: 'main', calories: 514, protein: 18, carbs: 64, fats: 21, price_sar: 12, estimated: true },
+  { id: 'woodenbakery-manoushe-kashkawan', chain: 'Wooden Bakery', name: 'Kashkawan Manoushe', category: 'main', calories: 627, protein: 24, carbs: 68, fats: 29, price_sar: 15, estimated: true },
+  { id: 'woodenbakery-manoushe-halloum', chain: 'Wooden Bakery', name: 'Cheese Halloum Manoushe', category: 'main', calories: 610, protein: 23, carbs: 68, fats: 27, price_sar: 15, estimated: true },
+  { id: 'woodenbakery-manoushe-cheese-hot', chain: 'Wooden Bakery', name: 'Cheese Hot Manoushe', category: 'main', calories: 557, protein: 20, carbs: 65, fats: 24, price_sar: 15, estimated: true },
+  { id: 'woodenbakery-manoushe-lahmeh', chain: 'Wooden Bakery', name: 'Lahmeh Bi Aajin', category: 'main', calories: 353, protein: 16, carbs: 44, fats: 12, price_sar: 13, estimated: true },
+  { id: 'woodenbakery-manoushe-lahmeh-pine', chain: 'Wooden Bakery', name: 'Lahmeh w Cheese w Pine Nuts', category: 'main', calories: 497, protein: 22, carbs: 48, fats: 24, price_sar: 17, estimated: true },
+  { id: 'woodenbakery-manoushe-beef-ham', chain: 'Wooden Bakery', name: 'Cheese w Beef Ham Manoushe', category: 'main', calories: 640, protein: 26, carbs: 70, fats: 28, price_sar: 20, estimated: true },
+  { id: 'woodenbakery-manoushe-turkey', chain: 'Wooden Bakery', name: 'Cheese w Turkey Manoushe', category: 'main', calories: 584, protein: 24, carbs: 66, fats: 24, price_sar: 18, estimated: true },
+  { id: 'woodenbakery-manoushe-soujouk', chain: 'Wooden Bakery', name: 'Cheese w Soujouk Manoushe', category: 'main', calories: 790, protein: 28, carbs: 76, fats: 41, price_sar: 21, estimated: true },
+  { id: 'woodenbakery-manoushe-combo', chain: 'Wooden Bakery', name: 'Cheese Combo Manoushe', category: 'main', calories: 576, protein: 20, carbs: 66, fats: 26, price_sar: 18, estimated: true },
+  { id: 'woodenbakery-manoushe-special', chain: 'Wooden Bakery', name: 'Wooden Bakery Special Manoushe', category: 'main', calories: 539, protein: 16, carbs: 68, fats: 23, price_sar: 19, estimated: true },
+  { id: 'woodenbakery-manoushe-spinach', chain: 'Wooden Bakery', name: 'Spinach Fatayer', category: 'main', calories: 292, protein: 8, carbs: 42, fats: 10, price_sar: 12, estimated: true },
+  { id: 'woodenbakery-bouchee-cheese', chain: 'Wooden Bakery', name: 'Bouchee Cheese', category: 'side', calories: 71, protein: 3, carbs: 8, fats: 3, price_sar: 2.5, estimated: true },
+  { id: 'woodenbakery-bouchee-beef-ham', chain: 'Wooden Bakery', name: 'Bouchee Beef Ham & Cheese', category: 'side', calories: 99, protein: 4, carbs: 10, fats: 5, price_sar: 2.5, estimated: true },
+  { id: 'woodenbakery-bouchee-hot-dog', chain: 'Wooden Bakery', name: 'Bouchee Hot Dog', category: 'side', calories: 112, protein: 4, carbs: 11, fats: 6, price_sar: 2.5, estimated: true },
+  { id: 'woodenbakery-bouchee-lahmeh', chain: 'Wooden Bakery', name: 'Bouchee Lahmeh', category: 'side', calories: 65, protein: 3, carbs: 8, fats: 2, price_sar: 2.5, estimated: true },
+  { id: 'woodenbakery-bouchee-spinach', chain: 'Wooden Bakery', name: 'Bouchee Spinach', category: 'side', calories: 51, protein: 1, carbs: 7, fats: 2, price_sar: 2.5, estimated: true },
+  { id: 'woodenbakery-bouchee-zaatar', chain: 'Wooden Bakery', name: 'Bouchee Zaatar', category: 'side', calories: 87, protein: 2, carbs: 11, fats: 4, price_sar: 2.5, estimated: true },
+  { id: 'woodenbakery-pizza-beef-s', cuisine: 'pizza', chain: 'Wooden Bakery', name: 'Pizza Beef (Small)', category: 'main', calories: 573, protein: 25, carbs: 64, fats: 24, price_sar: 22, family: 'woodenbakery-pizza-beef', units: 1, estimated: true },
+  { id: 'woodenbakery-pizza-beef-m', cuisine: 'pizza', chain: 'Wooden Bakery', name: 'Pizza Beef (Medium)', category: 'main', calories: 1101, protein: 48, carbs: 123, fats: 46, price_sar: 36, family: 'woodenbakery-pizza-beef', units: 2, estimated: true },
+  { id: 'woodenbakery-pizza-pepperoni-s', cuisine: 'pizza', chain: 'Wooden Bakery', name: 'Pizza Pepperoni (Small)', category: 'main', calories: 509, protein: 21, carbs: 58, fats: 21, price_sar: 22, family: 'woodenbakery-pizza-pepperoni', units: 1, estimated: true },
+  { id: 'woodenbakery-pizza-pepperoni-m', cuisine: 'pizza', chain: 'Wooden Bakery', name: 'Pizza Pepperoni (Medium)', category: 'main', calories: 993, protein: 41, carbs: 113, fats: 41, price_sar: 36, family: 'woodenbakery-pizza-pepperoni', units: 2, estimated: true },
+  { id: 'woodenbakery-pizza-chicken-s', cuisine: 'pizza', chain: 'Wooden Bakery', name: 'Pizza Chicken (Small)', category: 'main', calories: 560, protein: 26, carbs: 62, fats: 23, price_sar: 22, family: 'woodenbakery-pizza-chicken', units: 1, estimated: true },
+  { id: 'woodenbakery-pizza-chicken-m', cuisine: 'pizza', chain: 'Wooden Bakery', name: 'Pizza Chicken (Medium)', category: 'main', calories: 1093, protein: 50, carbs: 121, fats: 45, price_sar: 36, family: 'woodenbakery-pizza-chicken', units: 2, estimated: true },
+  { id: 'woodenbakery-pizza-vegetable-s', cuisine: 'pizza', chain: 'Wooden Bakery', name: 'Pizza Vegetable (Small)', category: 'main', calories: 502, protein: 18, carbs: 62, fats: 20, price_sar: 22, family: 'woodenbakery-pizza-vegetable', units: 1, estimated: true },
+  { id: 'woodenbakery-pizza-vegetable-m', cuisine: 'pizza', chain: 'Wooden Bakery', name: 'Pizza Vegetable (Medium)', category: 'main', calories: 980, protein: 35, carbs: 121, fats: 39, price_sar: 36, family: 'woodenbakery-pizza-vegetable', units: 2, estimated: true },
+  { id: 'woodenbakery-pizza-margarita-s', cuisine: 'pizza', chain: 'Wooden Bakery', name: 'Pizza Margarita (Small)', category: 'main', calories: 500, protein: 20, carbs: 58, fats: 21, price_sar: 18, family: 'woodenbakery-pizza-margarita', units: 1, estimated: true },
+  { id: 'woodenbakery-pizza-margarita-m', cuisine: 'pizza', chain: 'Wooden Bakery', name: 'Pizza Margarita (Medium)', category: 'main', calories: 700, protein: 28, carbs: 81, fats: 29, price_sar: 30, family: 'woodenbakery-pizza-margarita', units: 1.4, estimated: true },
+  { id: 'woodenbakery-croissant-turkey', chain: 'Wooden Bakery', name: 'Croissant Sandwich Turkey', category: 'main', calories: 460, protein: 20, carbs: 42, fats: 24, price_sar: 17, estimated: true },
+  { id: 'woodenbakery-croissant-omelette', chain: 'Wooden Bakery', name: 'Croissant Egg Omelette Sandwich', category: 'main', calories: 590, protein: 18, carbs: 44, fats: 37, price_sar: 14, estimated: true },
+  { id: 'woodenbakery-croissant-mortadella', chain: 'Wooden Bakery', name: 'Croissant Chicken Mortadella Sandwich', category: 'main', calories: 450, protein: 18, carbs: 42, fats: 23, price_sar: 16, estimated: true },
+  { id: 'woodenbakery-croissant-basturma', chain: 'Wooden Bakery', name: 'Croissant Sandwich Basturma', category: 'main', calories: 500, protein: 22, carbs: 42, fats: 27, price_sar: 18, estimated: true },
+  { id: 'woodenbakery-croissant-cheddar', chain: 'Wooden Bakery', name: 'Croissant Cheddar Cheese', category: 'side', calories: 370, protein: 10, carbs: 34, fats: 22, price_sar: 8, estimated: true },
+  { id: 'woodenbakery-croissant-plain', chain: 'Wooden Bakery', name: 'Croissant Plain', category: 'side', calories: 240, protein: 5, carbs: 26, fats: 13, price_sar: 8, estimated: true },
+  { id: 'woodenbakery-mini-croissant-chocolate', chain: 'Wooden Bakery', name: 'Mini Croissant Chocolate', category: 'side', calories: 110, protein: 2, carbs: 13, fats: 6, price_sar: 4, estimated: true },
+  { id: 'woodenbakery-mini-croissant-plain', chain: 'Wooden Bakery', name: 'Mini Croissant Plain', category: 'side', calories: 80, protein: 2, carbs: 9, fats: 4, price_sar: 4, estimated: true },
+  { id: 'woodenbakery-muffin-vanilla', chain: 'Wooden Bakery', name: 'Muffin Vanilla', category: 'dessert', calories: 490, protein: 7, carbs: 60, fats: 25, price_sar: 9, estimated: true },
+  { id: 'woodenbakery-muffin-chocochips', chain: 'Wooden Bakery', name: 'Muffin Vanilla Chocolate Chocochips', category: 'dessert', calories: 490, protein: 7, carbs: 60, fats: 25, price_sar: 9, estimated: true },
+  { id: 'woodenbakery-muffin-strawberry', chain: 'Wooden Bakery', name: 'Muffin Strawberry', category: 'dessert', calories: 480, protein: 7, carbs: 60, fats: 24, price_sar: 9, estimated: true },
+  { id: 'woodenbakery-chocolate-brownies', chain: 'Wooden Bakery', name: 'Chocolate Brownies', category: 'dessert', calories: 290, protein: 4, carbs: 36, fats: 15, price_sar: 7, estimated: true },
+  { id: 'woodenbakery-cinnamon-roll', chain: 'Wooden Bakery', name: 'Cinnamon Roll', category: 'dessert', calories: 270, protein: 5, carbs: 42, fats: 9, price_sar: 6, estimated: true },
+  { id: 'woodenbakery-fattouch', chain: 'Wooden Bakery', name: 'Fattouch', category: 'side', calories: 270, protein: 5, carbs: 30, fats: 14, price_sar: 16, estimated: true },
+  { id: 'woodenbakery-mojo-chicken-salad', chain: 'Wooden Bakery', name: 'Mojo Chicken Salad', category: 'main', calories: 297, protein: 28, carbs: 14, fats: 15, price_sar: 27, estimated: true },
+  { id: 'woodenbakery-tuna-pasta-salad', chain: 'Wooden Bakery', name: 'Tuna Pasta Salad', category: 'main', calories: 640, protein: 30, carbs: 50, fats: 36, price_sar: 25, estimated: true },
+  { id: 'woodenbakery-mini-rustique-chicken', chain: 'Wooden Bakery', name: 'Mini Rustique Mix Chicken', category: 'main', calories: 255, protein: 16, carbs: 30, fats: 8, price_sar: 10, estimated: true },
+  { id: 'woodenbakery-mini-rustique-tuna', chain: 'Wooden Bakery', name: 'Mini Rustique Sandwich Tuna', category: 'main', calories: 285, protein: 16, carbs: 30, fats: 11, price_sar: 10, estimated: true },
+  { id: 'woodenbakery-mini-rustique-halloum', chain: 'Wooden Bakery', name: 'Mini Rustique Sandwich Halloum', category: 'main', calories: 315, protein: 14, carbs: 30, fats: 15, price_sar: 10, estimated: true },
+  { id: 'woodenbakery-mini-rustique-turkey', chain: 'Wooden Bakery', name: 'Mini Rustique Sandwich Turkey', category: 'main', calories: 271, protein: 15, carbs: 30, fats: 10, price_sar: 10, estimated: true },
+  { id: 'woodenbakery-mini-rustique-rosto', chain: 'Wooden Bakery', name: 'Mini Rustique Sandwich Rosto', category: 'main', calories: 316, protein: 18, carbs: 30, fats: 14, price_sar: 11, estimated: true },
+  { id: 'woodenbakery-mini-rustique-chicken-shawarma', cuisine: 'shawarma', chain: 'Wooden Bakery', name: 'Mini Rustique Chicken Shawarma', category: 'main', calories: 254, protein: 15, carbs: 30, fats: 8, price_sar: 10, estimated: true },
+  { id: 'woodenbakery-mini-rustique-beef-shawarma', cuisine: 'shawarma', chain: 'Wooden Bakery', name: 'Mini Rustique Beef Shawarma', category: 'main', calories: 250, protein: 14, carbs: 30, fats: 8, price_sar: 10, estimated: true },
+  { id: 'woodenbakery-soujouk-sandwich', chain: 'Wooden Bakery', name: 'Sandwich Soujouk', category: 'main', calories: 630, protein: 24, carbs: 55, fats: 34, price_sar: 19, estimated: true },
+  { id: 'woodenbakery-eugene-wrap', chain: 'Wooden Bakery', name: 'Eugene Chicken Wrap', category: 'main', calories: 655, protein: 32, carbs: 62, fats: 31, price_sar: 24, estimated: true },
+  { id: 'woodenbakery-garlic-bread-cheese', chain: 'Wooden Bakery', name: 'Garlic Bread with Cheese', category: 'side', calories: 764, protein: 24, carbs: 80, fats: 38, price_sar: 18, estimated: true },
+  { id: 'woodenbakery-puff-spinach', chain: 'Wooden Bakery', name: 'Puff Pastry Spinach', category: 'side', calories: 100, protein: 3, carbs: 12, fats: 4, price_sar: 4.5, estimated: true },
+  { id: 'woodenbakery-armenian-lahmeh', chain: 'Wooden Bakery', name: 'Armenian Lahmeh', category: 'side', calories: 170, protein: 8, carbs: 22, fats: 5, price_sar: 5, estimated: true },
+  { id: 'woodenbakery-marinara-bread', chain: 'Wooden Bakery', name: 'Marinara Bread and Cheese', category: 'side', calories: 1060, protein: 36, carbs: 120, fats: 48, price_sar: 20, estimated: true },
+  { id: 'woodenbakery-dates-cake', chain: 'Wooden Bakery', name: 'Dates Cake (pc)', category: 'dessert', calories: 220, protein: 3, carbs: 36, fats: 7, price_sar: 5, estimated: true },
+  { id: 'woodenbakery-shaybeyat', chain: 'Wooden Bakery', name: 'Shaybeyat (pc)', category: 'dessert', calories: 110, protein: 2, carbs: 14, fats: 5, price_sar: 5, estimated: true },
+  { id: 'woodenbakery-sable-chocolate', chain: 'Wooden Bakery', name: 'Sable Chocolate', category: 'dessert', calories: 420, protein: 5, carbs: 48, fats: 23, price_sar: 10, estimated: true },
+  { id: 'woodenbakery-sable-vanille', chain: 'Wooden Bakery', name: 'Sable Vanille', category: 'dessert', calories: 360, protein: 5, carbs: 42, fats: 19, price_sar: 10, estimated: true },
+  { id: 'woodenbakery-blueberry-cheesecake', chain: 'Wooden Bakery', name: 'Blueberry Fudge Cheese Cake', category: 'dessert', calories: 450, protein: 7, carbs: 42, fats: 28, price_sar: 18, estimated: true },
+  { id: 'woodenbakery-fraisier', chain: 'Wooden Bakery', name: 'Fraisier', category: 'dessert', calories: 370, protein: 6, carbs: 40, fats: 20, price_sar: 18, estimated: true },
+  { id: 'woodenbakery-strawberry-cheesecake', chain: 'Wooden Bakery', name: 'Strawberry Cheese Cake', category: 'dessert', calories: 450, protein: 7, carbs: 42, fats: 28, price_sar: 17, estimated: true },
+  { id: 'woodenbakery-tiramisu', chain: 'Wooden Bakery', name: 'Tiramisu', category: 'dessert', calories: 320, protein: 6, carbs: 34, fats: 17, price_sar: 17, estimated: true },
 
-  // ── Auntie Anne's ──────────────────────────────────────────────
-  { id: 'auntieannes-original', chain: "Auntie Anne's", name: 'Original Pretzel', category: 'main', calories: 340, protein: 8, carbs: 65, fats: 5, price_sar: 14, estimated: false },
-  { id: 'auntieannes-pepperoni', chain: "Auntie Anne's", name: 'Pepperoni Pretzel', category: 'main', calories: 420, protein: 13, carbs: 58, fats: 15, price_sar: 19, estimated: false },
-  { id: 'auntieannes-pretzel-dogs', chain: "Auntie Anne's", name: 'Pretzel Dogs', category: 'main', calories: 360, protein: 11, carbs: 38, fats: 18, price_sar: 17, estimated: false },
-  { id: 'auntieannes-nuggets-cup', chain: "Auntie Anne's", name: 'Pretzel Nuggets (Cup)', category: 'main', calories: 350, protein: 8, carbs: 66, fats: 6, price_sar: 15, estimated: false },
-  { id: 'auntieannes-cinnamon-sugar', chain: "Auntie Anne's", name: 'Cinnamon Sugar Pretzel', category: 'dessert', calories: 470, protein: 8, carbs: 84, fats: 12, price_sar: 16, estimated: false },
+  // Auntie Anne's removed 2026-07: not on HungerStation (searched Malqa,
+  // EN + AR "آنتي آنز") — prices unverifiable under the audit mandate.
 
   // ── EGGSACTLY ──────────────────────────────────────────────────
-  { id: 'eggsactly-classic-egg', chain: 'EGGSACTLY', name: 'Egg & Cheese Brioche Sandwich', category: 'main', calories: 480, protein: 20, carbs: 42, fats: 26, price_sar: 24, estimated: true },
-  { id: 'eggsactly-truffle-egg', chain: 'EGGSACTLY', name: 'Truffle Egg Sandwich', category: 'main', calories: 450, protein: 19, carbs: 40, fats: 24, price_sar: 24, estimated: true },
-  { id: 'eggsactly-shakshuka', chain: 'EGGSACTLY', name: 'Shakshuka Plate', category: 'main', calories: 380, protein: 19, carbs: 22, fats: 24, price_sar: 26, estimated: true },
-  { id: 'eggsactly-egg-cheese-croissant', chain: 'EGGSACTLY', name: 'Egg & Cheese Croissant', category: 'main', calories: 430, protein: 17, carbs: 34, fats: 25, price_sar: 22, estimated: true },
-  { id: 'eggsactly-halloumi-wrap', chain: 'EGGSACTLY', name: 'Halloumi Egg Wrap', category: 'main', calories: 410, protein: 22, carbs: 38, fats: 19, price_sar: 21, estimated: true },
+  // Rebuilt 2026-07 from HungerStation "Eggsactly" (Malqa) labels. Several
+  // items carry "1 Calories" junk labels (paninis, Eggsactly Sandwich,
+  // clubs) — skipped. Also skipped: offers/combos, sharing boxes, sauces,
+  // all drinks.
+  { id: 'eggsactly-double-smash-burger', cuisine: 'burgers', chain: 'EGGSACTLY', name: 'Double Smash Burger', category: 'main', calories: 672, protein: 36, carbs: 46, fats: 38, price_sar: 24, estimated: true },
+  { id: 'eggsactly-burrata-sandwich', chain: 'EGGSACTLY', name: 'Burrata Sandwich', category: 'main', calories: 442, protein: 18, carbs: 40, fats: 23, price_sar: 26, estimated: true },
+  { id: 'eggsactly-shakshuka-sandwich', chain: 'EGGSACTLY', name: 'Shakshuka Sandwich', category: 'main', calories: 440, protein: 18, carbs: 44, fats: 21, price_sar: 17, estimated: true },
+  { id: 'eggsactly-cheetos-sandwich', chain: 'EGGSACTLY', name: 'Cheetos Sandwich', category: 'main', calories: 540, protein: 20, carbs: 50, fats: 29, price_sar: 19, estimated: true },
+  { id: 'eggsactly-truffle-sandwich', chain: 'EGGSACTLY', name: 'Truffle Sandwich', category: 'main', calories: 460, protein: 18, carbs: 42, fats: 24, price_sar: 19, estimated: true },
+  { id: 'eggsactly-avocado-sandwich', chain: 'EGGSACTLY', name: 'Avocado Sandwich', category: 'main', calories: 370, protein: 16, carbs: 34, fats: 19, price_sar: 20, estimated: true },
+  { id: 'eggsactly-egg-cheese-sandwich', chain: 'EGGSACTLY', name: 'Egg & Cheese Sandwich', category: 'main', calories: 430, protein: 18, carbs: 40, fats: 22, price_sar: 16, estimated: true },
+  { id: 'eggsactly-halloumi-sandwich', chain: 'EGGSACTLY', name: 'Halloumi Sandwich', category: 'main', calories: 280, protein: 14, carbs: 28, fats: 12, price_sar: 19, estimated: true },
+  { id: 'eggsactly-turkey-sandwich', chain: 'EGGSACTLY', name: 'Turkey Sandwich', category: 'main', calories: 500, protein: 26, carbs: 44, fats: 24, price_sar: 19, estimated: true },
+  { id: 'eggsactly-spicy-truffle-sandwich', chain: 'EGGSACTLY', name: 'Spicy Truffle Sandwich', category: 'main', calories: 370, protein: 16, carbs: 34, fats: 19, price_sar: 19, estimated: true },
+  { id: 'eggsactly-tuna-sandwich', chain: 'EGGSACTLY', name: 'Tuna Sandwich (Brioche)', category: 'main', calories: 400, protein: 22, carbs: 36, fats: 18, price_sar: 25, estimated: true },
+  { id: 'eggsactly-falafel-halloumi', chain: 'EGGSACTLY', name: 'Falafel Halloumi Sandwich', category: 'main', calories: 480, protein: 16, carbs: 54, fats: 22, price_sar: 24, estimated: true },
+  { id: 'eggsactly-bacon-eggs-sandwich', chain: 'EGGSACTLY', name: 'Bacon & Eggs Sandwich', category: 'main', calories: 280, protein: 16, carbs: 24, fats: 13, price_sar: 25, estimated: true },
+  { id: 'eggsactly-tamago-sandwich', chain: 'EGGSACTLY', name: 'Tamago Sandwich', category: 'main', calories: 190, protein: 10, carbs: 18, fats: 9, price_sar: 24, estimated: true },
+  { id: 'eggsactly-crunchy-chicken-salad', chain: 'EGGSACTLY', name: 'Crunchy Chicken Salad', category: 'main', calories: 449, protein: 32, carbs: 22, fats: 26, price_sar: 35, estimated: true },
+  { id: 'eggsactly-caesar-salad', chain: 'EGGSACTLY', name: 'Chicken Caesar Salad', category: 'main', calories: 337, protein: 28, carbs: 14, fats: 19, price_sar: 35, estimated: true },
+  { id: 'eggsactly-pesto-salad', chain: 'EGGSACTLY', name: 'Chicken Pesto Salad', category: 'main', calories: 614, protein: 34, carbs: 20, fats: 44, price_sar: 29, estimated: true },
+  { id: 'eggsactly-feta-salad', chain: 'EGGSACTLY', name: 'Feta Chicken Salad', category: 'main', calories: 226, protein: 22, carbs: 10, fats: 11, price_sar: 34, estimated: true },
+  { id: 'eggsactly-french-fries', chain: 'EGGSACTLY', name: 'French Fries', category: 'side', calories: 250, protein: 3, carbs: 34, fats: 11, price_sar: 12, estimated: true },
+  { id: 'eggsactly-corn-flakes', chain: 'EGGSACTLY', name: 'Corn Flakes with Berries', category: 'dessert', calories: 290, protein: 8, carbs: 52, fats: 5, price_sar: 15, estimated: true },
+  { id: 'eggsactly-nutella-sandwich', chain: 'EGGSACTLY', name: 'Nutella Berry Sandwich', category: 'dessert', calories: 300, protein: 6, carbs: 44, fats: 11, price_sar: 18, estimated: true },
+  { id: 'eggsactly-french-toast', chain: 'EGGSACTLY', name: 'Eggsactly French Toast', category: 'dessert', calories: 480, protein: 10, carbs: 62, fats: 21, price_sar: 15, estimated: true },
 
-  // ── Toastable ──────────────────────────────────────────────────
-  { id: 'toastable-grilled-cheese', chain: 'Toastable', name: 'Grilled Cheese Classic', category: 'main', calories: 480, protein: 17, carbs: 44, fats: 26, price_sar: 22, estimated: true },
-  { id: 'toastable-turkey-cheese', chain: 'Toastable', name: 'Turkey & Cheese Toast', category: 'main', calories: 470, protein: 25, carbs: 44, fats: 21, price_sar: 26, estimated: true },
-  { id: 'toastable-chicken-zaatar', chain: 'Toastable', name: 'Chicken Zaatar Toast', category: 'main', calories: 460, protein: 26, carbs: 45, fats: 19, price_sar: 25, estimated: true },
-  { id: 'toastable-shakshuka-toast', chain: 'Toastable', name: 'Spicy Shakshuka Toast', category: 'main', calories: 420, protein: 17, carbs: 46, fats: 19, price_sar: 23, estimated: true },
-  { id: 'toastable-nutella-banana', chain: 'Toastable', name: 'Nutella Banana Toast', category: 'dessert', calories: 490, protein: 10, carbs: 64, fats: 21, price_sar: 21, estimated: true },
+  // ── TOASTIC ────────────────────────────────────────────────────
+  // Replaces the fabricated "Toastable" 2026-07: the verified HungerStation
+  // toast/bakery chain in Malqa is TOASTIC (توستيك). Labels credible per
+  // piece. Skipped: Eid/kids/gathering boxes, whole cakes & heaters,
+  // unlabeled items, flat croissants + chocolate croissant (85–150 kcal
+  // labels not credible for croissants), all beverages.
+  { id: 'toastic-omlet-avocado', chain: 'TOASTIC', name: 'Omelette & Avocado Sandwich', category: 'main', calories: 290, protein: 14, carbs: 24, fats: 15, price_sar: 23, estimated: true },
+  { id: 'toastic-smoked-turkey', chain: 'TOASTIC', name: 'Smoked Turkey Sandwich', category: 'main', calories: 250, protein: 16, carbs: 28, fats: 8, price_sar: 24, estimated: true },
+  { id: 'toastic-fresh-chicken', chain: 'TOASTIC', name: 'Fresh Chicken Sandwich', category: 'main', calories: 170, protein: 12, carbs: 18, fats: 5, price_sar: 20, estimated: true },
+  { id: 'toastic-fresh-halloumi', chain: 'TOASTIC', name: 'Fresh Halloumi Sandwich', category: 'main', calories: 240, protein: 11, carbs: 22, fats: 12, price_sar: 20, estimated: true },
+  { id: 'toastic-fresh-tuna', chain: 'TOASTIC', name: 'Fresh Tuna Sandwich', category: 'main', calories: 210, protein: 13, carbs: 20, fats: 8, price_sar: 20, estimated: true },
+  { id: 'toastic-simit-halloumi-pesto', chain: 'TOASTIC', name: 'Simit Halloumi Cheese & Pesto', category: 'main', calories: 306, protein: 14, carbs: 36, fats: 12, price_sar: 24, estimated: true },
+  { id: 'toastic-simit-feta-nut', chain: 'TOASTIC', name: 'Simit Feta with Nuts', category: 'main', calories: 140, protein: 6, carbs: 16, fats: 6, price_sar: 22, estimated: true },
+  { id: 'toastic-mini-simit-tuna', chain: 'TOASTIC', name: 'Mini Simit Tuna', category: 'side', calories: 160, protein: 8, carbs: 18, fats: 6, price_sar: 15, estimated: true },
+  { id: 'toastic-mini-simit-halloumi', chain: 'TOASTIC', name: 'Mini Simit Halloumi', category: 'side', calories: 130, protein: 6, carbs: 16, fats: 5, price_sar: 15, estimated: true },
+  { id: 'toastic-cheese-croissant', chain: 'TOASTIC', name: 'Cheese Croissant', category: 'main', calories: 301, protein: 9, carbs: 28, fats: 17, price_sar: 15, estimated: true },
+  { id: 'toastic-thyme-croissant', chain: 'TOASTIC', name: 'Thyme Croissant', category: 'main', calories: 299, protein: 6, carbs: 30, fats: 17, price_sar: 15, estimated: true },
+  { id: 'toastic-mini-croissant-cheese', chain: 'TOASTIC', name: 'Mini Croissant Cheese', category: 'side', calories: 65, protein: 2, carbs: 7, fats: 3, price_sar: 9, estimated: true },
+  { id: 'toastic-parmesan-danish', chain: 'TOASTIC', name: 'Parmesan Cheese Danish', category: 'side', calories: 86, protein: 3, carbs: 9, fats: 4, price_sar: 17, estimated: true },
+  { id: 'toastic-labneh-mint-danish', chain: 'TOASTIC', name: 'Danish Labneh & Mint', category: 'side', calories: 105, protein: 3, carbs: 12, fats: 5, price_sar: 17, estimated: true },
+  { id: 'toastic-thyme-babka', chain: 'TOASTIC', name: 'Thyme Babka', category: 'side', calories: 120, protein: 3, carbs: 16, fats: 5, price_sar: 17, estimated: true },
+  { id: 'toastic-chocolate-danish', chain: 'TOASTIC', name: 'Chocolate Danish', category: 'dessert', calories: 155, protein: 3, carbs: 20, fats: 7, price_sar: 17, estimated: true },
+  { id: 'toastic-halva-danish', chain: 'TOASTIC', name: 'Halva Danish', category: 'dessert', calories: 160, protein: 4, carbs: 18, fats: 8, price_sar: 20, estimated: true },
+  { id: 'toastic-pecan-danish', chain: 'TOASTIC', name: 'Pecan Danish', category: 'dessert', calories: 110, protein: 2, carbs: 14, fats: 5, price_sar: 17, estimated: true },
+  { id: 'toastic-cheese-honey-danish', chain: 'TOASTIC', name: 'Cheese & Honey Danish', category: 'dessert', calories: 90, protein: 3, carbs: 12, fats: 3, price_sar: 17, estimated: true },
+  { id: 'toastic-date-pudding', chain: 'TOASTIC', name: 'Date Pudding', category: 'dessert', calories: 435, protein: 5, carbs: 70, fats: 15, price_sar: 22, estimated: true },
+  { id: 'toastic-french-toast', chain: 'TOASTIC', name: 'French Toast with Berries', category: 'dessert', calories: 469, protein: 10, carbs: 60, fats: 21, price_sar: 27, estimated: true },
+  { id: 'toastic-honey-cake', chain: 'TOASTIC', name: 'Honey Cake', category: 'dessert', calories: 322, protein: 5, carbs: 42, fats: 15, price_sar: 21, estimated: true },
+  { id: 'toastic-aum-ali', chain: 'TOASTIC', name: 'Aum Ali', category: 'dessert', calories: 714, protein: 14, carbs: 80, fats: 37, price_sar: 20, estimated: true },
+  { id: 'toastic-pecan-pudding', chain: 'TOASTIC', name: 'Pecan Pudding (Clay Cup)', category: 'dessert', calories: 645, protein: 8, carbs: 76, fats: 34, price_sar: 22, estimated: true },
+  { id: 'toastic-cheese-brulee', chain: 'TOASTIC', name: 'Cheese Brulee (Clay Cup)', category: 'dessert', calories: 320, protein: 6, carbs: 30, fats: 19, price_sar: 22, estimated: true },
+  { id: 'toastic-mini-eclair-5', chain: 'TOASTIC', name: 'Mini Eclair (5 pc)', category: 'dessert', calories: 506, protein: 8, carbs: 52, fats: 29, price_sar: 22, estimated: true },
 
   // ── Dawar Alsaada ──────────────────────────────────────────────
-  { id: 'dawaralsaada-egg-pastry', chain: 'Dawar Alsaada', name: 'Egg Pastry', category: 'main', calories: 380, protein: 14, carbs: 44, fats: 16, price_sar: 7, estimated: true },
-  { id: 'dawaralsaada-cheese-thyme', chain: 'Dawar Alsaada', name: 'Cheese & Thyme Pastry', category: 'main', calories: 420, protein: 15, carbs: 48, fats: 18, price_sar: 8, estimated: true },
-  { id: 'dawaralsaada-liquid-cheese', chain: 'Dawar Alsaada', name: 'Liquid Cheese Pastry', category: 'main', calories: 450, protein: 14, carbs: 50, fats: 21, price_sar: 9, estimated: true },
-  { id: 'dawaralsaada-liver-cheese', chain: 'Dawar Alsaada', name: 'Liver with Cheese Pastry', category: 'main', calories: 460, protein: 22, carbs: 44, fats: 21, price_sar: 12, estimated: true },
-  { id: 'dawaralsaada-chicken-pastry', chain: 'Dawar Alsaada', name: 'Chicken Pastry', category: 'main', calories: 430, protein: 20, carbs: 46, fats: 18, price_sar: 10, estimated: true },
-  { id: 'dawaralsaada-honey-cheese', chain: 'Dawar Alsaada', name: 'Honey & Cheese Pastry', category: 'dessert', calories: 470, protein: 13, carbs: 56, fats: 20, price_sar: 10, estimated: true },
+  // Rebuilt from HungerStation Malqa labels (2026-07); pies + the
+  // whole-wheat "Al Pur" healthy line are individually labeled. Skipped:
+  // offers/gathering boxes, the 70-pc honeycomb Hive (gathering size),
+  // unlabeled whole-wheat egg/chicken pies, playing cards (!), drinks.
+  { id: 'dawaralsaada-liver-cheese-pie', chain: 'Dawar Al Saada', name: 'Fresh Lamb Liver with Cheese Pie', category: 'main', calories: 290, protein: 16, carbs: 32, fats: 11, price_sar: 13, estimated: true },
+  { id: 'dawaralsaada-liver-pie', chain: 'Dawar Al Saada', name: 'Fresh Lamb Liver Pie', category: 'main', calories: 250, protein: 15, carbs: 32, fats: 7, price_sar: 12, estimated: true },
+  { id: 'dawaralsaada-egg-cheese-pie', chain: 'Dawar Al Saada', name: 'Egg with Cheese Pie', category: 'main', calories: 280, protein: 12, carbs: 30, fats: 12, price_sar: 7, estimated: true },
+  { id: 'dawaralsaada-egg-pie', chain: 'Dawar Al Saada', name: 'Egg Pie', category: 'main', calories: 220, protein: 10, carbs: 28, fats: 8, price_sar: 6, estimated: true },
+  { id: 'dawaralsaada-shakshuka-cheese-pie', chain: 'Dawar Al Saada', name: 'Shakshuka with Cheese Pie', category: 'main', calories: 300, protein: 12, carbs: 32, fats: 14, price_sar: 8, estimated: true },
+  { id: 'dawaralsaada-shakshuka-pie', chain: 'Dawar Al Saada', name: 'Shakshuka Pie', category: 'main', calories: 240, protein: 9, carbs: 30, fats: 9, price_sar: 7, estimated: true },
+  { id: 'dawaralsaada-falafel-pie', chain: 'Dawar Al Saada', name: 'Falafel Pie', category: 'main', calories: 370, protein: 11, carbs: 48, fats: 15, price_sar: 9, estimated: true },
+  { id: 'dawaralsaada-tahini-cheese-pie', chain: 'Dawar Al Saada', name: 'Tahini Cheese Pie', category: 'main', calories: 340, protein: 12, carbs: 36, fats: 16, price_sar: 7, estimated: true },
+  { id: 'dawaralsaada-nutella-peanut-pie', chain: 'Dawar Al Saada', name: 'Nutella and Peanut Pie', category: 'dessert', calories: 390, protein: 8, carbs: 48, fats: 18, price_sar: 9, estimated: true },
+  { id: 'dawaralsaada-turkey-pie', chain: 'Dawar Al Saada', name: 'Smoked Turkey Pie', category: 'main', calories: 300, protein: 15, carbs: 32, fats: 12, price_sar: 12, estimated: true },
+  { id: 'dawaralsaada-chicken-pie', chain: 'Dawar Al Saada', name: 'Chicken Pie', category: 'main', calories: 290, protein: 15, carbs: 32, fats: 11, price_sar: 12, estimated: true },
+  { id: 'dawaralsaada-halloumi-pie', chain: 'Dawar Al Saada', name: 'Halloumi Pie', category: 'main', calories: 320, protein: 14, carbs: 34, fats: 14, price_sar: 12, estimated: true },
+  { id: 'dawaralsaada-tuna-pie', chain: 'Dawar Al Saada', name: 'Tuna Pie', category: 'main', calories: 320, protein: 16, carbs: 32, fats: 14, price_sar: 11, estimated: true },
+  { id: 'dawaralsaada-cream-cheese-pie', chain: 'Dawar Al Saada', name: 'Cream Cheese Pie', category: 'main', calories: 270, protein: 8, carbs: 30, fats: 13, price_sar: 5, estimated: true },
+  { id: 'dawaralsaada-ww-liver-cheese', chain: 'Dawar Al Saada', name: 'Whole Wheat Liver Pie with Cheese', category: 'main', calories: 220, protein: 13, carbs: 25, fats: 8, price_sar: 14, estimated: true },
+  { id: 'dawaralsaada-ww-liver', chain: 'Dawar Al Saada', name: 'Whole Wheat Lamb Liver Pie', category: 'main', calories: 200, protein: 12, carbs: 25, fats: 6, price_sar: 13, estimated: true },
+  { id: 'dawaralsaada-ww-egg-cheese', chain: 'Dawar Al Saada', name: 'Whole Wheat Fried Egg Pie with Cheese', category: 'main', calories: 260, protein: 12, carbs: 28, fats: 11, price_sar: 8, estimated: true },
+  { id: 'dawaralsaada-ww-turkey', chain: 'Dawar Al Saada', name: 'Whole Wheat Smoked Turkey Pie', category: 'main', calories: 230, protein: 13, carbs: 26, fats: 8, price_sar: 13, estimated: true },
+  { id: 'dawaralsaada-ww-shakshuka-cheese', chain: 'Dawar Al Saada', name: 'Whole Wheat Shakshuka Cheese Pie', category: 'main', calories: 230, protein: 10, carbs: 26, fats: 9, price_sar: 9, estimated: true },
+  { id: 'dawaralsaada-ww-shakshuka', chain: 'Dawar Al Saada', name: 'Whole Wheat Shakshuka Pie', category: 'main', calories: 190, protein: 8, carbs: 24, fats: 7, price_sar: 8, estimated: true },
+  { id: 'dawaralsaada-ww-falafel', chain: 'Dawar Al Saada', name: 'Whole Wheat Falafel Pie', category: 'main', calories: 220, protein: 8, carbs: 30, fats: 7, price_sar: 10, estimated: true },
+  { id: 'dawaralsaada-ww-halloumi', chain: 'Dawar Al Saada', name: 'Whole Wheat Halloumi Pie', category: 'main', calories: 290, protein: 13, carbs: 30, fats: 13, price_sar: 13, estimated: true },
+  { id: 'dawaralsaada-ww-nutella-pb', chain: 'Dawar Al Saada', name: 'Whole Wheat Nutella & Peanut Butter Pie', category: 'dessert', calories: 360, protein: 8, carbs: 44, fats: 17, price_sar: 10, estimated: true },
+  { id: 'dawaralsaada-ww-cheese-tahini', chain: 'Dawar Al Saada', name: 'Whole Wheat Cheese & Tahini Pie', category: 'main', calories: 300, protein: 11, carbs: 32, fats: 14, price_sar: 8, estimated: true },
+  { id: 'dawaralsaada-ww-cheese', chain: 'Dawar Al Saada', name: 'Whole Wheat Cheese Pie', category: 'main', calories: 200, protein: 9, carbs: 24, fats: 7, price_sar: 6, estimated: true },
+  { id: 'dawaralsaada-ww-tuna', chain: 'Dawar Al Saada', name: 'Whole Wheat Tuna Pie', category: 'main', calories: 300, protein: 15, carbs: 30, fats: 13, price_sar: 12, estimated: true },
+  { id: 'dawaralsaada-hive-mini', chain: 'Dawar Al Saada', name: 'Al Saadah Hive Mini (35 pc with Honey)', category: 'dessert', calories: 1200, protein: 24, carbs: 180, fats: 42, price_sar: 22, estimated: true },
 
   // ── IHOP ───────────────────────────────────────────────────────
   // HungerStation SFDA calorie labels (2026-07), cross-checked against IHOP US
   // published nutrition (buttermilk full 540 = 5x108/pancake, chicken & waffles
-  // 1030, Belgian waffle 620 all match). Rejected: Cupcake Pancakes (full/half
-  // labels swapped: 400 vs 800), Labneh Zaatar Omelette (1466, out of family
-  // with siblings at 960-1040), Country Fried Chicken & Eggs (850 too low for
-  // battered chicken + gravy + hash browns + pancakes), kids meals, drinks.
+  // 1030, Belgian waffle 620 all match). Re-audited 2026-07 vs Malqa /166386:
+  // every price and label verified unchanged. Rejected: Cupcake Pancakes
+  // (full/half labels swapped: 400 vs 800), Labneh Zaatar Omelette (1466, out
+  // of family with siblings at 960-1040), Country Fried Chicken & Eggs (850
+  // too low for battered chicken + gravy + hash browns + pancakes), Green
+  // Pepper & Onion (131) and Battered Mixed Veggies (89) side labels not
+  // credible, sauces/toppings, kids meals, drinks.
   { id: 'ihop-buttermilk-half', chain: 'IHOP', name: 'Buttermilk Pancakes (Half Stack)', category: 'main', calories: 216, protein: 7, carbs: 40, fats: 3, price_sar: 35, estimated: true, family: 'ihop-buttermilk', units: 2 },
   { id: 'ihop-buttermilk-full', chain: 'IHOP', name: 'Buttermilk Pancakes (Full Stack)', category: 'main', calories: 540, protein: 16, carbs: 100, fats: 8, price_sar: 42, estimated: true, family: 'ihop-buttermilk', units: 5 },
-  { id: 'ihop-chocolate-chip-full', chain: 'IHOP', name: 'Chocolate Chip Pancakes (Full Stack)', category: 'dessert', calories: 1054, protein: 18, carbs: 158, fats: 38, price_sar: 55, estimated: true },
+  { id: 'ihop-chocolate-chip-half', chain: 'IHOP', name: 'Chocolate Chip Pancakes (Half Stack)', category: 'dessert', calories: 712, protein: 12, carbs: 107, fats: 26, price_sar: 45, estimated: true, family: 'ihop-chocolate-chip', units: 2 },
+  { id: 'ihop-chocolate-chip-full', chain: 'IHOP', name: 'Chocolate Chip Pancakes (Full Stack)', category: 'dessert', calories: 1054, protein: 18, carbs: 158, fats: 38, price_sar: 55, estimated: true, family: 'ihop-chocolate-chip', units: 3 },
   { id: 'ihop-cinnamon-half', chain: 'IHOP', name: 'Cinnamon Roll Pancakes (Half Stack)', category: 'dessert', calories: 536, protein: 9, carbs: 82, fats: 19, price_sar: 45, estimated: true, family: 'ihop-cinnamon', units: 2 },
   { id: 'ihop-cinnamon-full', chain: 'IHOP', name: 'Cinnamon Roll Pancakes (Full Stack)', category: 'dessert', calories: 1341, protein: 22, carbs: 205, fats: 48, price_sar: 55, estimated: true, family: 'ihop-cinnamon', units: 5 },
   { id: 'ihop-ny-cheesecake-half', chain: 'IHOP', name: 'New York Cheesecake Pancakes (Half Stack)', category: 'dessert', calories: 455, protein: 9, carbs: 70, fats: 15, price_sar: 45, estimated: true, family: 'ihop-ny-cheesecake', units: 2 },
@@ -76,6 +313,7 @@ export default [
   { id: 'ihop-oreo-half', chain: 'IHOP', name: 'Oreo Oh My Goodness Pancakes (Half Stack)', category: 'dessert', calories: 335, protein: 6, carbs: 55, fats: 10, price_sar: 45, estimated: true, family: 'ihop-oreo', units: 2 },
   { id: 'ihop-oreo-full', chain: 'IHOP', name: 'Oreo Oh My Goodness Pancakes (Full Stack)', category: 'dessert', calories: 670, protein: 12, carbs: 110, fats: 20, price_sar: 55, estimated: true, family: 'ihop-oreo', units: 4 },
   { id: 'ihop-strawberry-banana-pancakes', chain: 'IHOP', name: 'Strawberry Banana Pancakes (Half Stack)', category: 'main', calories: 340, protein: 7, carbs: 62, fats: 7, price_sar: 45, estimated: true },
+  { id: 'ihop-happiness-platter', chain: 'IHOP', name: 'IHOP Happiness Platter', category: 'main', calories: 1889, protein: 30, carbs: 270, fats: 72, price_sar: 84, estimated: true },
   { id: 'ihop-florentine-crepes', chain: 'IHOP', name: 'Chicken Florentine Crepes', category: 'main', calories: 820, protein: 45, carbs: 40, fats: 53, price_sar: 49, estimated: true },
   { id: 'ihop-strawberry-banana-french-toast', chain: 'IHOP', name: 'Strawberry Banana French Toast', category: 'main', calories: 650, protein: 16, carbs: 94, fats: 23, price_sar: 45, estimated: true },
   { id: 'ihop-chicken-waffles', chain: 'IHOP', name: 'Chicken & Waffles', category: 'main', calories: 1030, protein: 52, carbs: 88, fats: 52, price_sar: 55, estimated: true },
@@ -84,9 +322,9 @@ export default [
   { id: 'ihop-garden-omelette', chain: 'IHOP', name: 'Garden Omelette', category: 'main', calories: 960, protein: 42, carbs: 25, fats: 76, price_sar: 52, estimated: true },
   { id: 'ihop-cheeseburger-omelette', chain: 'IHOP', name: 'Cheeseburger Omelette', category: 'main', calories: 1040, protein: 58, carbs: 30, fats: 76, price_sar: 57, estimated: true },
   { id: 'ihop-chicken-quesadilla', chain: 'IHOP', name: 'Chicken Quesadilla', category: 'main', calories: 1030, protein: 55, carbs: 68, fats: 60, price_sar: 65, estimated: true },
-  { id: 'ihop-monster-chicken-burger', chain: 'IHOP', name: 'Monster Chicken Burger', category: 'main', calories: 1443, protein: 58, carbs: 120, fats: 80, price_sar: 64, estimated: true },
+  { id: 'ihop-monster-chicken-burger', cuisine: 'burgers', chain: 'IHOP', name: 'Monster Chicken Burger', category: 'main', calories: 1443, protein: 58, carbs: 120, fats: 80, price_sar: 64, estimated: true },
   { id: 'ihop-classic-cheeseburger', chain: 'IHOP', name: 'Classic Cheeseburger', category: 'main', calories: 1151, protein: 50, carbs: 80, fats: 70, price_sar: 59, estimated: true },
-  { id: 'ihop-cowboy-burger', chain: 'IHOP', name: 'Cowboy Burger', category: 'main', calories: 1753, protein: 70, carbs: 118, fats: 110, price_sar: 79, estimated: true },
+  { id: 'ihop-cowboy-burger', cuisine: 'burgers', chain: 'IHOP', name: 'Cowboy Burger', category: 'main', calories: 1753, protein: 70, carbs: 118, fats: 110, price_sar: 79, estimated: true },
   { id: 'ihop-english-breakfast', chain: 'IHOP', name: 'English Breakfast', category: 'main', calories: 966, protein: 52, carbs: 58, fats: 58, price_sar: 65, estimated: true },
   { id: 'ihop-split-decision', chain: 'IHOP', name: 'Split Decision Breakfast', category: 'main', calories: 1120, protein: 42, carbs: 108, fats: 58, price_sar: 67, estimated: true },
   { id: 'ihop-pancake-combo', chain: 'IHOP', name: 'Pancake Combo', category: 'main', calories: 750, protein: 28, carbs: 82, fats: 35, price_sar: 57, estimated: true },
@@ -99,13 +337,14 @@ export default [
   { id: 'ihop-grilled-chicken-breast', chain: 'IHOP', name: 'Grilled Chicken Breast (Side)', category: 'side', calories: 297, protein: 45, carbs: 2, fats: 12, price_sar: 24, estimated: true },
   { id: 'ihop-mashed-potatoes', chain: 'IHOP', name: 'Mashed Potatoes', category: 'side', calories: 267, protein: 4, carbs: 36, fats: 12, price_sar: 18, estimated: true },
   { id: 'ihop-steamed-broccoli', chain: 'IHOP', name: 'Steamed Broccoli', category: 'side', calories: 61, protein: 4, carbs: 9, fats: 1, price_sar: 15, estimated: true },
+  { id: 'ihop-fresh-strawberry', chain: 'IHOP', name: 'Fresh Strawberry (2 oz)', category: 'side', calories: 19, protein: 0.5, carbs: 4, fats: 0.2, price_sar: 12, estimated: true },
 
   // ── Half Million ───────────────────────────────────────────────
-  // HungerStation SFDA calorie labels (2026-07). Coffee-first chain — all
-  // drinks banned; salads and chocolate pudding carry no labels (skipped);
-  // both ice cream entries rejected (Affogato at 550 kcal is not credible
-  // for espresso + one scoop, which discredits its neighbor too).
-  { id: 'halfmillion-chocolate-croissant', chain: 'Half Million', name: 'Chocolate Croissant', category: 'dessert', calories: 381, protein: 6, carbs: 42, fats: 21, price_sar: 13, estimated: true },
+  // HungerStation SFDA calorie labels (2026-07, re-audited vs Malqa /29050).
+  // Coffee-first chain — all drinks banned; salads and chocolate pudding carry
+  // no labels (skipped); Affogato (550) and Coffee Crunch (513) rejected as not
+  // credible; Chocolate Croissant removed 2026-07 (no longer on HS menu).
+  { id: 'halfmillion-chocolate-ice-cream', chain: 'Half Million', name: 'Chocolate Ice Cream', category: 'dessert', calories: 266, protein: 4, carbs: 30, fats: 14, price_sar: 17, estimated: true },
   { id: 'halfmillion-tuna-panini', chain: 'Half Million', name: 'Tuna Panini', category: 'main', calories: 380, protein: 22, carbs: 40, fats: 15, price_sar: 19, estimated: true },
   { id: 'halfmillion-halloumi-panini', chain: 'Half Million', name: 'Halloumi Panini', category: 'main', calories: 340, protein: 16, carbs: 38, fats: 14, price_sar: 19, estimated: true },
   { id: 'halfmillion-chicken-sandwich', chain: 'Half Million', name: 'Chicken Sandwich', category: 'main', calories: 330, protein: 20, carbs: 38, fats: 11, price_sar: 19, estimated: true },
@@ -113,4 +352,31 @@ export default [
   { id: 'halfmillion-caramel-bites', chain: 'Half Million', name: 'Caramel Bites', category: 'dessert', calories: 260, protein: 3, carbs: 37, fats: 11, price_sar: 15, estimated: true },
   { id: 'halfmillion-cookies', chain: 'Half Million', name: 'Cookies', category: 'dessert', calories: 230, protein: 3, carbs: 29, fats: 11, price_sar: 13, estimated: true },
   { id: 'halfmillion-pecan-tiramisu', chain: 'Half Million', name: 'Pecan Tiramisu', category: 'dessert', calories: 480, protein: 7, carbs: 48, fats: 29, price_sar: 17, estimated: true },
+
+  // ── Furan Al Dayaa ─────────────────────────────────────────────
+  // HungerStation SFDA labels (2026-07). Lebanese oven/manakish chain. Roughly
+  // half the menu (sandwiches, pizzas, dozens) is listed at 0.0 SR (option-
+  // priced) and cannot be added. Rejected: sambousek 6 pc at "118 cal"
+  // (~20/pc, garbage), all family/diwaniyah/World Cup boxes, kids meals.
+  { id: 'furanaldayaa-eggs-boat', chain: 'Furan Al Dayaa', name: 'Eggs Boat', category: 'main', calories: 233, protein: 11, carbs: 20, fats: 12, price_sar: 13, estimated: true },
+  { id: 'furanaldayaa-feta-boat', chain: 'Furan Al Dayaa', name: 'Feta Boat', category: 'main', calories: 281, protein: 11, carbs: 28, fats: 14, price_sar: 12, estimated: true },
+  { id: 'furanaldayaa-kiri-eggs-spinach', chain: 'Furan Al Dayaa', name: 'Kiri, Eggs & Spinach Boat', category: 'main', calories: 640, protein: 22, carbs: 60, fats: 35, price_sar: 15, estimated: true },
+  { id: 'furanaldayaa-boat-halloumi', chain: 'Furan Al Dayaa', name: 'Halloumi Boat with Pesto', category: 'main', calories: 322, protein: 14, carbs: 30, fats: 16, price_sar: 15, estimated: true },
+  { id: 'furanaldayaa-boat-pepperoni', chain: 'Furan Al Dayaa', name: 'Pepperoni Boat', category: 'main', calories: 366, protein: 15, carbs: 32, fats: 20, price_sar: 15, estimated: true },
+  { id: 'furanaldayaa-boat-chicken', chain: 'Furan Al Dayaa', name: 'Chicken Boat', category: 'main', calories: 388, protein: 20, carbs: 34, fats: 19, price_sar: 15, estimated: true },
+  { id: 'furanaldayaa-kerrys-boat', chain: 'Furan Al Dayaa', name: 'Kiri Original Boat', category: 'main', calories: 615, protein: 16, carbs: 60, fats: 34, price_sar: 14, estimated: true },
+  { id: 'furanaldayaa-kiri-raspberry', chain: 'Furan Al Dayaa', name: 'Kiri & Raspberry Jam Boat', category: 'dessert', calories: 690, protein: 14, carbs: 88, fats: 31, price_sar: 15, estimated: true },
+  { id: 'furanaldayaa-kiri-dates', chain: 'Furan Al Dayaa', name: 'Kiri, Dates & Cinnamon Boat', category: 'dessert', calories: 700, protein: 14, carbs: 92, fats: 31, price_sar: 14, estimated: true },
+  { id: 'furanaldayaa-akawi-protein', chain: 'Furan Al Dayaa', name: 'Akawi Cheese Protein Pie', category: 'main', calories: 446, protein: 28, carbs: 40, fats: 19, price_sar: 16, estimated: true },
+  { id: 'furanaldayaa-halloumi-protein', chain: 'Furan Al Dayaa', name: 'Halloumi Protein Pie', category: 'main', calories: 496, protein: 30, carbs: 42, fats: 23, price_sar: 17, estimated: true },
+  { id: 'furanaldayaa-pottery-eggs', chain: 'Furan Al Dayaa', name: 'Pottery Eggs', category: 'main', calories: 277, protein: 16, carbs: 4, fats: 22, price_sar: 13, estimated: true },
+  { id: 'furanaldayaa-shakshuka', chain: 'Furan Al Dayaa', name: 'Shakshuka', category: 'main', calories: 314, protein: 14, carbs: 16, fats: 21, price_sar: 19, estimated: true },
+  { id: 'furanaldayaa-halloumi-pottery', chain: 'Furan Al Dayaa', name: 'Grilled Halloumi Pottery', category: 'main', calories: 665, protein: 38, carbs: 10, fats: 53, price_sar: 25, estimated: true },
+  { id: 'furanaldayaa-veg-plate', chain: 'Furan Al Dayaa', name: 'Vegetable Plate', category: 'side', calories: 32, protein: 1, carbs: 7, fats: 0, price_sar: 5, estimated: true },
+  { id: 'furanaldayaa-oven-wedges', chain: 'Furan Al Dayaa', name: 'Oven Baked Potato Wedges', category: 'side', calories: 129, protein: 3, carbs: 25, fats: 2, price_sar: 13, estimated: true },
+  { id: 'furanaldayaa-vanilla-cookies', chain: 'Furan Al Dayaa', name: 'Vanilla Cookies', category: 'dessert', calories: 389, protein: 5, carbs: 50, fats: 19, price_sar: 8, estimated: true },
+  { id: 'furanaldayaa-chocolate-cookies', chain: 'Furan Al Dayaa', name: 'Chocolate Cookies', category: 'dessert', calories: 389, protein: 5, carbs: 49, fats: 19, price_sar: 8, estimated: true },
+  { id: 'furanaldayaa-kashkaval-honey', chain: 'Furan Al Dayaa', name: 'Kashkaval with Honey Manousheh', category: 'dessert', calories: 542, protein: 18, carbs: 64, fats: 24, price_sar: 13, estimated: true },
+  { id: 'furanaldayaa-nutella', chain: 'Furan Al Dayaa', name: 'Nutella Manousheh', category: 'dessert', calories: 443, protein: 9, carbs: 58, fats: 20, price_sar: 16, estimated: true },
+  { id: 'furanaldayaa-aish-albolbol', chain: 'Furan Al Dayaa', name: 'Aish Al Bolbol (Labneh, Cheese & Honey)', category: 'dessert', calories: 726, protein: 22, carbs: 80, fats: 35, price_sar: 15, estimated: true },
 ];

@@ -36,12 +36,25 @@ const TAGGED_FILES = [
 
 // Display order for the category checklist.
 export const CUISINES = [
-  'burgers', 'chicken', 'pizza', 'shawarma', 'sandwiches', 'saudi',
+  'burgers', 'chicken', 'pizza', 'shawarma', 'levantine', 'sandwiches', 'saudi',
   'seafood', 'asian', 'healthy', 'bakery', 'desserts',
 ];
 
+// Full-menu Levantine restaurants live in the shawarma file but deserve their
+// own filter — their menus are mostly mezze/manaeesh/wraps, not shawarma.
+// Their actual shawarma items carry per-item `cuisine: 'shawarma'` overrides.
+const CHAIN_CUISINE = {
+  'Barbar': 'levantine',
+  'Zaatar w Zeit': 'levantine',
+  'Allo Beirut': 'levantine',
+  'Operation Falafel': 'levantine',
+  'Bayt Alfatirah Aldimashqia': 'levantine',
+};
+
+// Cuisine resolution: per-item override > per-chain override > file default.
+// A pizza sold at a shawarma chain should surface under the pizza filter.
 export const MENU = TAGGED_FILES.flatMap(([items, cuisine]) =>
-  items.map((i) => ({ ...i, cuisine }))
+  items.map((i) => ({ ...i, cuisine: i.cuisine ?? CHAIN_CUISINE[i.chain] ?? cuisine }))
 );
 export const CHAINS = [...new Set(MENU.map((i) => i.chain))];
 
@@ -65,7 +78,8 @@ export function validateMenu(items) {
     if (!Number.isFinite(it.calories) || it.calories <= 0) errors.push(`${where}: bad calories`);
     if (!Number.isFinite(it.price_sar) || it.price_sar <= 0) errors.push(`${where}: bad price_sar`);
     if (typeof it.estimated !== 'boolean') errors.push(`${where}: estimated must be boolean`);
-    if (typeof it.name === 'string' && BEVERAGE_RE.test(it.name)) {
+    // "Karak Ice Cream" and similar dessert names may contain a drink word.
+    if (typeof it.name === 'string' && BEVERAGE_RE.test(it.name) && !/ice\s?cream/i.test(it.name)) {
       errors.push(`${where}: beverage-like name "${it.name}" — drinks are banned`);
     }
   });

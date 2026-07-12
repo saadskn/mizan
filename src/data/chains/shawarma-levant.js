@@ -549,7 +549,7 @@ export default [
   // yoghurt drink. "New Items" and "New Doughs" kept — permanent menu lines.
   { id: 'zwz-orzo-salad', chain: 'Zaatar w Zeit', name: 'Orzo Salad', category: 'main', calories: 356, protein: 12, carbs: 40, fats: 16, price_sar: 43, estimated: true },
   { id: 'zwz-chicken-avocado-salad', chain: 'Zaatar w Zeit', name: 'Chicken Avocado Salad', category: 'main', calories: 568, protein: 30, carbs: 42, fats: 30, price_sar: 46, estimated: true },
-  { id: 'zwz-escalope-pasta-skillet', chain: 'Zaatar w Zeit', name: 'Creamy Escalope Pasta Skillet', category: 'main', calories: 1132, protein: 48, carbs: 110, fats: 52, price_sar: 52, estimated: true },
+  { id: 'zwz-escalope-pasta-skillet', cuisine: 'pasta', chain: 'Zaatar w Zeit', name: 'Creamy Escalope Pasta Skillet', category: 'main', calories: 1132, protein: 48, carbs: 110, fats: 52, price_sar: 52, estimated: true },
   { id: 'zwz-golden-taouk-skillet', chain: 'Zaatar w Zeit', name: 'Golden Taouk Skillet', category: 'main', calories: 1956, protein: 85, carbs: 160, fats: 105, price_sar: 53, estimated: true },
   { id: 'zwz-super-tuna-wrap', chain: 'Zaatar w Zeit', name: 'Super Tuna Wrap (High Protein Dough)', category: 'main', calories: 400, protein: 30, carbs: 42, fats: 12, price_sar: 38, estimated: true },
   { id: 'zwz-simply-kafta-wrap', chain: 'Zaatar w Zeit', name: 'Simply Kafta (Potato Dough)', category: 'main', calories: 550, protein: 25, carbs: 55, fats: 25, price_sar: 37, estimated: true },

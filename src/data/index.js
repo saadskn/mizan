@@ -36,19 +36,22 @@ const TAGGED_FILES = [
 
 // Display order for the category checklist.
 export const CUISINES = [
-  'burgers', 'chicken', 'pizza', 'shawarma', 'levantine', 'sandwiches', 'saudi',
-  'seafood', 'asian', 'healthy', 'bakery', 'desserts',
+  'burgers', 'chicken', 'pizza', 'pasta', 'shawarma', 'lebanese', 'sandwiches',
+  'saudi', 'seafood', 'asian', 'healthy', 'bakery', 'desserts',
 ];
 
-// Full-menu Levantine restaurants live in the shawarma file but deserve their
-// own filter — their menus are mostly mezze/manaeesh/wraps, not shawarma.
-// Their actual shawarma items carry per-item `cuisine: 'shawarma'` overrides.
+// Chain-level cuisine overrides. The full-menu Lebanese restaurants live in
+// the shawarma file but deserve their own filter — their menus are mostly
+// mezze/manaeesh/wraps, not shawarma (their actual shawarma items carry
+// per-item `cuisine: 'shawarma'` overrides). CasaPasta lives in the pizza
+// file but is a pasta restaurant top to bottom.
 const CHAIN_CUISINE = {
-  'Barbar': 'levantine',
-  'Zaatar w Zeit': 'levantine',
-  'Allo Beirut': 'levantine',
-  'Operation Falafel': 'levantine',
-  'Bayt Alfatirah Aldimashqia': 'levantine',
+  'Barbar': 'lebanese',
+  'Zaatar w Zeit': 'lebanese',
+  'Allo Beirut': 'lebanese',
+  'Operation Falafel': 'lebanese',
+  'Bayt Alfatirah Aldimashqia': 'lebanese',
+  'CasaPasta': 'pasta',
 };
 
 // Cuisine resolution: per-item override > per-chain override > file default.

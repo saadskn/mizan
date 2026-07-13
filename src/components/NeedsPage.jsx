@@ -67,6 +67,11 @@ export default function NeedsPage({ t }) {
   const set = (k, v) => setForm((prev) => ({ ...prev, [k]: v }));
 
   function handleSubmit() {
+    if (form.gender === 'nb') {
+      // The photo already stands in for the results — nothing to calculate.
+      setError(false);
+      return;
+    }
     const input = {
       gender: form.gender,
       activity: form.activity,
@@ -104,9 +109,22 @@ export default function NeedsPage({ t }) {
           <div className="flex gap-2" role="radiogroup" aria-label={t.gender}>
             <Pill on={form.gender === 'male'} onClick={() => set('gender', 'male')}>{t.genderMale}</Pill>
             <Pill on={form.gender === 'female'} onClick={() => set('gender', 'female')}>{t.genderFemale}</Pill>
+            <Pill on={form.gender === 'nb'} onClick={() => set('gender', 'nb')}>{t.genderNb}</Pill>
           </div>
         </fieldset>
 
+        {form.gender === 'nb' && (
+          <div className="mt-8 flex justify-center">
+            <img
+              src={`${import.meta.env.BASE_URL}nonbinary.jpg`}
+              alt=""
+              className="anim-rise w-[540px] max-w-full rounded-3xl border border-edge dark:border-olive-edge
+                         shadow-xl shadow-ink/10 dark:shadow-black/40"
+            />
+          </div>
+        )}
+
+        {form.gender !== 'nb' && (<>
         <div className="grid grid-cols-3 gap-3 mt-5">
           {fields.map(([k, label]) => (
             <label key={k} className="block">
@@ -141,9 +159,10 @@ export default function NeedsPage({ t }) {
                            hover:-translate-y-0.5 active:translate-y-0 active:scale-[.98] transition-all duration-300">
           {t.calcBtn}
         </button>
+        </>)}
       </form>
 
-      {result && (
+      {form.gender !== 'nb' && result && (
         <div key={calcId} className="mt-10">
           <div className="anim-rise flex items-center gap-4 mb-5">
             <h2 className="font-display font-bold text-2xl text-ink dark:text-cream">{t.needsResultTitle}</h2>

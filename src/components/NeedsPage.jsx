@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState.js';
 import { ACTIVITY_LEVELS, dailyNeeds, validateNeeds } from '../lib/needs.js';
-import Disclaimer from './Disclaimer.jsx';
 
 const ACTIVITY_KEYS = {
   sedentary: 'actSedentary',
@@ -179,7 +178,6 @@ export default function NeedsPage({ t }) {
           </p>
         </div>
       )}
-      <Disclaimer t={t} />
     </section>
   );
 }

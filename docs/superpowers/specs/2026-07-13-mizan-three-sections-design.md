@@ -60,6 +60,20 @@ button to the finder (explicitly cut by Saad). Inputs persist in localStorage
   fat · price (SAR). Estimated items keep the `~` marker convention. Item names
   render LTR inside RTL layout per the existing spec rule.
 
+## 4. Meal Builder (`#/build`) — amendment, approved 2026-07-13
+
+Fourth ☰ entry. One page, two steps: a search box filters the 96 chains
+(compact rows: logo · name · item count; tap to lock in), then the chain's menu
+renders grouped Mains/Sides/Desserts with a [− n +] stepper per item (cap 9).
+A sticky bottom bar shows live totals — calories, protein, carbs, fats, SAR —
+recomputed on every tap, no submit button. One restaurant per meal ("Change
+spot" clears the tray); the in-progress meal persists in localStorage
+(`mm_build`). Estimated items keep the `~` marker; the totals get `~` when any
+counted item is estimated. Same bilingual/RTL and disclaimer-footing rules.
+
+Also approved: the ×1.725 activity label reads "Hard · 6–7×/wk" (was 4–6),
+removing the numeric overlap with Moderate · 3–5; multipliers unchanged.
+
 ## Cross-cutting
 
 - All new UI strings live in `src/i18n/strings.js` with en/ar key parity

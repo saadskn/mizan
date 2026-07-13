@@ -4,6 +4,7 @@ const ENTRIES = [
   { hash: '#/', page: 'home', labelKey: 'find' },
   { hash: '#/needs', page: 'needs', labelKey: 'navNeeds' },
   { hash: '#/spots', page: 'spots', labelKey: 'navSpots' },
+  { hash: '#/build', page: 'build', labelKey: 'navBuild' },
 ];
 
 export default function NavMenu({ t, route }) {

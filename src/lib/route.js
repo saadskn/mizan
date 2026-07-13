@@ -9,6 +9,7 @@ export function parseHash(hash) {
     .map(decodeURIComponent);
   if (parts.length === 0) return { page: 'home' };
   if (parts[0] === 'needs' && parts.length === 1) return { page: 'needs' };
+  if (parts[0] === 'build' && parts.length === 1) return { page: 'build' };
   if (parts[0] === 'spots') {
     if (parts.length === 1) return { page: 'spots' };
     if (parts.length === 2) return { page: 'spot', slug: parts[1] };

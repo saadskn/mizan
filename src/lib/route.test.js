@@ -7,6 +7,8 @@ describe('parseHash', () => {
     ['#', { page: 'home' }],
     ['#/', { page: 'home' }],
     ['#/needs', { page: 'needs' }],
+    ['#/build', { page: 'build' }],
+    ['#/build/extra', { page: 'home' }],
     ['#/spots', { page: 'spots' }],
     ['#/spots/', { page: 'spots' }],
     ['#/spots/mcdonalds', { page: 'spot', slug: 'mcdonalds' }],

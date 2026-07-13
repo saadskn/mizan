@@ -12,6 +12,7 @@ import ResultsGrid from './components/ResultsGrid.jsx';
 import NeedsPage from './components/NeedsPage.jsx';
 import SpotsPage from './components/SpotsPage.jsx';
 import SpotDetailPage from './components/SpotDetailPage.jsx';
+import BuildPage from './components/BuildPage.jsx';
 
 function systemTheme() {
   return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -106,6 +107,7 @@ export default function App() {
           </>
         )}
         {route.page === 'needs' && <NeedsPage t={t} />}
+        {route.page === 'build' && <BuildPage t={t} />}
         {route.page === 'spots' && <SpotsPage t={t} />}
         {route.page === 'spot' && <SpotDetailPage key={route.slug} t={t} slug={route.slug} />}
       </div>

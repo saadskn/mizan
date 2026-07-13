@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 
 const ENTRIES = [
   { hash: '#/', page: 'home', labelKey: 'find' },
-  { hash: '#/needs', page: 'needs', labelKey: 'navNeeds' },
-  { hash: '#/spots', page: 'spots', labelKey: 'navSpots' },
   { hash: '#/build', page: 'build', labelKey: 'navBuild' },
+  { hash: '#/spots', page: 'spots', labelKey: 'navSpots' },
+  { hash: '#/needs', page: 'needs', labelKey: 'navNeeds' },
 ];
 
 export default function NavMenu({ t, route }) {

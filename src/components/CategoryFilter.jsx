@@ -1,6 +1,6 @@
 import { CUISINES } from '../data/index.js';
 
-const LABEL_KEYS = {
+export const LABEL_KEYS = {
   burgers: 'catBurgers',
   chicken: 'catChicken',
   pizza: 'catPizza',

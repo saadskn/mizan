@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { STRINGS } from './i18n/strings.js';
 import { usePersistedState } from './hooks/usePersistedState.js';
+import { useHashRoute } from './hooks/useHashRoute.js';
 import { findMatches } from './lib/matching.js';
 import { MENU, CUISINES } from './data/index.js';
 import TopBar from './components/TopBar.jsx';
@@ -8,6 +9,9 @@ import Hero from './components/Hero.jsx';
 import MacroForm, { parseGoals } from './components/MacroForm.jsx';
 import CategoryFilter from './components/CategoryFilter.jsx';
 import ResultsGrid from './components/ResultsGrid.jsx';
+import NeedsPage from './components/NeedsPage.jsx';
+import SpotsPage from './components/SpotsPage.jsx';
+import SpotDetailPage from './components/SpotDetailPage.jsx';
 
 function systemTheme() {
   return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -23,7 +27,12 @@ export default function App() {
   const [goals, setGoals] = useState(null);
   const [searchId, setSearchId] = useState(0);
   const resultsRef = useRef(null);
+  const route = useHashRoute();
   const t = STRINGS[lang];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [route.page, route.slug]);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
@@ -78,20 +87,27 @@ export default function App() {
       <div aria-hidden="true" className="bg-wash" />
       {/* keyed by lang: switching language lets the whole page rise back in */}
       <div key={lang} className="relative z-10 pb-16">
-        <TopBar t={t} theme={theme} setTheme={setTheme} lang={lang} setLang={setLang} />
-        <Hero t={t} />
-        <MacroForm
-          t={t}
-          values={values}
-          onChange={(k, v) => setValues((prev) => ({ ...prev, [k]: v }))}
-          onSubmit={handleSubmit}
-          error={error}
-        >
-          <CategoryFilter t={t} selected={cats} onToggle={toggleCat} />
-        </MacroForm>
-        <div ref={resultsRef}>
-          <ResultsGrid key={searchId} t={t} results={results} goals={goals ?? {}} />
-        </div>
+        <TopBar t={t} theme={theme} setTheme={setTheme} lang={lang} setLang={setLang} route={route} />
+        {route.page === 'home' && (
+          <>
+            <Hero t={t} />
+            <MacroForm
+              t={t}
+              values={values}
+              onChange={(k, v) => setValues((prev) => ({ ...prev, [k]: v }))}
+              onSubmit={handleSubmit}
+              error={error}
+            >
+              <CategoryFilter t={t} selected={cats} onToggle={toggleCat} />
+            </MacroForm>
+            <div ref={resultsRef}>
+              <ResultsGrid key={searchId} t={t} results={results} goals={goals ?? {}} />
+            </div>
+          </>
+        )}
+        {route.page === 'needs' && <NeedsPage t={t} />}
+        {route.page === 'spots' && <SpotsPage t={t} />}
+        {route.page === 'spot' && <SpotDetailPage key={route.slug} t={t} slug={route.slug} />}
       </div>
     </div>
   );

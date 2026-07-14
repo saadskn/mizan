@@ -46,6 +46,7 @@ function Stepper({ n, onAdd, onSub, addLabel }) {
 export default function BuildPage({ t }) {
   const [build, setBuild] = usePersistedState('mm_build', { slug: null, counts: {} });
   const [query, setQuery] = useState('');
+  const [itemQuery, setItemQuery] = useState('');
 
   // a persisted slug can go stale when a chain leaves the roster
   const spot = build.slug ? SPOT_BY_SLUG.get(build.slug) : null;
@@ -103,7 +104,7 @@ export default function BuildPage({ t }) {
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
             {filtered.map((s) => (
               <button key={s.slug} type="button"
-                      onClick={() => setBuild({ slug: s.slug, counts: {} })}
+                      onClick={() => { setBuild({ slug: s.slug, counts: {} }); setItemQuery(''); }}
                       className="flex items-center gap-3 p-2.5 rounded-2xl text-start
                                  bg-white dark:bg-olive-card border border-edge dark:border-olive-edge
                                  hover:-translate-y-px hover:border-oasis dark:hover:border-mint2 transition-all">
@@ -135,7 +136,7 @@ export default function BuildPage({ t }) {
               </div>
             </div>
             <button type="button"
-                    onClick={() => setBuild({ slug: null, counts: {} })}
+                    onClick={() => { setBuild({ slug: null, counts: {} }); setItemQuery(''); }}
                     className="shrink-0 px-3.5 py-2 rounded-full text-sm font-semibold
                                bg-white dark:bg-olive-card border border-edge dark:border-olive-edge
                                text-mut dark:text-cream-mut hover:border-oasis dark:hover:border-mint2 transition-colors">
@@ -143,12 +144,27 @@ export default function BuildPage({ t }) {
             </button>
           </div>
 
+          <input
+            type="text"
+            value={itemQuery}
+            onChange={(e) => setItemQuery(e.target.value)}
+            placeholder={t.buildSearchItems}
+            className="mt-5 w-full rounded-2xl px-4 py-3 text-base font-semibold
+                       bg-white dark:bg-olive-card border border-edge dark:border-olive-edge
+                       text-ink dark:text-cream
+                       placeholder:font-normal placeholder:text-faint dark:placeholder:text-cream-mut/60
+                       focus:outline-none focus:ring-2 focus:ring-oasis dark:focus:ring-mint2 focus:border-transparent"
+          />
+
           {totals.count === 0 && (
             <p className="mt-4 text-sm text-faint dark:text-cream-mut">{t.buildEmpty}</p>
           )}
 
           {GROUPS.map(([cat, labelKey]) => {
-            const rows = spot.items.filter((it) => it.category === cat);
+            const iq = itemQuery.trim().toLowerCase();
+            const rows = spot.items.filter(
+              (it) => it.category === cat && (!iq || it.name.toLowerCase().includes(iq))
+            );
             if (rows.length === 0) return null;
             return (
               <div key={cat} className="mt-7">

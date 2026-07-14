@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { SPOTS } from '../lib/spots.js';
 import { LABEL_KEYS } from './CategoryFilter.jsx';
 import SpotLogo from './SpotLogo.jsx';
@@ -32,6 +33,10 @@ function SpotTile({ t, spot, index }) {
 }
 
 export default function SpotsPage({ t }) {
+  const [query, setQuery] = useState('');
+  const q = query.trim().toLowerCase();
+  const filtered = q ? SPOTS.filter((s) => s.chain.toLowerCase().includes(q)) : SPOTS;
+
   return (
     <section className="max-w-6xl mx-auto px-5 pt-2 pb-10">
       <h1 className="anim-rise font-display font-bold text-3xl sm:text-4xl tracking-tight text-ink dark:text-cream">
@@ -40,8 +45,20 @@ export default function SpotsPage({ t }) {
       <p className="anim-rise mt-2 text-base text-mut dark:text-cream-mut" style={{ animationDelay: '0.15s' }}>
         {t.spotsTagline}
       </p>
-      <div className="mt-7 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        {SPOTS.map((spot, i) => (
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder={t.buildSearch}
+        className="anim-rise mt-6 w-full rounded-2xl px-4 py-3 text-base font-semibold
+                   bg-white dark:bg-olive-card border border-edge dark:border-olive-edge
+                   text-ink dark:text-cream
+                   placeholder:font-normal placeholder:text-faint dark:placeholder:text-cream-mut/60
+                   focus:outline-none focus:ring-2 focus:ring-oasis dark:focus:ring-mint2 focus:border-transparent"
+        style={{ animationDelay: '0.3s' }}
+      />
+      <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        {filtered.map((spot, i) => (
           <SpotTile key={spot.slug} t={t} spot={spot} index={i} />
         ))}
       </div>

@@ -100,7 +100,7 @@ function sharesAnyItem(a, b) {
 }
 
 export function findMatches(menu, goals, opts = {}) {
-  const { limit = 25, perChainCap = 10, dupThreshold = 2 / 3 } = opts;
+  const { limit = 100, perChainCap = 10, dupThreshold = 2 / 3 } = opts;
   const scoredKeys = filledGoalKeys(goals);
   if (scoredKeys.length === 0) return [];
 

@@ -274,6 +274,6 @@ describe('findMatches', () => {
     const t0 = performance.now();
     const res = findMatches(menu, { protein: 40, carbs: 50, fats: 20, calories: 600 });
     expect(performance.now() - t0).toBeLessThan(1500);
-    expect(res).toHaveLength(25);
+    expect(res).toHaveLength(100);
   });
 });

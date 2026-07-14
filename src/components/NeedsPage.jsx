@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState.js';
-import { ACTIVITY_LEVELS, dailyNeeds, validateNeeds } from '../lib/needs.js';
+import { ACTIVITY_LEVELS, GOALS, dailyNeeds, validateNeeds } from '../lib/needs.js';
 
 const ACTIVITY_KEYS = {
   sedentary: 'actSedentary',
@@ -8,6 +8,12 @@ const ACTIVITY_KEYS = {
   moderate: 'actModerate',
   hard: 'actHard',
   athlete: 'actAthlete',
+};
+
+const GOAL_KEYS = {
+  cut: 'goalCut',
+  maintain: 'goalMaintain',
+  gain: 'goalGain',
 };
 
 const inputCls = `mt-1 w-full rounded-2xl px-3.5 py-2.5 text-lg font-semibold
@@ -57,7 +63,7 @@ function RangeCard({ label, min, max, unit, delayMs }) {
 
 export default function NeedsPage({ t }) {
   const [form, setForm] = usePersistedState('mm_needs', {
-    gender: 'male', age: '', height: '', weight: '', activity: 'moderate',
+    gender: 'male', age: '', height: '', weight: '', activity: 'moderate', goal: 'maintain',
   });
   const [result, setResult] = useState(null);
   const [error, setError] = useState(false);
@@ -74,6 +80,7 @@ export default function NeedsPage({ t }) {
     const input = {
       gender: form.gender,
       activity: form.activity,
+      goal: form.goal ?? 'maintain', // forms persisted before goals existed lack the key
       age: Number(form.age),
       height: Number(form.height),
       weight: Number(form.weight),
@@ -146,6 +153,17 @@ export default function NeedsPage({ t }) {
           </div>
         </fieldset>
 
+        <fieldset className="mt-5">
+          <legend className="text-sm font-semibold text-mut dark:text-cream-mut mb-2.5">{t.goal}</legend>
+          <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t.goal}>
+            {GOALS.map((g) => (
+              <Pill key={g} on={(form.goal ?? 'maintain') === g} onClick={() => set('goal', g)}>
+                {t[GOAL_KEYS[g]]}
+              </Pill>
+            ))}
+          </div>
+        </fieldset>
+
         {error && (
           <p className="mt-3 text-sm font-medium text-clay dark:text-date-lt">{t.errNeeds}</p>
         )}
@@ -168,7 +186,7 @@ export default function NeedsPage({ t }) {
             <div className="weave-band anim-grow-x flex-1 h-1.5 rounded-sm opacity-70" />
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            <RangeCard label={t.caloriesShort} min={result.calories} max={result.calories} unit={t.kcal} delayMs={0} />
+            <RangeCard label={t.caloriesShort} min={result.calories.min} max={result.calories.max} unit={t.kcal} delayMs={0} />
             <RangeCard label={t.proteinShort} min={result.protein.min} max={result.protein.max} unit={t.g} delayMs={120} />
             <RangeCard label={t.carbsShort} min={result.carbs.min} max={result.carbs.max} unit={t.g} delayMs={240} />
             <RangeCard label={t.fatsShort} min={result.fats.min} max={result.fats.max} unit={t.g} delayMs={360} />

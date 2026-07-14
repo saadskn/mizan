@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cat > \\\"$TMPDIR/mizan-check.mjs\\\" 2>/dev/null || true; cat > /c/Users/saads/AppData/Local/Temp/claude/C--Users-saads/84e7ce43-e9d5-4607-86b6-40fcbf9a73fc/scratchpad/mizan-check.mjs <<'EOF'...",
+  "error": "Exit code 7\n/usr/bin/bash: line 1: /mizan-check.mjs: Permission denied\nfinder results: 100\ncut → kcal { min: 2298, max: 2498 } carbs { min: 243, max: 382 }\nmaintain → kcal { min: 2798, max: 2798 } carbs { min: 348, max: 432 }\ngain → kcal { min: 3098, max: 3298 } carbs { min: 392, max: 541 }\ndev server: 000",
+  "timestamp": "2026-07-14T17:43:56.833Z",
+  "retry_count": 1
+}

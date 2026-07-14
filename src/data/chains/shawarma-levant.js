@@ -824,4 +824,40 @@ export default [
   { id: 'rayg-arabi-10', chain: 'Rayg', name: 'Arabi Shawarma Plate (10 pc)', category: 'main', calories: 860, protein: 52, carbs: 68, fats: 42, price_sar: 42.5, estimated: true, family: 'rayg-arabi', units: 10 },
   { id: 'rayg-arabi-13', chain: 'Rayg', name: 'Arabi Shawarma Plate (13 pc)', category: 'main', calories: 1430, protein: 75, carbs: 115, fats: 74, price_sar: 50.5, estimated: true, family: 'rayg-arabi', units: 13 },
   { id: 'rayg-fries', chain: 'Rayg', name: 'Fries Plate', category: 'side', calories: 300, protein: 4, carbs: 40, fats: 14, price_sar: 13, estimated: true },
+
+  // ── Alkhafeef ──────────────────────────────────────────────────
+  // Saudi manakeesh/saj chain (cuisine override → lebanese in index.js).
+  // Calories and prices from HungerStation Riyadh Malqa (2026-07, SFDA menu
+  // labels); P/C/F estimated to match those calories. Skipped: combos
+  // (bundled with cola), drinks/karak.
+  { id: 'alkhafeef-manakeesh-zatar', chain: 'Alkhafeef', name: 'Manakeesh Zaatar', category: 'main', calories: 412, protein: 10, carbs: 58, fats: 14, price_sar: 9, estimated: true },
+  { id: 'alkhafeef-fatayer-spinach', chain: 'Alkhafeef', name: 'Fatayer Spinach', category: 'main', calories: 257, protein: 7, carbs: 36, fats: 8, price_sar: 12, estimated: true },
+  { id: 'alkhafeef-manakeesh-jobnah', chain: 'Alkhafeef', name: 'Manakeesh Akkawi Cheese', category: 'main', calories: 435, protein: 18, carbs: 50, fats: 17, price_sar: 13, estimated: true },
+  { id: 'alkhafeef-manakeesh-kashkawan', chain: 'Alkhafeef', name: 'Manakeesh Kashkaval', category: 'main', calories: 497, protein: 20, carbs: 52, fats: 21, price_sar: 14, estimated: true },
+  { id: 'alkhafeef-manakeesh-cheese-hotdog', chain: 'Alkhafeef', name: 'Manakeesh Cheese Hotdog', category: 'main', calories: 459, protein: 17, carbs: 50, fats: 19, price_sar: 14, estimated: true },
+  { id: 'alkhafeef-manakeesh-mhamra', chain: 'Alkhafeef', name: 'Manakeesh Muhammara', category: 'main', calories: 318, protein: 8, carbs: 48, fats: 10, price_sar: 11, estimated: true },
+  { id: 'alkhafeef-manakeesh-labnah', chain: 'Alkhafeef', name: 'Manakeesh Labneh', category: 'main', calories: 389, protein: 12, carbs: 48, fats: 15, price_sar: 11, estimated: true },
+  { id: 'alkhafeef-manakeesh-halloumi', chain: 'Alkhafeef', name: 'Manakeesh Halloumi', category: 'main', calories: 394, protein: 17, carbs: 44, fats: 16, price_sar: 15, estimated: true },
+  { id: 'alkhafeef-manakeesh-cheese-egg', chain: 'Alkhafeef', name: 'Manakeesh Cheese & Egg', category: 'main', calories: 459, protein: 20, carbs: 46, fats: 19, price_sar: 14, estimated: true },
+  { id: 'alkhafeef-manakeesh-three-cheese', chain: 'Alkhafeef', name: 'Three Cheese Manakeesh', category: 'main', calories: 465, protein: 20, carbs: 50, fats: 19, price_sar: 16, estimated: true },
+  { id: 'alkhafeef-manakeesh-chicken-slices', chain: 'Alkhafeef', name: 'Chicken Slices Manakeesh', category: 'main', calories: 334, protein: 20, carbs: 40, fats: 9, price_sar: 14, estimated: true },
+  { id: 'alkhafeef-manakeesh-kofta', chain: 'Alkhafeef', name: 'Manakeesh Kofta', category: 'main', calories: 369, protein: 18, carbs: 40, fats: 14, price_sar: 15, estimated: true },
+  { id: 'alkhafeef-lahem-be-ajeen', chain: 'Alkhafeef', name: 'Lahem Be Ajeen', category: 'main', calories: 382, protein: 18, carbs: 44, fats: 13, price_sar: 15, estimated: true },
+  { id: 'alkhafeef-mini-manakeesh-12', chain: 'Alkhafeef', name: 'Mini Manakeesh Mix (12 pc)', category: 'main', calories: 1666, protein: 56, carbs: 208, fats: 60, price_sar: 45, estimated: true, family: 'alkhafeef-mini-manakeesh', units: 12 },
+  { id: 'alkhafeef-mini-manakeesh-24', chain: 'Alkhafeef', name: 'Mini Manakeesh Mix (24 pc)', category: 'main', calories: 3332, protein: 112, carbs: 416, fats: 120, price_sar: 79, estimated: true, family: 'alkhafeef-mini-manakeesh', units: 24 },
+  { id: 'alkhafeef-saj-smoked-turkey', chain: 'Alkhafeef', name: 'Saj Smoked Turkey', category: 'main', calories: 471, protein: 26, carbs: 52, fats: 16, price_sar: 19, estimated: true },
+  { id: 'alkhafeef-saj-smoked-chicken', chain: 'Alkhafeef', name: 'Saj Smoked Chicken', category: 'main', calories: 491, protein: 28, carbs: 52, fats: 17, price_sar: 19, estimated: true },
+  { id: 'alkhafeef-saj-cheese', chain: 'Alkhafeef', name: 'Saj Cheese', category: 'main', calories: 265, protein: 11, carbs: 32, fats: 10, price_sar: 14, estimated: true },
+  { id: 'alkhafeef-saj-kashkaval', chain: 'Alkhafeef', name: 'Saj Kashkaval Cheese', category: 'main', calories: 484, protein: 20, carbs: 50, fats: 20, price_sar: 14, estimated: true },
+  { id: 'alkhafeef-spicy-chicken-sandwich', chain: 'Alkhafeef', name: 'Spicy Chicken Sandwich', category: 'main', calories: 459, protein: 28, carbs: 46, fats: 16, price_sar: 21, estimated: true },
+  { id: 'alkhafeef-chicken-marinara-sandwich', chain: 'Alkhafeef', name: 'Chicken Marinara Sandwich', category: 'main', calories: 607, protein: 32, carbs: 66, fats: 22, price_sar: 21, estimated: true },
+  { id: 'alkhafeef-halloumi-wrap', chain: 'Alkhafeef', name: 'Grilled Halloumi Wrap', category: 'main', calories: 541, protein: 20, carbs: 52, fats: 26, price_sar: 19, estimated: true },
+  { id: 'alkhafeef-tawook-sandwich', chain: 'Alkhafeef', name: 'Tawook Sandwich', category: 'main', calories: 389, protein: 24, carbs: 42, fats: 12, price_sar: 16, estimated: true },
+  { id: 'alkhafeef-tawook-plate', chain: 'Alkhafeef', name: 'Tawook Plate', category: 'main', calories: 1091, protein: 60, carbs: 110, fats: 40, price_sar: 28, estimated: true },
+  { id: 'alkhafeef-fukhara-shakshuka', chain: 'Alkhafeef', name: 'Fukhara Shakshuka', category: 'main', calories: 970, protein: 34, carbs: 90, fats: 50, price_sar: 22, estimated: true },
+  { id: 'alkhafeef-egg-cheese', chain: 'Alkhafeef', name: 'Egg & Cheese Fukhara', category: 'main', calories: 1000, protein: 40, carbs: 84, fats: 52, price_sar: 23, estimated: true },
+  { id: 'alkhafeef-hummus', chain: 'Alkhafeef', name: 'Hummus with Bread', category: 'side', calories: 785, protein: 24, carbs: 96, fats: 32, price_sar: 11, estimated: true },
+  { id: 'alkhafeef-potato-wedges', chain: 'Alkhafeef', name: 'Potato Wedges', category: 'side', calories: 225, protein: 3, carbs: 30, fats: 10, price_sar: 8, estimated: true },
+  { id: 'alkhafeef-green-salad', chain: 'Alkhafeef', name: 'Green Salad', category: 'side', calories: 123, protein: 3, carbs: 12, fats: 7, price_sar: 15, estimated: true },
+  { id: 'alkhafeef-halloumi-salad', chain: 'Alkhafeef', name: 'Halloumi Salad', category: 'side', calories: 222, protein: 10, carbs: 10, fats: 15, price_sar: 18, estimated: true },
 ];

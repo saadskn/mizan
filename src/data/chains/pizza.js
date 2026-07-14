@@ -438,4 +438,30 @@ export default [
   { id: 'letspizza-crunchy-chocolate-cake', chain: "Let's Pizza", name: 'Crunchy Chocolate Cake', category: 'dessert', calories: 270, protein: 4, carbs: 32, fats: 14, price_sar: 20, estimated: true },
   { id: 'letspizza-lotus-cheesecake', chain: "Let's Pizza", name: 'Lotus Cheese Cake', category: 'dessert', calories: 450, protein: 6, carbs: 44, fats: 28, price_sar: 20, estimated: true },
   { id: 'letspizza-hazelnut-chocolate-cake', chain: "Let's Pizza", name: 'Hazelnut Chocolate Cake', category: 'dessert', calories: 381, protein: 5, carbs: 40, fats: 22, price_sar: 20, estimated: true },
+
+  // ── PizzaExpress ───────────────────────────────────────────────
+  // Calories and prices from HungerStation Riyadh Al Olaya (2026-07, SFDA
+  // menu labels); P/C/F estimated to match those calories. Skipped: 2-for-1
+  // offers and "Any 3" bundles (not a la carte), drinks/mojitos.
+  { id: 'pizzaexpress-margherita-m', chain: 'PizzaExpress', name: 'Margherita Pizza (Medium)', category: 'main', calories: 750, protein: 30, carbs: 95, fats: 24, price_sar: 21, estimated: true },
+  { id: 'pizzaexpress-margherita-l', chain: 'PizzaExpress', name: 'Margherita Pizza (Large)', category: 'main', calories: 1330, protein: 52, carbs: 168, fats: 44, price_sar: 32, estimated: true },
+  { id: 'pizzaexpress-vegetarian-m', chain: 'PizzaExpress', name: 'Vegetarian Pizza (Medium)', category: 'main', calories: 820, protein: 30, carbs: 108, fats: 26, price_sar: 29, estimated: true },
+  { id: 'pizzaexpress-vegetarian-l', chain: 'PizzaExpress', name: 'Vegetarian Pizza (Large)', category: 'main', calories: 1460, protein: 52, carbs: 190, fats: 48, price_sar: 39, estimated: true },
+  { id: 'pizzaexpress-lareine-turkey-m', chain: 'PizzaExpress', name: 'La Reine Turkey Pizza (Medium)', category: 'main', calories: 740, protein: 36, carbs: 90, fats: 24, price_sar: 31, estimated: true },
+  { id: 'pizzaexpress-lareine-turkey-l', chain: 'PizzaExpress', name: 'La Reine Turkey Pizza (Large)', category: 'main', calories: 1380, protein: 62, carbs: 165, fats: 45, price_sar: 42, estimated: true },
+  { id: 'pizzaexpress-sloppy-giuseppe-m', chain: 'PizzaExpress', name: 'Sloppy Giuseppe Pizza (Medium)', category: 'main', calories: 790, protein: 38, carbs: 94, fats: 26, price_sar: 31, estimated: true },
+  { id: 'pizzaexpress-sloppy-giuseppe-l', chain: 'PizzaExpress', name: 'Sloppy Giuseppe Pizza (Large)', category: 'main', calories: 1430, protein: 66, carbs: 170, fats: 46, price_sar: 42, estimated: true },
+  { id: 'pizzaexpress-bbq-chicken-m', chain: 'PizzaExpress', name: 'BBQ Chicken Pizza (Medium)', category: 'main', calories: 1060, protein: 52, carbs: 130, fats: 32, price_sar: 31, estimated: true },
+  { id: 'pizzaexpress-bbq-chicken-l', chain: 'PizzaExpress', name: 'BBQ Chicken Pizza (Large)', category: 'main', calories: 1710, protein: 82, carbs: 205, fats: 56, price_sar: 42, estimated: true },
+  { id: 'pizzaexpress-pollo-forza-m', chain: 'PizzaExpress', name: 'Pollo Forza Pizza (Medium)', category: 'main', calories: 1100, protein: 50, carbs: 132, fats: 36, price_sar: 31, estimated: true },
+  { id: 'pizzaexpress-pollo-forza-l', chain: 'PizzaExpress', name: 'Pollo Forza Pizza (Large)', category: 'main', calories: 1720, protein: 78, carbs: 200, fats: 60, price_sar: 42, estimated: true },
+  { id: 'pizzaexpress-arrabizza-m', chain: 'PizzaExpress', name: 'Arrabizza Pizza (Medium)', category: 'main', calories: 890, protein: 44, carbs: 110, fats: 28, price_sar: 31, estimated: true },
+  { id: 'pizzaexpress-arrabizza-l', chain: 'PizzaExpress', name: 'Arrabizza Pizza (Large)', category: 'main', calories: 1520, protein: 72, carbs: 182, fats: 48, price_sar: 42, estimated: true },
+  { id: 'pizzaexpress-ranch-m', chain: 'PizzaExpress', name: 'Ranch Pizza (Medium)', category: 'main', calories: 800, protein: 40, carbs: 92, fats: 28, price_sar: 37, estimated: true },
+  { id: 'pizzaexpress-ranch-l', chain: 'PizzaExpress', name: 'Ranch Pizza (Large)', category: 'main', calories: 1420, protein: 68, carbs: 166, fats: 48, price_sar: 47, estimated: true },
+  { id: 'pizzaexpress-penne-contadina', chain: 'PizzaExpress', name: 'Penne Contadina', category: 'main', calories: 700, protein: 38, carbs: 82, fats: 22, price_sar: 28, estimated: true, cuisine: 'pasta' },
+  { id: 'pizzaexpress-lasagne', chain: 'PizzaExpress', name: 'Lasagne', category: 'main', calories: 750, protein: 36, carbs: 60, fats: 38, price_sar: 36, estimated: true, cuisine: 'pasta' },
+  { id: 'pizzaexpress-grand-chicken-caesar', chain: 'PizzaExpress', name: 'Grand Chicken Caesar Salad', category: 'main', calories: 620, protein: 40, carbs: 28, fats: 36, price_sar: 23, estimated: true },
+  { id: 'pizzaexpress-superboost-salad', chain: 'PizzaExpress', name: 'Superboost Salad', category: 'main', calories: 650, protein: 42, carbs: 55, fats: 26, price_sar: 26, estimated: true },
+  { id: 'pizzaexpress-chicken-wings', chain: 'PizzaExpress', name: 'Chicken Wings', category: 'side', calories: 600, protein: 40, carbs: 20, fats: 40, price_sar: 25, estimated: true },
 ];

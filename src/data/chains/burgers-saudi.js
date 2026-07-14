@@ -223,4 +223,18 @@ export default [
   { id: 'gunbun-fries', chain: 'GUNBUN', name: 'Fresh Hand Cut Fries', category: 'side', calories: 380, protein: 5, carbs: 48, fats: 18, price_sar: 13, estimated: true },
   { id: 'gunbun-gunfries', chain: 'GUNBUN', name: 'Gunfries (Loaded)', category: 'side', calories: 620, protein: 10, carbs: 60, fats: 36, price_sar: 26, estimated: true },
   { id: 'gunbun-crispy-kale', chain: 'GUNBUN', name: 'Crispy Kale', category: 'side', calories: 250, protein: 5, carbs: 18, fats: 17, price_sar: 28, estimated: true },
+
+  // ── Burger Hunch ───────────────────────────────────────────────
+  // Calories and prices from HungerStation Riyadh Al Olaya (2026-07, SFDA
+  // menu labels); P/C/F estimated to match those calories. Skipped: Double
+  // Smoky Beef/Chicken (listed at 630/610 kcal, only +50 over the singles —
+  // fails sanity), dip sauces, drinks.
+  { id: 'burger-hunch-smoky-beef', chain: 'Burger Hunch', name: 'Smoky Beef Burger', category: 'main', calories: 580, protein: 30, carbs: 44, fats: 30, price_sar: 25, estimated: true },
+  { id: 'burger-hunch-smoky-chicken', chain: 'Burger Hunch', name: 'Smoky Chicken Burger', category: 'main', calories: 560, protein: 32, carbs: 44, fats: 26, price_sar: 25, estimated: true },
+  { id: 'burger-hunch-flat-tasty', chain: 'Burger Hunch', name: 'Flat Tasty Burger', category: 'main', calories: 440, protein: 24, carbs: 38, fats: 20, price_sar: 25, estimated: true },
+  { id: 'burger-hunch-mini-box-beef', chain: 'Burger Hunch', name: 'Mini Burger Box (12 pc, Beef)', category: 'main', calories: 2919, protein: 130, carbs: 260, fats: 140, price_sar: 129, estimated: true },
+  { id: 'burger-hunch-grill-box', chain: 'Burger Hunch', name: 'Grill Box', category: 'main', calories: 3500, protein: 170, carbs: 260, fats: 190, price_sar: 129, estimated: true },
+  { id: 'burger-hunch-cheese-nachos', chain: 'Burger Hunch', name: 'Cheese Nachos', category: 'side', calories: 240, protein: 7, carbs: 26, fats: 12, price_sar: 10, estimated: true },
+  { id: 'burger-hunch-seasoned-fries', chain: 'Burger Hunch', name: 'Seasoned Fries', category: 'side', calories: 160, protein: 2, carbs: 22, fats: 7, price_sar: 9, estimated: true },
+  { id: 'burger-hunch-hunch-fries', chain: 'Burger Hunch', name: 'Hunch Fries (Loaded)', category: 'side', calories: 300, protein: 8, carbs: 34, fats: 15, price_sar: 18, estimated: true },
 ];

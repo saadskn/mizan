@@ -51,6 +51,7 @@ const CHAIN_CUISINE = {
   'Allo Beirut': 'lebanese',
   'Operation Falafel': 'lebanese',
   'Bayt Alfatirah Aldimashqia': 'lebanese',
+  'Alkhafeef': 'lebanese',
   'CasaPasta': 'pasta',
 };
 
